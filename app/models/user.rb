@@ -11,7 +11,7 @@ class User < ApplicationRecord
   def self.authenticate_username(username, password)
     user = User.find_by(username: username)
     return nil unless user
-    user.is_password?(password) ? return user : return nil
+    return (user.is_password?(password) ? user : nil)
   end
 
   def password=(pw)
