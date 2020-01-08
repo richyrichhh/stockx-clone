@@ -8,11 +8,11 @@ export default class Profile extends React.Component {
   }
 
   render() {
-    console.dir(this.props);
-    console.log(this.props.match.path);
+    // console.dir(this.props);
+    // console.log(this.props.match.path);
     let selected = this.props.match.path.split('/');
     selected = selected[selected.length - 1];
-    console.log(selected);
+    // console.log(selected);
     return (
       <div id="profile-div">
         <p>Hi, {this.props.currentUser.username}</p>

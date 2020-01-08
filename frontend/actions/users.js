@@ -25,8 +25,5 @@ export const fetchUser = id => dispatch =>
 export const updateUser = formUser => dispatch =>
   UsersUtil.updateUser(formUser).then(user => dispatch(receiveUser(user)));
 
-// export const createUser = formUser => dispatch =>
-//   UsersUtil.createUser(formUser).then(user => dispatch(receiveUser(user)));
-
 export const removeUser = id => dispatch =>
   UsersUtil.deleteUser(id).then(() => dispatch(deleteUser(id)));
