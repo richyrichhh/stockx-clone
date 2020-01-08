@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { removeUser } from '../../actions/users';
+import { updateUser, removeUser } from '../../actions/users';
 import { logout } from '../../actions/session';
 import Profile from './profile';
 
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  updateUser: (user) => dispatch(updateUser(user)),
   removeUser: (id) => dispatch(removeUser(id)),
   logout: () => dispatch(logout())
 });

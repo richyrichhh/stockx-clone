@@ -10,7 +10,7 @@ export default class Profile extends React.Component {
     return (
       <div id="profile-div">
         <p>Hi, {this.props.currentUser.username}</p>
-
+        <Link to="/profile/edit">Edit Profile</Link>
         <button id="temp-logout-btn" onClick={this.props.logout}>Log Out</button>
       </div>
     )
