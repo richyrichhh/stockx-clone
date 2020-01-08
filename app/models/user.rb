@@ -8,6 +8,13 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :portfolio_items,
+    class_name: :PortfolioItem
+
+  has_many :portfolio,
+    through: :portfolio_items,
+    source: :product
+
   def self.authenticate_username(username, password)
     user = User.find_by(username: username)
     return nil unless user
