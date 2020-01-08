@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
       flash.now[:errors] = ['Invalid username or password.']
     else
       login(@user)
-      redirect_to api_user_url(@user)
+      render 'api/users/show'
     end
   end
 

@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      redirect_to api_user_url(@user)
+      render :show
     else
       flash.now[:errors] = @user.errors.full_messages
     end
@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(user_params[:id])
     if @user.update(user_params)
-      redirect_to api_user_url(@user)
+      render :show
     else
       flash.now[:errors] = @user.errors.full_messages
     end
