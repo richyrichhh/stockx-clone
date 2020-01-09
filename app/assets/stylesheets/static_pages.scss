@@ -1,3 +1,16 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#app-div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

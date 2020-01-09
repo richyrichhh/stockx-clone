@@ -8,7 +8,7 @@ import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route-util';
 
 const App = () => (
-  <div>
+  <div id="app-div">
     <div id="nav-bar-div"></div>
     <Route exact path="/" component={SplashContainer} />
     <Route exact path="/products" component={ProductsIndexContainer} />

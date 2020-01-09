@@ -23,7 +23,7 @@ export default class PortfolioItem extends React.Component {
           <li><img src={product.img_path} height="100px"/></li>
           <li><p>{product.name}</p></li>
           <li><p>Retail: {product.retail_price}</p></li>
-          <li><img class="delete-portfolio-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px"/></li>
+          <li><img className="delete-portfolio-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px"/></li>
         </ul>
       </div>
     )
