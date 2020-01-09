@@ -1,2 +1,4 @@
 node_modules
 bundle.js*
+development.log
+bootsnap-load-path-cache

@@ -6,7 +6,6 @@ import Root from './components/root';
 document.addEventListener('DOMContentLoaded', () => {
   let initState = {};
   let store;
-  console.log('hello this is react');
 
   if (window.currentUser) {
     initState = {

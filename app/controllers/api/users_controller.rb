@@ -7,7 +7,16 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      redirect_to api_user_url(@user)
+      render :show
+    else
+      flash.now[:errors] = @user.errors.full_messages
+    end
+  end
+
+  def update
+    @user = User.find(user_params[:id])
+    if @user.update(user_params)
+      render :show
     else
       flash.now[:errors] = @user.errors.full_messages
     end
@@ -18,6 +27,6 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :email)
+    params.require(:user).permit(:username, :password, :email, :id)
   end
 end

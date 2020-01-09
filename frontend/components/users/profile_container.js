@@ -1,4 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { fetchBenches } from '../actions/benches';
-// import BenchIndex from './bench_index';
+import Profile from './profile';
+
+const mapStateToProps = (state) => {
+  return ({
+    currentUser: state.entities.currentUser,
+  })
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return ({});
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
