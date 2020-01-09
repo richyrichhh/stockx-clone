@@ -8,7 +8,7 @@ export default class PortfolioItem extends React.Component {
 
   componentDidMount() {
     this.props.fetchProduct(this.props.item.product_id);
-    console.dir(this.props);
+    // console.dir(this.props);
   }
 
   handleDelete() {

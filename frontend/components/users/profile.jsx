@@ -9,7 +9,7 @@ import PortfolioIndexContainer from '../portfolio/portfolio_index_container';
 export default class Profile extends React.Component {
   constructor(props) {
     super(props);
-    console.dir(this.props);
+    // console.dir(this.props);
     this.selected = this.props.location.pathname.split('/');
     this.selected = this.selected[this.selected.length - 1];
   }

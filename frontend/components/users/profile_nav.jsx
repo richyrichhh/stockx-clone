@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class ProfileNav extends React.Component {
   constructor(props) {
     super(props);
-    console.dir(this.props)
+    // console.dir(this.props)
   }
 
   render() {
