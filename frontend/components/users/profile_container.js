@@ -1,17 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateUser, removeUser } from '../../actions/users';
-import { logout } from '../../actions/session';
 import Profile from './profile';
 
-const mapStateToProps = (state) => ({
-  currentUser: state.entities.currentUser
-});
+const mapStateToProps = (state) => {
+  return ({
+    currentUser: state.entities.currentUser,
+  })
+};
 
-const mapDispatchToProps = dispatch => ({
-  updateUser: (user) => dispatch(updateUser(user)),
-  removeUser: (id) => dispatch(removeUser(id)),
-  logout: () => dispatch(logout())
-});
+const mapDispatchToProps = (dispatch) => {
+  return ({});
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
