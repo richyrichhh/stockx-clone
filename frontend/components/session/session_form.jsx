@@ -26,7 +26,7 @@ export default class SessionForm extends React.Component {
 
   handleInput(type) {
     return (e) => {
-      console.log(`${type} changed to ${e.target.value}`);
+      // console.log(`${type} changed to ${e.target.value}`);
       this.setState({ [type]: e.target.value });
     };
   }
