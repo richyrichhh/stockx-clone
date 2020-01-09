@@ -20,11 +20,11 @@ const deleteItem = itemId => ({
   itemId
 });
 
-export const fetchPortfolio = () => dispatch =>
-  PortfolioUtil.fetchPortfolio().then(portfolio => dispatch(receivePortfolio(portfolio)));
+export const fetchPortfolio = (id) => dispatch =>
+  PortfolioUtil.fetchPortfolio(id).then(portfolio => dispatch(receivePortfolio(portfolio)));
 
-export const addItem = item => dispatch =>
-  PortfolioUtil.addItem(item).then(newItem => dispatch(receiveItem(newItem)));
+export const addItem = (id, item) => dispatch =>
+  PortfolioUtil.addItem(id, item).then(newItem => dispatch(receiveItem(newItem)));
 
 export const removeItem = id => dispatch =>
   PortfolioUtil.removeItem(id).then(() => dispatch(deleteItem(id)));

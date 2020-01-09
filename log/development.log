@@ -3352,3 +3352,1130 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 303ms (Views: 15.6ms | ActiveRecord: 6.7ms)
 
 
+Started GET "/api/products" for ::1 at 2020-01-09 08:56:30 -0800
+Processing by Api::ProductsController#index as JSON
+  Rendering api/products/index.json.jbuilder
+  [1m[36mProduct Load (4.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jbuilder:1
+  Rendered api/products/index.json.jbuilder (43.3ms)
+Completed 200 OK in 81ms (Views: 52.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/products" for ::1 at 2020-01-09 08:56:36 -0800
+Processing by Api::ProductsController#index as JSON
+  Rendering api/products/index.json.jbuilder
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jbuilder:1
+  Rendered api/products/index.json.jbuilder (11.8ms)
+Completed 200 OK in 41ms (Views: 28.9ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (7.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mPortfolioItem Load (1.5ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPortfolioItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "portfolio_items" WHERE "portfolio_items"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPortfolioItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "portfolio_items" WHERE "portfolio_items"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tGiYOCSpi2oSxhRA5fvCJA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (7.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "admin"], ["password_digest", "$2a$12$z0uwSv5bCm5shyadi.xyFOzF7o/slFY9ptMHVlT3FAX9gm9bdV17O"], ["email", "admin@site.com"], ["session_token", "tGiYOCSpi2oSxhRA5fvCJA"], ["created_at", "2020-01-09 17:03:50.048987"], ["updated_at", "2020-01-09 17:03:50.048987"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demologin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4bn7zUfy5G4Ml1a6Xfbqxw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "demologin"], ["password_digest", "$2a$12$YxZS0WyXqxko.Y5wtQHjFeybr6D1zSAunFsH6eq69oYPSmvMMfTba"], ["email", "demo@demo.demo"], ["session_token", "4bn7zUfy5G4Ml1a6Xfbqxw"], ["created_at", "2020-01-09 17:03:50.300064"], ["updated_at", "2020-01-09 17:03:50.300064"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Air Jordan 1 \"Bred\""], ["description", "The Classic"], ["style_code", "4281"], ["colorway", "black red"], ["retail_price", 170], ["img_path", "https://www.flightclub.com/media/catalog/product/cache/1/image/1600x1140/9df78eab33525d08d6e5fb8d27136e95/6/3/63611742962-air-jordan-1-retro-high-og-bred-black-varsity-red-white-011845_1.jpg"], ["release_date", "2016-09-03"], ["created_at", "2020-01-09 17:03:50.303698"], ["updated_at", "2020-01-09 17:03:50.303698"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Air Jordan 3 \"White Cement\""], ["description", "Also a classic"], ["style_code", "136064-105"], ["colorway", "white fire red cement grey black"], ["retail_price", 200], ["img_path", "https://stockx-360.imgix.net/Air-Jordan-3-Retro-White-Cement-2011/Images/Air-Jordan-3-Retro-White-Cement-2011/Lv2/img01.jpg"], ["release_date", "2016-09-03"], ["created_at", "2020-01-09 17:03:50.309789"], ["updated_at", "2020-01-09 17:03:50.309789"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Air Jordan 11 \"Space Jams\""], ["description", "Your childhood"], ["style_code", "378037-003"], ["colorway", "black dark concord white"], ["retail_price", 220], ["img_path", "https://stockx.imgix.net/Jordan-11-Retro-Space-Jams-2016-Product.jpg"], ["release_date", "2016-12-10"], ["created_at", "2020-01-09 17:03:50.312840"], ["updated_at", "2020-01-09 17:03:50.312840"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mPortfolioItem Create (0.5ms)[0m  [1m[32mINSERT INTO "portfolio_items" ("user_id", "product_id", "size", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 13], ["product_id", 13], ["size", "M 9"], ["created_at", "2020-01-09 17:03:50.333452"], ["updated_at", "2020-01-09 17:03:50.333452"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mPortfolioItem Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolio_items" ("user_id", "product_id", "size", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 13], ["product_id", 14], ["size", "M 9"], ["created_at", "2020-01-09 17:03:50.340948"], ["updated_at", "2020-01-09 17:03:50.340948"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+Started GET "/" for ::1 at 2020-01-09 09:08:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uXnJ_dNV4o6xMZLG1VyaOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 630ms (Views: 619.2ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-01-09 09:08:45 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"admin", "email"=>"", "password"=>"[FILTERED]", "id"=>""}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+No template found for Api::SessionsController#create, rendering head :no_content
+Completed 204 No Content in 322ms (ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2020-01-09 09:08:50 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"admin", "email"=>"", "password"=>"[FILTERED]", "id"=>""}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (3.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["updated_at", "2020-01-09 17:08:50.326863"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.7ms)
+Completed 200 OK in 259ms (Views: 8.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:09:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 59ms (Views: 54.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:10:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 496ms (Views: 485.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:12:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 393ms (Views: 385.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:16:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 409ms (Views: 400.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:16:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 393ms (Views: 388.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:16:25 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (1.6ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (32.6ms)
+Completed 200 OK in 77ms (Views: 20.3ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:20:02 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.9ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (3.7ms)
+Completed 200 OK in 23ms (Views: 16.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:23:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 417ms (Views: 408.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:23:25 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.5ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (4.6ms)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:24:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 394ms (Views: 386.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:24:02 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (2.9ms)
+Completed 200 OK in 18ms (Views: 10.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:24:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:24:33 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.6ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (3.1ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:32:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 438ms (Views: 427.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/products/undefined" for ::1 at 2020-01-09 09:32:44 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+Completed 404 Not Found in 35ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=undefined):
+  
+app/controllers/api/products_controller.rb:25:in `show'
+Started GET "/" for ::1 at 2020-01-09 09:34:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 558ms (Views: 552.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/products/undefined" for ::1 at 2020-01-09 09:34:54 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=undefined):
+  
+app/controllers/api/products_controller.rb:25:in `show'
+Started GET "/" for ::1 at 2020-01-09 09:37:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 381ms (Views: 375.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:38:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 414ms (Views: 409.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:38:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 470ms (Views: 466.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:39:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 460ms (Views: 454.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:39:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 420ms (Views: 416.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:41:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:41:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 73ms (Views: 67.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:41:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 57ms (Views: 50.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:43:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 81ms (Views: 75.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:44:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 427ms (Views: 420.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:45:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:45:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 53ms (Views: 48.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:46:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 497ms (Views: 492.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:47:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 657ms (Views: 651.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:47:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 442ms (Views: 438.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:50:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 380ms (Views: 375.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:50:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 372ms (Views: 367.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:50:38 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (2.7ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (7.7ms)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:51:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 374ms (Views: 368.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:51:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 468ms (Views: 463.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:51:44 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (3.1ms)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:52:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 47ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:52:27 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (2.0ms)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:52:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 405ms (Views: 399.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:52:52 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.9ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (4.9ms)
+Completed 200 OK in 31ms (Views: 19.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:56:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 400ms (Views: 396.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:56:45 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.6ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (3.5ms)
+Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:57:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 378ms (Views: 373.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:57:58 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.7ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (3.7ms)
+Completed 200 OK in 25ms (Views: 17.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 09:58:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 408ms (Views: 404.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 09:58:30 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.5ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (3.0ms)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:01:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 383ms (Views: 377.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:01:34 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.9ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (3.2ms)
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:01:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 406ms (Views: 400.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:01:49 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.5ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (2.7ms)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/products/13" for ::1 at 2020-01-09 10:01:49 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"13"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+Started GET "/api/products/14" for ::1 at 2020-01-09 10:01:49 -0800
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (0.8ms)
+Completed 200 OK in 21ms (Views: 10.9ms | ActiveRecord: 1.0ms)
+
+
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (0.4ms)
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:14:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 495ms (Views: 487.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:14:27 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (1.6ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (6.4ms)
+Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:15:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 370ms (Views: 364.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:15:08 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (1.3ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (4.0ms)
+Completed 200 OK in 18ms (Views: 10.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/products/13" for ::1 at 2020-01-09 10:15:08 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"13"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+Started GET "/api/products/14" for ::1 at 2020-01-09 10:15:08 -0800
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (0.9ms)
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 0.8ms)
+
+
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (0.5ms)
+Completed 200 OK in 19ms (Views: 11.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:21:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 403ms (Views: 394.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:21:35 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (1.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (5.6ms)
+Completed 200 OK in 22ms (Views: 14.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/products/13" for ::1 at 2020-01-09 10:21:35 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"13"}
+Started GET "/api/products/14" for ::1 at 2020-01-09 10:21:35 -0800
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (1.0ms)
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 1.3ms)
+
+
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (0.4ms)
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:21:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 482ms (Views: 476.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:21:46 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (1.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (7.0ms)
+Completed 200 OK in 33ms (Views: 20.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/products/13" for ::1 at 2020-01-09 10:21:46 -0800
+Started GET "/api/products/14" for ::1 at 2020-01-09 10:21:46 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"14"}
+Processing by Api::ProductsController#show as JSON
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Parameters: {"id"=>"13"}
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (0.8ms)
+Completed 200 OK in 20ms (Views: 11.6ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mProduct Load (15.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (0.8ms)
+Completed 200 OK in 38ms (Views: 14.1ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:21:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 465ms (Views: 459.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:21:52 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (1.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (4.1ms)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/products/13" for ::1 at 2020-01-09 10:21:52 -0800
+Started GET "/api/products/14" for ::1 at 2020-01-09 10:21:52 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"13"}
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (1.2ms)
+Completed 200 OK in 23ms (Views: 15.8ms | ActiveRecord: 1.3ms)
+
+
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (0.3ms)
+Completed 200 OK in 33ms (Views: 15.1ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/api/portfolio/10" for ::1 at 2020-01-09 10:21:54 -0800
+Processing by Api::PortfolioItemsController#destroy as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mPortfolioItem Load (0.4ms)[0m  [1m[34mSELECT  "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/portfolio_items_controller.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/portfolio_items_controller.rb:34
+  [1m[36mPortfolioItem Destroy (1.6ms)[0m  [1m[31mDELETE FROM "portfolio_items" WHERE "portfolio_items"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/api/portfolio_items_controller.rb:34
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/portfolio_items_controller.rb:34
+No template found for Api::PortfolioItemsController#destroy, rendering head :no_content
+Completed 204 No Content in 112ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:21:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 83ms (Views: 76.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:21:56 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (1.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (4.7ms)
+Completed 200 OK in 25ms (Views: 17.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/products/14" for ::1 at 2020-01-09 10:21:56 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/show.json.jbuilder (2.1ms)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/api/portfolio/11" for ::1 at 2020-01-09 10:22:00 -0800
+Processing by Api::PortfolioItemsController#destroy as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mPortfolioItem Load (0.4ms)[0m  [1m[34mSELECT  "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/portfolio_items_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/portfolio_items_controller.rb:34
+  [1m[36mPortfolioItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "portfolio_items" WHERE "portfolio_items"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/api/portfolio_items_controller.rb:34
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/portfolio_items_controller.rb:34
+No template found for Api::PortfolioItemsController#destroy, rendering head :no_content
+Completed 204 No Content in 106ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:22:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:22:01 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (1.3ms)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:22:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 390ms (Views: 384.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:22:26 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.5ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (5.2ms)
+Completed 200 OK in 24ms (Views: 17.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-09 10:22:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 58ms (Views: 53.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/13/portfolio" for ::1 at 2020-01-09 10:22:28 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"13"}
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (0.5ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (2.0ms)
+Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (1.6ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mPortfolioItem Load (1.0ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "_B2bcHxqJ0bRbAVD8KAH8Q"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "admin"], ["password_digest", "$2a$12$W5GNmfPYAmUHzPKA2bTo8e/zZ8wFgrz1FEo7VOYYX.zA6FC6ABIcu"], ["email", "admin@site.com"], ["session_token", "_B2bcHxqJ0bRbAVD8KAH8Q"], ["created_at", "2020-01-09 18:22:40.609363"], ["updated_at", "2020-01-09 18:22:40.609363"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demologin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YzpQOV7ja-tNDYgoSLc3hg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "demologin"], ["password_digest", "$2a$12$Hy53qvc5EjI7pILx6W8blOcyj7g78mVt7DaTD8ju5d6bPJFTitsO."], ["email", "demo@demo.demo"], ["session_token", "YzpQOV7ja-tNDYgoSLc3hg"], ["created_at", "2020-01-09 18:22:40.857169"], ["updated_at", "2020-01-09 18:22:40.857169"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Air Jordan 1 \"Bred\""], ["description", "The Classic"], ["style_code", "4281"], ["colorway", "black red"], ["retail_price", 170], ["img_path", "https://www.flightclub.com/media/catalog/product/cache/1/image/1600x1140/9df78eab33525d08d6e5fb8d27136e95/6/3/63611742962-air-jordan-1-retro-high-og-bred-black-varsity-red-white-011845_1.jpg"], ["release_date", "2016-09-03"], ["created_at", "2020-01-09 18:22:40.860324"], ["updated_at", "2020-01-09 18:22:40.860324"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Air Jordan 3 \"White Cement\""], ["description", "Also a classic"], ["style_code", "136064-105"], ["colorway", "white fire red cement grey black"], ["retail_price", 200], ["img_path", "https://stockx-360.imgix.net/Air-Jordan-3-Retro-White-Cement-2011/Images/Air-Jordan-3-Retro-White-Cement-2011/Lv2/img01.jpg"], ["release_date", "2016-09-03"], ["created_at", "2020-01-09 18:22:40.862717"], ["updated_at", "2020-01-09 18:22:40.862717"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Air Jordan 11 \"Space Jams\""], ["description", "Your childhood"], ["style_code", "378037-003"], ["colorway", "black dark concord white"], ["retail_price", 220], ["img_path", "https://stockx.imgix.net/Jordan-11-Retro-Space-Jams-2016-Product.jpg"], ["release_date", "2016-12-10"], ["created_at", "2020-01-09 18:22:40.864991"], ["updated_at", "2020-01-09 18:22:40.864991"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mPortfolioItem Create (0.5ms)[0m  [1m[32mINSERT INTO "portfolio_items" ("user_id", "product_id", "size", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 15], ["product_id", 16], ["size", "M 9"], ["created_at", "2020-01-09 18:22:40.893184"], ["updated_at", "2020-01-09 18:22:40.893184"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mPortfolioItem Create (1.4ms)[0m  [1m[32mINSERT INTO "portfolio_items" ("user_id", "product_id", "size", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 15], ["product_id", 17], ["size", "M 9"], ["created_at", "2020-01-09 18:22:40.899899"], ["updated_at", "2020-01-09 18:22:40.899899"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+Started GET "/" for ::1 at 2020-01-09 10:22:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fPYNnsB4MrZZxxs_kkN3bg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 41.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-01-09 10:22:47 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"admin", "email"=>"", "password"=>"[FILTERED]", "id"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ddFc5Fo9YIw283P2vc5_RA"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ddFc5Fo9YIw283P2vc5_RA"], ["updated_at", "2020-01-09 18:22:47.277418"], ["id", 15]]
+  ↳ app/models/user.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 243ms (Views: 6.9ms | ActiveRecord: 2.7ms)
+
+

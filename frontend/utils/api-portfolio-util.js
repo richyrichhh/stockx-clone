@@ -1,14 +1,16 @@
-export const fetchPortfolio = () => (
-  $.ajax({
-    method: 'GET',
-    url: `/api/users/${current_user.id}/portfolio`
-  })
-);
+export const fetchPortfolio = (id) => {
+  return (
+    $.ajax({
+      method: 'GET',
+      url: `/api/users/${id}/portfolio`
+    })
+  )
+};
 
-export const addItem = (item) => (
+export const addItem = (id, item) => (
   $.ajax({
     method: 'POST',
-    url: `/api/users/${current_user.id}/portfolio`,
+    url: `/api/users/${id}/portfolio`,
     data: { item }
   })
 );

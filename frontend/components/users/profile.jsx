@@ -4,6 +4,7 @@ import { ProtectedRoute } from '../../utils/route-util';
 import ProfileNavContainer from './profile_nav_container';
 import ProfileMainContainer from './profile_main_container';
 import EditProfileContainer from './edit_profile_container';
+import PortfolioIndexContainer from '../portfolio/portfolio_index_container';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class Profile extends React.Component {
         <ProfileNavContainer selected={this.selected} />
         <Route exact path="/profile" component={ProfileMainContainer} />
         <ProtectedRoute exact path="/profile/edit" component={EditProfileContainer} />
+        <ProtectedRoute exact path="/profile/portfolio" component={PortfolioIndexContainer}  />
       </div>
     );
   }
