@@ -12,8 +12,9 @@ export default class ProductsIndex extends React.Component {
   }
 
   render() {
-    let { products } = this.props;
-    if (!products[0]) products = [];
+    let products;
+    if (!this.props.products[0]) products = [];
+    else products = Object.values(this.props.products);
     return (
       <div id="products-index-div">
         <ul id="products-list">

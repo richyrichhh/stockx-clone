@@ -7,7 +7,7 @@ export default ({ product }) => {
   console.dir(product);
   return (
     <li className="products-index-item">
-      <Link to={linkPath}><img src={product.img_path} height="250px" width="250px" />
+      <Link to={linkPath}><img src={product.img_path} height="250px" />
         <h3>{product.name}</h3></Link>
     </li>
   );

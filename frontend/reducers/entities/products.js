@@ -4,10 +4,10 @@ export default (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PRODUCTS:
-      return action.products;
+      return Object.assign({}, action.products);
     case RECEIVE_PRODUCT:
       if (action.product) {
-        return Object.assign({}, state, action.product);
+        return Object.assign({}, state, {[action.product.id]: action.product});
       } else {
         return state;
       }
