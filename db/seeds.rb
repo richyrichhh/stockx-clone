@@ -16,5 +16,7 @@ product1 = Product.create(name: 'Air Jordan 1 "Bred"', description: 'The Classic
 product2 = Product.create(name: 'Air Jordan 3 "White Cement"', description: 'Also a classic', style_code: '136064-105', colorway: 'white fire red cement grey black', retail_price: 200, img_path: 'https://stockx-360.imgix.net/Air-Jordan-3-Retro-White-Cement-2011/Images/Air-Jordan-3-Retro-White-Cement-2011/Lv2/img01.jpg', release_date: '3/9/2016')
 product3 = Product.create(name: 'Air Jordan 11 "Space Jams"', description: 'Your childhood', style_code: '378037-003', colorway: 'black dark concord white', retail_price: 220, img_path: 'https://stockx.imgix.net/Jordan-11-Retro-Space-Jams-2016-Product.jpg', release_date: '10/12/2016')
 
-PortfolioItem.create(user_id: user1.id, product_id: product1.id, size: 'M 9')
-PortfolioItem.create(user_id: user1.id, product_id: product2.id, size: 'M 9')
+PortfolioItem.create(user_id: user1.id, product_id: product1.id, size: 'M 9', purchase_price: 1)
+PortfolioItem.create(user_id: user1.id, product_id: product2.id, size: 'M 9', purchase_price: 1)
+PortfolioItem.create(user_id: demo_user.id, product_id: product3.id, size: 'M 9', purchase_price: 1)
+

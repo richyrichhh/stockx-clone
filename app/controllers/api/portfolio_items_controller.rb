@@ -1,14 +1,11 @@
 class Api::PortfolioItemsController < ApplicationController
   def index
-    p '---'
-    p params
-    p '---'
-    @items = PortfolioItem.all
+    @items = PortfolioItem.where(user_id: current_user.id)
   end
 
   def create
     @item = PortfolioItem.new(item_params)
-    @item.user_id = current_user.id
+    
     if @item.save
       render :show
     else
@@ -35,6 +32,6 @@ class Api::PortfolioItemsController < ApplicationController
   end
 
   def item_params
-    params.require[:item].permit[:id, :product_id, :user_id, :size]
+    params.require(:item).permit(:id, :product_id, :user_id, :size, :purchase_price)
   end
 end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update, :destroy] do
       # resources :portfolio_items, only: [:index, :create]
       get '/portfolio', :to => 'portfolio_items#index'
-      post '/portfolio', :to => 'portfolio_items#show'
+      post '/portfolio', :to => 'portfolio_items#create'
     end
     resources :products, only: [:create, :show, :update, :index]
     # resources :portfolio_items, only: [:destroy]

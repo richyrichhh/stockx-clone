@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchProducts: (id) => dispatch(fetchProduct(id)),
+  fetchProducts: () => dispatch(fetchProducts()),
   fetchPortfolio: (id) => dispatch(fetchPortfolio(id))
 });
 

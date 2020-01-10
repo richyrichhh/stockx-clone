@@ -7,7 +7,7 @@ export default class PortfolioItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProduct(this.props.item.product_id);
+    if (!this.props.products[this.props.item.product_id]) this.props.fetchProduct(this.props.item.product_id);
     // console.dir(this.props);
   }
 
@@ -22,7 +22,8 @@ export default class PortfolioItem extends React.Component {
         <ul>
           <li><img src={product.img_path} height="100px"/></li>
           <li><p>{product.name}</p></li>
-          <li><p>Retail: {product.retail_price}</p></li>
+          <li><p>Retail: ${product.retail_price}</p></li>
+          <li><p>Purchase Price: ${this.props.item.purchase_price}</p></li>
           <li><img className="delete-portfolio-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px"/></li>
         </ul>
       </div>
