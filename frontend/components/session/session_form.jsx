@@ -43,7 +43,7 @@ export default class SessionForm extends React.Component {
     const is_edit_form = (this.props.formType === 'edit' ? true : false);
     return (
       <div id="form-div">
-        {is_edit_form ? <div id="form-header"><strong>Edit</strong></div> : (!is_login_form ? (<div id="form-header"><p style={{ fontWeight: "bold" }}>Sign Up</p> <Link className="btn" to="/login"><p>Log In</p></Link></div>) : (<div id="form-header"><Link className="btn" to="/register"><p>Sign Up</p></Link> <p style={{ fontWeight: "bold" }}>Log In</p></div>))}
+        {is_edit_form ? <div id="form-header"><strong>Edit</strong></div> : (!is_login_form ? (<div id="form-header"><div className="selected btn" >Sign Up</div> <Link className="btn" to="/login"><div>Log In</div></Link></div>) : (<div id="form-header"><Link className="btn" to="/register"><div>Sign Up</div></Link> <div className="selected btn" >Log In</div></div>))}
         <form action="" id="session-form" onSubmit={this.handleSubmit}>
           <label className="form-label">
             <input className="form-input" type="text" name="user[username]" placeholder="Username" value={this.state.username} onChange={this.handleInput('username')} />
