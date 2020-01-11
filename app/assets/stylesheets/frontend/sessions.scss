@@ -1,0 +1,158 @@
+// Place all the styles related to the Api::Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#form-div {
+  height: 100%;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+#form-span {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #CCCCCC;
+  border-radius: 2.5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  height: 50%;
+  max-height: 800px;
+  width: 100%;
+  max-width: 300px;
+}
+
+#form-span:hover {
+  cursor: default;
+}
+
+#form-header {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  height: 50px;
+  width: 100%;
+  max-width: 300px;
+  align-items: center;
+  // border-bottom: 1px solid black;
+}
+
+#form-header:hover {
+  cursor: default;
+}
+
+#form-header > a {
+  font-size: 12px;
+  font-family: 'proxima-nova', sans-serif;
+  cursor: default;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  border-bottom: 2px solid gray;
+  width: 50%;
+  justify-content: center;
+  display: flex;
+}
+
+#form-header > .selected {
+  font-size: 12px;
+  font-family: 'proxima-nova', sans-serif;
+  cursor: default;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  border-bottom: 2px solid black;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#form-header > strong {
+  display: flex;
+  font-size: 14px;
+  padding-top: 10px;
+  font-family: 'proxima-nova', sans-serif;
+  position: relative;
+}
+
+#form-header p:hover {
+  cursor: default;
+}
+
+#form-header *:visited {
+  color: gray;
+  text-decoration: none;
+}
+
+#form-header *:link {
+  color: gray;
+  text-decoration: none;
+}
+
+
+#session-form {
+  // width: 300px;
+  // height: 400px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: space-between;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: 'proxima-nova', sans-serif;
+  width: 300px;
+  padding-bottom: 7.5px;
+}
+
+.form-label {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.form-input {
+  height: 20x;
+  margin: -1px 3px;
+  border: 1px solid #BBBBBB;
+  border-radius: 2.5px;
+  font-size: 12px;
+  width: 97%;
+  padding: 12px 10px 5px;
+}
+
+#session-form-submit {
+  margin-top: 12px;
+}
+
+.session-form-btn {
+  size: 200%;
+  background: #999999;
+  color: white;
+  border-style: outset;
+  border-color: #666666;
+  height: 30px;
+  width: 100%;
+  font: bold 12px 'proxima-nova', sans-serif;
+  text-shadow: none;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
+  box-shadow: none;
+  margin-top: 2px;
+}
+
+.session-form-btn:active {
+  border-style: inset;
+  background: #444444;
+  box-shadow: none;
+}
+

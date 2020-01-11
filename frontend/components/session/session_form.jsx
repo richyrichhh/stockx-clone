@@ -43,29 +43,31 @@ export default class SessionForm extends React.Component {
     const is_edit_form = (this.props.formType === 'edit' ? true : false);
     return (
       <div id="form-div">
-        {is_edit_form ? <div id="form-header"><strong>Edit</strong></div> : (!is_login_form ? (<div id="form-header"><div className="selected btn" >Sign Up</div> <Link className="btn" to="/login"><div>Log In</div></Link></div>) : (<div id="form-header"><Link className="btn" to="/register"><div>Sign Up</div></Link> <div className="selected btn" >Log In</div></div>))}
-        <form action="" id="session-form" onSubmit={this.handleSubmit}>
-          <label className="form-label">
-            <input className="form-input" type="text" name="user[username]" placeholder="Username" value={this.state.username} onChange={this.handleInput('username')} />
-          </label>
-          {!is_login_form ? 
+        <span id="form-span">
+          {is_edit_form ? <div id="form-header"><strong>Edit</strong></div> : (!is_login_form ? (<div id="form-header"><div className="selected btn" >Sign Up</div> <Link className="btn" to="/login"><div>Log In</div></Link></div>) : (<div id="form-header"><Link className="btn" to="/register"><div>Sign Up</div></Link> <div className="selected btn" >Log In</div></div>))}
+          <form action="" id="session-form" onSubmit={this.handleSubmit}>
             <label className="form-label">
-              <input className="form-input" type="text" name="user[name][0]" placeholder="First Name" value={this.state.firstName} onChange={this.handleInput('firstName')} />
-            </label> : null}
-          {!is_login_form ?
+              <input className="form-input" type="text" name="user[username]" placeholder="Username" value={this.state.username} onChange={this.handleInput('username')} />
+            </label>
+            {!is_login_form ? 
+              <label className="form-label">
+                <input className="form-input" type="text" name="user[name][0]" placeholder="First Name" value={this.state.firstName} onChange={this.handleInput('firstName')} />
+              </label> : null}
+            {!is_login_form ?
+              <label className="form-label">
+                <input className="form-input" type="text" name="user[name][1]" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInput('lastName')} />
+              </label> : null}
+            {!is_login_form ?
+              <label className="form-label">
+                <input className="form-input" type="text" name="user[email]" placeholder="E-Mail" value={this.state.email} onChange={this.handleInput('email')} />
+              </label> : null}
             <label className="form-label">
-              <input className="form-input" type="text" name="user[name][1]" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInput('lastName')} />
-            </label> : null}
-          {!is_login_form ?
-            <label className="form-label">
-              <input className="form-input" type="text" name="user[email]" placeholder="E-Mail" value={this.state.email} onChange={this.handleInput('email')} />
-            </label> : null}
-          <label className="form-label">
-            <input className="form-input" type="password" name="user[password]" placeholder="Password" value={this.state.password} onChange={this.handleInput('password')} />
-          </label>
-          <input type="submit" id="session-form-submit" className="session-form-btn" value="Submit"/>
-          {is_login_form ? <button id="guest-login-btn" className="session-form-btn" onClick={this.handleGuestSubmit}>Demo Login</button> : null}
-        </form>
+              <input className="form-input" type="password" name="user[password]" placeholder="Password" value={this.state.password} onChange={this.handleInput('password')} />
+            </label>
+            <input type="submit" id="session-form-submit" className="session-form-btn" value="Submit"/>
+            {is_login_form ? <button id="guest-login-btn" className="session-form-btn" onClick={this.handleGuestSubmit}>Demo Login</button> : null}
+          </form>
+        </span>
       </div>
     );
   }

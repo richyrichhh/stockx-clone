@@ -4,17 +4,20 @@ import LoginContainer from './session/login_container';
 import RegistrationContainer from './session/registration_container';
 import ProfileContainer from './users/profile_container';
 import ProductsIndexContainer from './products/products_index_container';
+import NavBarContainer from './nav/navbar_container';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route-util';
 
 const App = () => (
   <div id="app-div">
-    <div id="nav-bar-div"></div>
-    <Route exact path="/" component={SplashContainer} />
-    <Route exact path="/products" component={ProductsIndexContainer} />
-    <ProtectedRoute path="/profile" component={ProfileContainer} />
-    <AuthRoute exact path="/login" component={LoginContainer} />
-    <AuthRoute exact path="/register" component={RegistrationContainer} />
+    <NavBarContainer />
+    <div id="main-div">
+      <Route exact path="/" component={SplashContainer} />
+      <Route exact path="/products" component={ProductsIndexContainer} />
+      <ProtectedRoute path="/profile" component={ProfileContainer} />
+      <AuthRoute exact path="/login" component={LoginContainer} />
+      <AuthRoute exact path="/register" component={RegistrationContainer} />
+    </div>
     <div id="footer-div"></div>
     <div id="ticker-div"></div>
   </div>

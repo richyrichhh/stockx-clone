@@ -1,0 +1,127 @@
+div {
+  margin: 0 0 0 0;
+}
+
+#navbar-div {
+  position: fixed;
+  height: 20vh;
+  max-height: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: 1px solid #EEEEEE;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo-span {
+  width: 10%;
+  padding-left: 2.5%;
+  // border: 1px sozlid black;
+}
+
+#logo-span > img {
+  max-height: 60px;
+  max-width: 116.13px;
+  width: 100%;
+  height: 100%;
+}
+
+#navbar-search-span {
+  height: 100%;
+  // border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+#navbar-search-outer {
+  height: 45%;
+  width: 100%;
+  margin-left: 1%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6F6F6;
+}
+
+#navbar-search-icon {
+  width: 8%;
+  display: flex;
+  position: relative;
+  left: 1%;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 15px;
+}
+
+#navbar-search {
+  width: 92%;
+  height: 50%;
+  font-size: 15px;
+  border-style: none;
+  background-color: #F6F6F6;
+  color: black;
+  margin-right: 2%;
+}
+
+#navbar-nav-ele {
+  width: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+#navbar-els1 {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#navbar-els1 > a {
+  color: #111111;
+  cursor: pointer;
+  text-decoration: none;
+  font-stretch: expanded;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  white-space: nowrap;
+  font-size: 15px;
+  text-transform: capitalize;
+  padding: 8px 10px;
+}
+
+#navbar-els2 > a {
+  text-decoration: none;
+  color: black;
+}
+
+#navbar-sell-btn {
+  display: flex;
+  size: 200%;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+  border-style: outset;
+  border-color: black;
+  height: 32px;
+  width: 58.5px;
+  font: 15px 'proxima-nova', sans-serif;
+  font-weight: 500;
+  text-shadow: none;  
+  text-decoration: none;
+  box-shadow: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
