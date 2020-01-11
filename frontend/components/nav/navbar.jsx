@@ -16,7 +16,7 @@ export default class NavBar extends React.Component {
     return (
       <div id="navbar-div">
         <span id="logo-span">
-          <img src={LOGO_PATH} />
+          <Link to="/"><img src={LOGO_PATH} /></Link>
         </span>
         <span id="navbar-search-span">
           <span id="navbar-search-outer">
