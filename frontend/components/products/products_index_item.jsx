@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 export default ({ product }) => {
   const linkPath = `/products/${product.id}`
-  // console.dir(product);
+  console.dir(product);
   return (
     <li className="products-index-item">
       <Link to={linkPath}><img src={product.img_path} height="250px" />
-        <h3>{product.name}</h3></Link>
+        <h3>{product.model} "{product.name}"</h3></Link>
     </li>
   );
 }

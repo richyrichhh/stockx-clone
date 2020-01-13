@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_180039) do
+ActiveRecord::Schema.define(version: 2020_01_13_194351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_180039) do
     t.string "size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "purchase_price"
+    t.integer "purchase_price", null: false
     t.index ["product_id"], name: "index_portfolio_items_on_product_id"
     t.index ["user_id"], name: "index_portfolio_items_on_user_id"
   end
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_01_10_180039) do
     t.date "release_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "model"
+    t.string "brand"
     t.index ["name"], name: "index_products_on_name", unique: true
   end
 
@@ -46,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_180039) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
+    t.string "name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

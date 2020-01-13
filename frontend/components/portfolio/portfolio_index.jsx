@@ -25,11 +25,23 @@ export default class PortfolioIndex extends React.Component {
     let portfolio = (isEmpty(this.props.portfolio) ? {} : this.props.portfolio);
     return (
       <div id="portfolio-main">
-        <ul id="portfolio-list">
+        <table id="portfolio-table">
+          <tr>
+            <th>Name</th>
+            <th>Added Date</th>
+            <th>Purchase Price</th>
+            <th>Market Value</th>
+            <th>Gain/Loss</th>
+          </tr>
           {Object.values(portfolio).map(item => <PortfolioItemContainer item={item} key={`item${item.id}`} />)}
-        </ul>
+        </table>
+
         <Link to="/profile/portfolio/add">Add Item</Link>
       </div>
     )
   }
 }
+
+// <ul id="portfolio-list">
+//   {Object.values(portfolio).map(item => <PortfolioItemContainer item={item} key={`item${item.id}`} />)}
+// </ul>
