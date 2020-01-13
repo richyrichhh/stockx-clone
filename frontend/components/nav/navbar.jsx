@@ -51,6 +51,7 @@ export default class NavBar extends React.Component {
             </Link>
           </span>
         </span>
+        
       </div>
     );
   }

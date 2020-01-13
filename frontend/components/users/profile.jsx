@@ -19,10 +19,12 @@ export default class Profile extends React.Component {
     return (
       <div id="profile">
         <ProfileNavContainer selected={this.selected} />
-        <Route exact path="/profile" component={ProfileMainContainer} />
-        <ProtectedRoute exact path="/profile/edit" component={EditProfileContainer} />
-        <ProtectedRoute path="/profile/portfolio" component={PortfolioIndexContainer}  />
-        <ProtectedRoute exact path="/profile/portfolio/add" component={PortfolioFormContainer} />
+        <div id="profile-main">
+          <Route exact path="/profile" component={ProfileMainContainer} />
+          <ProtectedRoute exact path="/profile/edit" component={EditProfileContainer} />
+          <ProtectedRoute path="/profile/portfolio" component={PortfolioIndexContainer}  />
+          <ProtectedRoute exact path="/profile/portfolio/add" component={PortfolioFormContainer} />
+        </div>
       </div>
     );
   }

@@ -4,7 +4,7 @@ div {
 
 #navbar-div {
   position: fixed;
-  height: 20vh;
+  height: 100%;
   max-height: 90px;
   width: 100%;
   display: flex;
@@ -12,10 +12,11 @@ div {
   top: 0;
   left: 0;
   z-index: 1;
-  border-bottom: 1px solid #EEEEEE;
   background-color: white;
   justify-content: space-between;
   align-items: center;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px #777777;
 }
 
 #logo-span {
@@ -70,6 +71,7 @@ div {
   background-color: #F6F6F6;
   color: black;
   margin-right: 2%;
+  letter-spacing: 1px;
 }
 
 #navbar-nav-ele {
