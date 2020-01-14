@@ -9,7 +9,7 @@ export default class ProfileNav extends React.Component {
   }
 
   componentDidMount() {
-    console.dir(this.props);
+    // console.dir(this.props);
     $(document.getElementById(`p-navbar-${this.props.selected}`)).addClass("profile-selected");
   }
 

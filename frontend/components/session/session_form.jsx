@@ -52,7 +52,7 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.dir(this.props);
+    // console.dir(this.props);
     const user = Object.assign({}, this.state, {name: (this.state.firstName + ' ' + this.state.lastName)});
     this.props.process(user).then(success => this.props.history.push('/profile'), 
       error => {

@@ -10,7 +10,7 @@ export default (state = _cleanErrors, action) => {
     case RECEIVE_PORTFOLIO_ERRORS:
       return action.errors;
     case RECEIVE_ITEM || CLEAR_ERRORS:
-      console.log('we in clear errors');
+      // console.log('we in clear errors');
       return _cleanErrors;
     default:
       return state;
