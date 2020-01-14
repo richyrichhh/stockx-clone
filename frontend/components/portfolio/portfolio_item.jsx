@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom';
+import isEmpty from '../../utils/obj-util';
 
 const MARKET_VALUE = 10;
 
@@ -23,6 +25,10 @@ export default class PortfolioItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.state = { 
+      item: (this.props.item ? this.props.item : {}),
+      product: (this.props.products[this.props.item.product_id] ? this.props.products[this.props.item.product_id] : {})
+    };
   }
 
   componentDidMount() {
@@ -30,16 +36,19 @@ export default class PortfolioItem extends React.Component {
     // console.dir(this.props);
   }
 
-  handleDelete() {
+  handleDelete(e) {
+    e.preventDefault();
     this.props.removeItem(this.props.item.id);
-    console.dir(this.context);
-    this.props.history.push('/profile/portfolio');
-    // this.props.history.push('/profile/portfolio');
+    this.setState({item: {}, product: {}});
+    // console.dir(this.context);
+    // this.setState(this.state.a ? {a: false} : {a: true});
+    // this.forceUpdate();
   }
 
   render() {
-    let product = (this.props.products[this.props.item.product_id] ? this.props.products[this.props.item.product_id] : {})
-    let item = (this.props.item ? this.props.item : {});
+    let product = this.state.product;
+    let item = this.state.item;
+    if (isEmpty(product) || isEmpty(item)) return (null);
     let size = ["n/a", "n/a"];
     if (item) {
       size = item.size.split(' ');
@@ -47,13 +56,13 @@ export default class PortfolioItem extends React.Component {
     let date = item.updated_at;
     date = (date ? date.split('T')[0].split('-')._formatDateFromString().join('/') : (new Date(Date.now())).toLocaleDateString().split('/')._formatDateFromDate().rotateRight(-1).join('/'));
     let gColor = "g-black";
-    let g_l = MARKET_VALUE - (this.props.item.purchase_price || 0);
+    let g_l = MARKET_VALUE - (item.purchase_price || 0);
     if (g_l > 0) gColor = "g-green";
     else if (g_l < 0) gColor = "g-red"
     return (
       <tr className="portfolio-row portfolio-item">
         <td className="portfolio-col1">
-          <img className="delete-portfolio-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" />
+          <Link to="/profile/"><img className="delete-portfolio-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" /></Link>
         </td>
         <td className="portfolio-col2 portfolio-item-info">
           <span className="portfolio-item-pic">
@@ -67,7 +76,7 @@ export default class PortfolioItem extends React.Component {
           </ul>
         </td>
         <td className="portfolio-col3"><p>{date}</p></td>
-        <td className="portfolio-col4"><p>${this.props.item.purchase_price}</p></td>
+        <td className="portfolio-col4"><p>${item.purchase_price}</p></td>
         <td className="portfolio-col5"><p>${MARKET_VALUE}</p></td>
         <td className="portfolio-col6"><p className={gColor}>{`$${g_l}(${((g_l / item.purchase_price)*100).toFixed(2)}%)`}</p></td>
       </tr>

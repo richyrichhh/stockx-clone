@@ -63,6 +63,12 @@
 
 }
 
+.portfolio-col1 > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .portfolio-col2 {
   width: 20%;
   display: flex;
