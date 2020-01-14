@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #form-div {
-  height: 100%;
+  height: 90vh;
   width: 100%;
   min-height: 80vh;
   display: flex;
@@ -21,10 +21,20 @@
   border-radius: 2.5px;
   padding-left: 2px;
   padding-right: 2px;
-  height: 50%;
-  max-height: 800px;
   width: 100%;
   max-width: 300px;
+}
+
+.formtype-register {
+  height: 300px;
+}
+
+.formtype-edit {
+  height: 300px;
+}
+
+.formtype-login {
+  height: 200px;
 }
 
 #form-span:hover {

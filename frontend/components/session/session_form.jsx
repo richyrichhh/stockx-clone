@@ -17,6 +17,20 @@ export default class SessionForm extends React.Component {
     this.handleGuestSubmit = this.handleGuestSubmit.bind(this);
   }
 
+  componentDidMount() {
+    let formClass = `formtype-${this.props.formType}`
+    $(document.getElementById('form-span')).addClass(formClass);
+  }
+
+  componentDidUpdate() {
+    const form = $(document.getElementById('form-span'))
+    form.removeClass('edit');
+    form.removeClass('login');
+    form.removeClass('register');
+    let formClass = `formtype-${this.props.formType}`
+    form.addClass(formClass);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state, {name: (this.state.firstName + ' ' + this.state.lastName)});

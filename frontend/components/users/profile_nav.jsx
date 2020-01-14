@@ -26,7 +26,6 @@ export default class ProfileNav extends React.Component {
   // }
 
   changeBold(e) {
-    e.preventDefault();
     let selected = document.getElementsByClassName("profile-selected")
     if (selected.length > 0) $(selected[0]).removeClass("profile-selected");
     $(e.currentTarget).addClass("profile-selected");
