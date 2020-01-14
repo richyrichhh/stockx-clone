@@ -171,3 +171,12 @@
   width: 25%;
   height: 25%;
 }
+
+#portfolio-form-errors {
+  position: relative;
+  top: 25px;
+  border: 1px solid red;
+  background-color: pink;
+  border-radius: 5px;
+  padding: 5px;
+}

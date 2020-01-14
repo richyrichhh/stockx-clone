@@ -5,11 +5,10 @@ class Api::PortfolioItemsController < ApplicationController
 
   def create
     @item = PortfolioItem.new(item_params)
-    
     if @item.save
       render :show
     else
-      flash.now[:errors] = @item.errors.full_messages
+      render json: @item.errors.full_messages, status: 401
     end
   end
 
@@ -18,7 +17,7 @@ class Api::PortfolioItemsController < ApplicationController
     if @item.update(item_params)
       render :show
     else
-      flash.now[:errors] = @item.errors.full_messages
+      render json: @item.errors.full_messages, status: 401
     end
   end
 

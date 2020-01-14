@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
   def create
     @user = User.authenticate_username(params[:user][:username], params[:user][:password])
     if @user.nil?
-      flash.now[:errors] = ['Invalid username or password.']
+      render json: ["Invalid username or password."], status: 401
     else
       login(@user)
       render 'api/users/show'

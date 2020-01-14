@@ -1,5 +1,5 @@
 class PortfolioItem < ApplicationRecord
-  validates :user_id, :product_id, :size, presence: true
+  validates :user_id, :product_id, :size, :purchase_price, presence: true
 
   belongs_to :user
 

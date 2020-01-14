@@ -11,7 +11,8 @@ export default class SessionForm extends React.Component {
       password: "",
       id: this.props.currentUser.id,
       firstName: this.name[0],
-      lastName: this.name[1]
+      lastName: this.name[1],
+      errors: this.props.errors
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuestSubmit = this.handleGuestSubmit.bind(this);
@@ -22,7 +23,13 @@ export default class SessionForm extends React.Component {
     $(document.getElementById('form-span')).addClass(formClass);
   }
 
+  componentWillUnmount() {
+    this.state.errors = [];
+    this.props.resetErrors();
+  }
+
   componentDidUpdate() {
+    // if (this.state.errors.length > 0) $(document.getElementById("user-form-errors")).removeClass('hidden');
     const form = $(document.getElementById('form-span'))
     form.removeClass('edit');
     form.removeClass('login');
@@ -31,11 +38,28 @@ export default class SessionForm extends React.Component {
     form.addClass(formClass);
   }
 
+  renderErrors() {
+    return (
+      <ul className="error-list">
+        {this.state.errors.map((error, i) => (
+          <li className="error-item" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+    console.dir(this.props);
     const user = Object.assign({}, this.state, {name: (this.state.firstName + ' ' + this.state.lastName)});
-    this.props.process(user);
-    this.props.history.push('/profile');
+    this.props.process(user).then(success => this.props.history.push('/profile'), 
+      error => {
+        this.setState({errors: this.props.errors});
+        $(document.getElementById("user-form-errors")).removeClass('hidden');
+      }
+    );
   }
 
   handleInput(type) {
@@ -82,6 +106,9 @@ export default class SessionForm extends React.Component {
             {is_login_form ? <button id="guest-login-btn" className="session-form-btn" onClick={this.handleGuestSubmit}>Demo Login</button> : null}
           </form>
         </span>
+        <div id="user-form-errors" className="hidden">
+          {this.renderErrors()}
+        </div>
       </div>
     );
   }

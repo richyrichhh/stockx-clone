@@ -20,11 +20,16 @@ const deleteItem = itemId => ({
   itemId
 });
 
+const receivePortfolioErrors = errors => ({
+  type: RECEIVE_PORTFOLIO_ERRORS,
+  errors
+});
+
 export const fetchPortfolio = (id) => dispatch =>
   PortfolioUtil.fetchPortfolio(id).then(portfolio => dispatch(receivePortfolio(portfolio)));
 
 export const addItem = (id, item) => dispatch =>
-  PortfolioUtil.addItem(id, item).then(newItem => dispatch(receiveItem(newItem)));
+  PortfolioUtil.addItem(id, item).then(newItem => dispatch(receiveItem(newItem)), errors => dispatch(receivePortfolioErrors(errors.responseJSON)));
 
 export const removeItem = id => dispatch =>
   PortfolioUtil.removeItem(id).then(() => dispatch(deleteItem(id)));

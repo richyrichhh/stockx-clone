@@ -23,7 +23,11 @@ export const fetchUser = id => dispatch =>
   UsersUtil.fetchUser(id).then(user => dispatch(receiveUser(user)));
 
 export const updateUser = formUser => dispatch =>
-  UsersUtil.updateUser(formUser).then(user => dispatch(receiveUser(user)));
+  UsersUtil.updateUser(formUser)
+    .then(user => dispatch(receiveUser(user)), err => (
+      dispatch(receiveUserErrors(err.responseJSON))
+  )
+);
 
 export const removeUser = id => dispatch =>
   UsersUtil.deleteUser(id).then(() => dispatch(deleteUser(id)));
