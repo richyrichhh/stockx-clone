@@ -20308,3 +20308,51 @@ Unpermitted parameters: :model, :brand
 Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 2.9ms)
 
 
+Started GET "/api/users/23/portfolio" for ::1 at 2020-01-14 15:26:59 -0800
+Started GET "/api/products" for ::1 at 2020-01-14 15:26:59 -0800
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"23"}
+Processing by Api::ProductsController#index as JSON
+  Rendering api/products/index.json.jbuilder
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProduct Load (6.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jbuilder:3
+  Rendered api/products/_product.json.jbuilder (2.3ms)
+  Rendering api/portfolio_items/index.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (0.4ms)
+  [1m[36mPortfolioItem Load (0.9ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."user_id" = $1[0m  [["user_id", 23]]
+  Rendered api/products/_product.json.jbuilder (0.2ms)
+  Rendered api/products/index.json.jbuilder (31.4ms)
+Completed 200 OK in 54ms (Views: 38.2ms | ActiveRecord: 6.5ms)
+
+
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (16.6ms)
+Completed 200 OK in 73ms (Views: 29.6ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/api/products" for ::1 at 2020-01-14 15:27:02 -0800
+Processing by Api::ProductsController#index as JSON
+Started GET "/api/users/23/portfolio" for ::1 at 2020-01-14 15:27:02 -0800
+  Rendering api/products/index.json.jbuilder
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"23"}
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jbuilder:3
+  Rendered api/products/_product.json.jbuilder (0.8ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  Rendered api/products/_product.json.jbuilder (0.2ms)
+  Rendered api/products/_product.json.jbuilder (0.1ms)
+  Rendered api/products/index.json.jbuilder (13.3ms)
+Completed 200 OK in 32ms (Views: 20.6ms | ActiveRecord: 3.1ms)
+
+
+  ↳ app/controllers/application_controller.rb:6
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (2.1ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (11.3ms)
+Completed 200 OK in 41ms (Views: 22.6ms | ActiveRecord: 5.5ms)
+
+
