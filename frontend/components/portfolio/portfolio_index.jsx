@@ -2,6 +2,7 @@ import React from 'react'
 import PortfolioItemContainer from './portfolio_item_container';
 import isEmpty from '../../utils/obj-util';
 import {Link} from 'react-router-dom';
+import { withRouter } from 'react-router'
 
 export default class PortfolioIndex extends React.Component {
   constructor(props) {
@@ -25,15 +26,21 @@ export default class PortfolioIndex extends React.Component {
     let portfolio = (isEmpty(this.props.portfolio) ? {} : this.props.portfolio);
     return (
       <div id="portfolio-main">
+        <span id="portfolio-header">Portfolio</span>
         <table id="portfolio-table">
-          <tr>
-            <th>Name</th>
-            <th>Added Date</th>
-            <th>Purchase Price</th>
-            <th>Market Value</th>
-            <th>Gain/Loss</th>
-          </tr>
-          {Object.values(portfolio).map(item => <PortfolioItemContainer item={item} key={`item${item.id}`} />)}
+          <thead id="portfolio-table-heading">
+            <tr className="portfolio-row">
+              <th className="portfolio-col1"></th>
+              <th className="portfolio-col2" id="portfolio-center-this">Name</th>
+              <th className="portfolio-col3">Added Date</th>
+              <th className="portfolio-col4">Purchase Price</th>
+              <th className="portfolio-col5">Market Value</th>
+              <th className="portfolio-col6">Gain/Loss</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.values(portfolio).map(item => isEmpty(item) ? null : <PortfolioItemContainer history={this.props.history} item={item} key={`item${item.id}`} />)}
+          </tbody>
         </table>
 
         <Link to="/profile/portfolio/add">Add Item</Link>

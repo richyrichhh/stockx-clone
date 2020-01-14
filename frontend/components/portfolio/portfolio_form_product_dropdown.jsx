@@ -6,7 +6,7 @@ export default ({ products }) => {
       <option value="default" disabled>Product</option>
       {products.map(product => 
         (
-          <option value={product.id} key={`product-opt${product.id}`}>{product.name}</option>
+          <option value={`${product.id}|jj|${product.model}|jj|${product.brand}`} key={`product-opt${product.id}`}>{product.name}</option>
         )
       )}
     </select>

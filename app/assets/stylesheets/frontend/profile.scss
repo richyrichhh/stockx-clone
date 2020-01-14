@@ -1,8 +1,9 @@
 #profile {
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
+  width: 100vw;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 #profile-nav-bar {
@@ -15,6 +16,7 @@
   font-family: 'proxima-nova', sans-serif;
   overflow: hidden;
   background-color: #f5f5f5;
+  z-index: 1;
 }
 
 #profile-nav-name {
@@ -74,5 +76,6 @@
   position: relative;
   margin-left: 250px;
   // border: 1px solid red;
-  width: 100%;
+  width: calc(100vw - 250px);
+  flex-direction: column;
 }

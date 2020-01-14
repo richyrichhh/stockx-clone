@@ -15,28 +15,30 @@ export default class PortfolioForm extends React.Component {
   }
 
   handleSubmit(e) {
+    const itemData = document.getElementById("portfolio-form-product-dropdown").value.split('|jj|');
     const item = Object.assign({}, this.state, {
       size: `${document.getElementById("portfolio-form-size-sex-dropdown").value} ${document.getElementById("portfolio-form-size-num-dropdown").value}`,
-      product_id: document.getElementById("portfolio-form-product-dropdown").value
+      product_id: itemData[0],
+      model: itemData[1],
+      brand: itemData[2]
     });
     this.props.addItem(this.state.user_id, item);
     this.props.history.push('/profile/portfolio');
   }
 
   handleInput(type) {
-    return (e) => this.setState({[type]: e.target.value})
+    return (e) => {this.setState({[type]: Math.round(e.target.value)})}
   }
 
   render() {
     let products = (isEmpty(this.props.products) ? [] : Object.values(this.props.products));
-    console.dir(products);
     return (
-      <div id="portfolio-form">
-        <form action="" onSubmit={this.handleSubmit}>
+      <div id="portfolio-form-div">
+        <form action="" id="portfolio-form" onSubmit={this.handleSubmit}>
           <label>
             <ProductDropdown products={products} />
           </label>
-          <label>
+          <label id="portfolio-input-size">
             <select name="size_mfk" defaultValue="default" id="portfolio-form-size-sex-dropdown">
                 <option value="default" disabled>Sex</option>
                 <option value="M" key="sex-opt-M">M</option>
@@ -51,7 +53,7 @@ export default class PortfolioForm extends React.Component {
               </select>
           </label>
           <label>
-              <input type="text" name="purchase_price" id="portfolio-form-price" placeholder="Purchase Price" onChange={this.handleInput('purchase_price')} />
+              <input type="number" min="0" step="1" name="purchase_price" id="portfolio-form-price" placeholder="Purchase Price" onChange={this.handleInput('purchase_price')} />
           </label>
           <input type="submit" value="Submit"/>
         </form>

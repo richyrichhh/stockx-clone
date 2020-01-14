@@ -1,4 +1,167 @@
 #portfolio-main {
+  // width: 100%;
+  width: calc(100% - 10px);
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'proxima-nova', sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin-top: 100px;
+}
+
+#portfolio-table {
   width: 100%;
-  
+  display: flex;
+  flex-direction: column;
+}
+
+#portfolio-center-this {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  right: 1.5%;
+}
+
+#portfolio-header {
+  text-transform: uppercase;
+  font-size: 16px;
+  position: relative;
+  margin-bottom: -1px;
+  margin-left: 2%;
+  border-bottom: 4px solid green;
+  width: 100px;
+}
+
+#portfolio-table-heading {
+  font-family: impact;
+  text-transform: uppercase;
+  border-top: 1px solid #c3c3c3;
+  cursor: default;
+}
+
+#portfolio-table-heading > tr {
+  height: 5vh;
+  color: #333;
+}
+
+.portfolio-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.portfolio-col1 {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 5px;
+  box-sizing: border-box;
+
+}
+
+.portfolio-col2 {
+  width: 20%;
+  display: flex;
+
+}
+
+.portfolio-col3 {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-item-pic {
+  margin-right: 2%;
+}
+.portfolio-item-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.portfolio-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-col4 {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-col5 {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-col6 {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+#portfolio-form-div {
+  // margin-top: 1vh;
+  margin-left: 10vh;
+  width: 20%;
+  height: 120px;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#portfolio-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: left;
+}
+
+#portfolio-form-product-dropdown {
+  width: 100%;
+}
+
+#portfolio-form * {
+  font-size: 12px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#portfolio-form-price {
+  width: 97px;
+  text-align: right;
+}
+
+.portfolio-item {
+  height: 75px;
+}
+
+#portfolio-item-size {
+  display: flex;
+  flex-direction: row;
+}
+
+.g-red {
+  color: red!important;
+}
+
+.g-green {
+  color: green!important;
+}
+
+.g-black {
+  color: black!important;
+}
+
+.delete-portfolio-item-btn {
+  width: 25%;
+  height: 25%;
 }

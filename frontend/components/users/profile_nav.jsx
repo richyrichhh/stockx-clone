@@ -10,10 +10,23 @@ export default class ProfileNav extends React.Component {
 
   componentDidMount() {
     console.dir(this.props);
-    $(document.getElementById(`navbar-${this.props.selected}`)).addClass("profile-selected");
+    $(document.getElementById(`p-navbar-${this.props.selected}`)).addClass("profile-selected");
   }
 
+  // componentWillUpdate() {
+  //   let selected = document.getElementsByClassName("profile-selected")
+  //   if (selected.length > 0) $(selected[0]).removeClass("profile-selected");
+  //   $(document.getElementById(`p-navbar-${this.props.selected}`)).addClass("profile-selected");
+  // }
+
+  // componentDidCatch() {
+  //   let selected = document.getElementsByClassName("profile-selected")
+  //   if (selected.length > 0) $(selected[0]).removeClass("profile-selected");
+  //   $(document.getElementById(`p-navbar-${this.props.selected}`)).addClass("profile-selected");
+  // }
+
   changeBold(e) {
+    e.preventDefault();
     let selected = document.getElementsByClassName("profile-selected")
     if (selected.length > 0) $(selected[0]).removeClass("profile-selected");
     $(e.currentTarget).addClass("profile-selected");
@@ -23,11 +36,11 @@ export default class ProfileNav extends React.Component {
     return (
       <ul id="profile-nav-bar">
         <span id="profile-nav-name">{this.props.currentUser ? this.props.currentUser.name : ""}</span>
-        <Link to="/profile/listings"><li onClick={this.changeBold} id="navbar-listings" className="profile-nav-item"><span className="nav-icon">💵</span><span className="nav-label">Listings</span></li></Link>
-        <Link to="/profile"><li onClick={this.changeBold} id="navbar-profile" className="profile-nav-item"><span className="nav-icon">🤦‍♂️</span><span className="nav-label">Profile</span></li></Link>
-        <Link to="/profile/portfolio"><li onClick={this.changeBold} id="navbar-portfolio" className="profile-nav-item"><span className="nav-icon">📈</span><span className="nav-label">Portfolio</span></li></Link>
-        <Link to="/profile/follows"><li onClick={this.changeBold} id="navbar-follows" className="profile-nav-item"><span className="nav-icon">🔭</span><span className="nav-label">Following</span></li></Link>
-        <li id="navbar-settings" className="profile-nav-item"><span className="nav-icon">⚙️</span>Settings</li>
+        <Link to="/profile/listings"><li onClick={this.changeBold} id="p-navbar-listings" className="profile-nav-item"><span className="nav-icon">💵</span><span className="nav-label">Listings</span></li></Link>
+        <Link to="/profile"><li onClick={this.changeBold} id="p-navbar-profile" className="profile-nav-item"><span className="nav-icon">🤦‍♂️</span><span className="nav-label">Profile</span></li></Link>
+        <Link to="/profile/portfolio"><li onClick={this.changeBold} id="p-navbar-portfolio" className="profile-nav-item"><span className="nav-icon">📈</span><span className="nav-label">Portfolio</span></li></Link>
+        <Link to="/profile/follows"><li onClick={this.changeBold} id="p-navbar-follows" className="profile-nav-item"><span className="nav-icon">🔭</span><span className="nav-label">Following</span></li></Link>
+        <li id="p-navbar-settings" className="profile-nav-item"><span className="nav-icon">⚙️</span>Settings</li>
       </ul>
     );
   }
