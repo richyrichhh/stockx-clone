@@ -3,6 +3,22 @@ import { withRouter } from 'react-router'
 
 const MARKET_VALUE = 10;
 
+Array.prototype.rotateRight = function (n) {
+  this.unshift(this.splice(n, this.length))
+  return this;
+}
+
+Array.prototype._formatDateFromDate = function () {
+  this[1] -= 1;
+  if (this[0].length === 1) this[0] = `0${this[0]}`;
+  if (this[1].length === 1) this[1] = `0${this[1]}`;
+  return this;
+}
+
+Array.prototype._formatDateFromString = function() {
+  this[2] -= 1;
+  return this;
+}
 export default class PortfolioItem extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +45,7 @@ export default class PortfolioItem extends React.Component {
       size = item.size.split(' ');
     }
     let date = item.updated_at;
-    date = (date ? date.split('T')[0].split('-').join('/') : "");
+    date = (date ? date.split('T')[0].split('-')._formatDateFromString().join('/') : (new Date(Date.now())).toLocaleDateString().split('/')._formatDateFromDate().rotateRight(-1).join('/'));
     let gColor = "g-black";
     let g_l = MARKET_VALUE - (this.props.item.purchase_price || 0);
     if (g_l > 0) gColor = "g-green";
