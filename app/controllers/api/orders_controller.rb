@@ -32,7 +32,7 @@ class Api::OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:id, :product_id, :asker_id, :taker_id, :price, :Type, :active, :sold, :shipped, :size, :sex)
+    params.require(:order).permit(:id, :product_id, :asker_id, :taker_id, :price, :type, :active, :sold, :shipped, :size, :sex)
   end
 end
 
