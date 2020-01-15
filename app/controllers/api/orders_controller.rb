@@ -28,4 +28,24 @@ class Api::OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
   end
+
+  def order_params
+    params.require(:order).permit(:id, :product_id, :seller_id, :buyer_id, :price, :Type, :active, :sold, :shipped, :created_at, :updated_at, :size, :sex)
+  end
 end
+
+create_table "orders", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "seller_id", null: false
+    t.integer "buyer_id"
+    t.integer "price", null: false
+    t.string "type", null: false
+    t.string "active", null: false
+    t.string "sold", null: false
+    t.string "shipped", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "size", null: false
+    t.string "sex", null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+  end

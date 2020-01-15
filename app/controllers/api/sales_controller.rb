@@ -4,7 +4,7 @@ class Api::SalesController < ApplicationController
   end
 
   def product_size_index
-    @sales = Product.find(params[:product_id]).sales.where("size = #{params[:size]}")
+    @sales = Product.find(params[:product_id]).sales.where("sales.size = #{params[:size]}")
   end
 
   def create
@@ -28,4 +28,8 @@ class Api::SalesController < ApplicationController
   def show
     @sale = Sale.find(params[:id])
   end  
+
+  def sale_params
+    params.require(:sale).permit(:id, :order_id, :product_id, :size, :date, :active)
+  end
 end
