@@ -1,6 +1,6 @@
 class Api::OrdersController < ApplicationController
   def user_index
-    @orders = current_user.bought_orders.concat(current_user.sold_orders)
+    @orders = current_user.taken_orders.concat(current_user.listed_orders)
     render :index
   end
 
@@ -32,7 +32,7 @@ class Api::OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:id, :product_id, :seller_id, :buyer_id, :price, :Type, :active, :sold, :shipped, :size, :sex)
+    params.require(:order).permit(:id, :product_id, :asker_id, :taker_id, :price, :Type, :active, :sold, :shipped, :size, :sex)
   end
 end
 

@@ -17,14 +17,14 @@ class User < ApplicationRecord
     through: :portfolio_items,
     source: :product
 
-  has_many :bought_orders,
+  has_many :taken_orders,
     primary_key: :id,
-    foreign_key: :buyer_id,
+    foreign_key: :taker_id,
     class_name: :Order
 
-  has_many :sold_orders,
+  has_many :listed_orders,
     primary_key: :id,
-    foreign_key: :seller_id,
+    foreign_key: :asker_id,
     class_name: :Order
 
   def self.authenticate_username(username, password)

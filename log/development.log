@@ -21462,3 +21462,258 @@ Migrating to AddCreditToUsers (20200115193738)
   ↳ bin/rails:9
   [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-01-15 11:40:28 -0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/richie/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 631ms (Views: 609.5ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/api/products" for ::1 at 2020-01-15 11:40:29 -0800
+Started GET "/api/users/23/portfolio" for ::1 at 2020-01-15 11:40:29 -0800
+Processing by Api::ProductsController#index as JSON
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"23"}
+  Rendering api/products/index.json.jbuilder
+  [1m[36mProduct Load (15.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jbuilder:3
+  [1m[36mUser Load (14.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (3.1ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (80.2ms)
+Completed 200 OK in 215ms (Views: 79.5ms | ActiveRecord: 104.2ms)
+
+
+  Rendered api/products/_product.json.jbuilder (0.8ms)
+  Rendered api/products/_product.json.jbuilder (0.3ms)
+  Rendered api/products/_product.json.jbuilder (0.6ms)
+  Rendered api/products/index.json.jbuilder (191.0ms)
+Completed 200 OK in 232ms (Views: 53.6ms | ActiveRecord: 154.8ms)
+
+
+Started GET "/api/products/26" for ::1 at 2020-01-15 11:40:30 -0800
+Started GET "/api/products/25" for ::1 at 2020-01-15 11:40:30 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"26"}
+Started GET "/api/products/27" for ::1 at 2020-01-15 11:40:30 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"25"}
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"27"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  [1m[36mProduct Load (3.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendering api/products/show.json.jbuilder
+  [1m[36mProduct Load (13.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendered api/products/_product.json.jbuilder (0.5ms)
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendered api/products/_product.json.jbuilder (0.7ms)
+  Rendered api/products/show.json.jbuilder (8.0ms)
+Completed 200 OK in 45ms (Views: 21.0ms | ActiveRecord: 4.5ms)
+
+
+  Rendered api/products/show.json.jbuilder (6.3ms)
+Completed 200 OK in 65ms (Views: 42.5ms | ActiveRecord: 1.1ms)
+
+
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (0.2ms)
+  Rendered api/products/show.json.jbuilder (4.9ms)
+Completed 200 OK in 66ms (Views: 16.2ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/api/products/26" for ::1 at 2020-01-15 11:40:30 -0800
+Started GET "/api/products/25" for ::1 at 2020-01-15 11:40:30 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"26"}
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"25"}
+  [1m[36mProduct Load (6.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (4.1ms)
+  Rendered api/products/show.json.jbuilder (9.3ms)
+Completed 200 OK in 54ms (Views: 31.4ms | ActiveRecord: 6.4ms)
+
+
+  Rendered api/products/_product.json.jbuilder (0.3ms)
+  Rendered api/products/show.json.jbuilder (18.3ms)
+Completed 200 OK in 52ms (Views: 43.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/products/26" for ::1 at 2020-01-15 11:40:30 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"26"}
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (0.9ms)
+  Rendered api/products/show.json.jbuilder (4.7ms)
+Completed 200 OK in 34ms (Views: 22.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/products/26" for ::1 at 2020-01-15 11:40:30 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"26"}
+  [1m[36mProduct Load (6.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (1.7ms)
+  Rendered api/products/show.json.jbuilder (7.0ms)
+Completed 200 OK in 52ms (Views: 25.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/products/26" for ::1 at 2020-01-15 11:40:30 -0800
+Processing by Api::ProductsController#show as JSON
+  Parameters: {"id"=>"26"}
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25
+  Rendering api/products/show.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (1.5ms)
+  Rendered api/products/show.json.jbuilder (6.0ms)
+Completed 200 OK in 29ms (Views: 20.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/users/23/portfolio" for ::1 at 2020-01-15 11:40:33 -0800
+Started GET "/api/products" for ::1 at 2020-01-15 11:40:33 -0800
+Processing by Api::ProductsController#index as JSON
+  Rendering api/products/index.json.jbuilder
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"23"}
+  [1m[36mProduct Load (5.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  ↳ app/views/api/products/index.json.jbuilder:3
+  Rendered api/products/_product.json.jbuilder (0.5ms)
+  Rendered api/products/_product.json.jbuilder (0.1ms)
+  Rendering api/portfolio_items/index.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (0.3ms)
+  Rendered api/products/index.json.jbuilder (32.8ms)
+Completed 200 OK in 54ms (Views: 41.9ms | ActiveRecord: 5.6ms)
+
+
+  [1m[36mPortfolioItem Load (21.4ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (31.8ms)
+Completed 200 OK in 59ms (Views: 22.4ms | ActiveRecord: 26.1ms)
+
+
+Started GET "/api/products" for ::1 at 2020-01-15 11:40:35 -0800
+Started GET "/api/users/23/portfolio" for ::1 at 2020-01-15 11:40:35 -0800
+Processing by Api::ProductsController#index as JSON
+Processing by Api::PortfolioItemsController#index as JSON
+  Rendering api/products/index.json.jbuilder
+  Parameters: {"user_id"=>"23"}
+  [1m[36mProduct Load (6.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jbuilder:3
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/products/_product.json.jbuilder (1.2ms)
+  Rendering api/portfolio_items/index.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (0.2ms)
+  Rendered api/products/_product.json.jbuilder (0.2ms)
+  Rendered api/products/index.json.jbuilder (30.5ms)
+Completed 200 OK in 47ms (Views: 35.5ms | ActiveRecord: 6.2ms)
+
+
+  [1m[36mPortfolioItem Load (3.2ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (14.2ms)
+Completed 200 OK in 39ms (Views: 22.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/users/23/portfolio" for ::1 at 2020-01-15 11:40:43 -0800
+Started GET "/api/products" for ::1 at 2020-01-15 11:40:43 -0800
+Processing by Api::ProductsController#index as JSON
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"23"}
+  Rendering api/products/index.json.jbuilder
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProduct Load (4.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jbuilder:3
+  Rendered api/products/_product.json.jbuilder (0.6ms)
+  Rendered api/products/_product.json.jbuilder (0.2ms)
+  Rendered api/products/_product.json.jbuilder (0.1ms)
+  Rendered api/products/index.json.jbuilder (22.4ms)
+Completed 200 OK in 41ms (Views: 31.2ms | ActiveRecord: 4.1ms)
+
+
+  Rendering api/portfolio_items/index.json.jbuilder
+  [1m[36mPortfolioItem Load (2.6ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (9.9ms)
+Completed 200 OK in 39ms (Views: 28.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-15 11:40:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 83ms (Views: 78.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/23/portfolio" for ::1 at 2020-01-15 11:40:47 -0800
+Started GET "/api/products" for ::1 at 2020-01-15 11:40:47 -0800
+Processing by Api::ProductsController#index as JSON
+Processing by Api::PortfolioItemsController#index as JSON
+  Parameters: {"user_id"=>"23"}
+  Rendering api/products/index.json.jbuilder
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hunsH8yXSqIyYQ1ndmeHHQ"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jbuilder:3
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/products/_product.json.jbuilder (0.7ms)
+  Rendered api/products/_product.json.jbuilder (0.2ms)
+  Rendering api/portfolio_items/index.json.jbuilder
+  Rendered api/products/_product.json.jbuilder (0.2ms)
+  Rendered api/products/index.json.jbuilder (21.4ms)
+  [1m[36mPortfolioItem Load (1.2ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items" WHERE "portfolio_items"."user_id" = $1[0m  [["user_id", 23]]
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+  ↳ app/views/api/portfolio_items/index.json.jbuilder:1
+  Rendered api/portfolio_items/index.json.jbuilder (9.0ms)
+Completed 200 OK in 30ms (Views: 20.1ms | ActiveRecord: 2.3ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(266188667795485890)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeBuyerSellerOnOrdersToAskerTaker (20200115194313)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "orders" RENAME COLUMN "buyer_id" TO "taker_id"[0m
+  ↳ db/migrate/20200115194313_change_buyer_seller_on_orders_to_asker_taker.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "orders" RENAME COLUMN "seller_id" TO "asker_id"[0m
+  ↳ db/migrate/20200115194313_change_buyer_seller_on_orders_to_asker_taker.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200115194313"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(266188667795485890)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
