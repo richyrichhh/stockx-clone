@@ -1,6 +1,8 @@
 class Api::PortfolioItemsController < ApplicationController
   def index
-    @items = PortfolioItem.where(user_id: current_user.id)
+    @items = current_user.portfolio_items
+    # @items = PortfolioItem.where(user_id: current_user.id)
+
   end
 
   def create

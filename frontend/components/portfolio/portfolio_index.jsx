@@ -24,6 +24,7 @@ export default class PortfolioIndex extends React.Component {
 
   render() {
     let portfolio = (isEmpty(this.props.portfolio) ? {} : this.props.portfolio);
+    let products = (isEmpty(this.props.products) ? {} : this.props.products);
     return (
       <div id="portfolio-main">
         <span id="portfolio-header">Portfolio</span>
@@ -39,7 +40,7 @@ export default class PortfolioIndex extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {Object.values(portfolio).map(item => isEmpty(item) ? null : <PortfolioItemContainer item={item} key={`item${item.id}`} />)}
+            {Object.values(portfolio).map(item => isEmpty(item) ? null : <PortfolioItemContainer products={products} item={item} key={`item${item.id}`} />)}
           </tbody>
         </table>
 

@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_194351) do
+ActiveRecord::Schema.define(version: 2020_01_15_175707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "seller_id", null: false
+    t.integer "buyer_id"
+    t.integer "price", null: false
+    t.string "type", null: false
+    t.string "active", null: false
+    t.string "sold", null: false
+    t.string "shipped", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "size", null: false
+    t.string "sex", null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+  end
 
   create_table "portfolio_items", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -36,9 +52,19 @@ ActiveRecord::Schema.define(version: 2020_01_13_194351) do
     t.date "release_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "model"
-    t.string "brand"
+    t.string "model", null: false
+    t.string "brand", null: false
     t.index ["name"], name: "index_products_on_name", unique: true
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "product_id", null: false
+    t.string "size", null: false
+    t.date "date", null: false
+    t.string "active", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

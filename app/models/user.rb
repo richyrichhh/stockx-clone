@@ -17,6 +17,16 @@ class User < ApplicationRecord
     through: :portfolio_items,
     source: :product
 
+  has_many :bought_orders,
+    primary_key: :id,
+    foreign_key: :buyer_id,
+    class_name: :Order
+
+  has_many :sold_orders,
+    primary_key: :id,
+    foreign_key: :seller_id,
+    class_name: :Order
+
   def self.authenticate_username(username, password)
     user = User.find_by(username: username)
     return nil unless user

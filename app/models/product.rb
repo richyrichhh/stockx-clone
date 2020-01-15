@@ -8,4 +8,6 @@ class Product < ApplicationRecord
   has_many :owners,
     through: :portfolios,
     source: :user
+
+  has_many :orders
 end
