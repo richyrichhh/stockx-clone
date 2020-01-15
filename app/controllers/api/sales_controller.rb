@@ -1,10 +1,12 @@
 class Api::SalesController < ApplicationController
   def product_index
     @sales = Product.find(params[:product_id]).sales
+    render :index
   end
 
   def product_size_index
     @sales = Product.find(params[:product_id]).sales.where("sales.size = #{params[:size]}")
+    render :index
   end
 
   def create
