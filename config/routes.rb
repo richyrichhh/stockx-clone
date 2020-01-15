@@ -8,9 +8,15 @@ Rails.application.routes.draw do
       # resources :portfolio_items, only: [:index, :create]
       get '/portfolio', :to => 'portfolio_items#index'
       post '/portfolio', :to => 'portfolio_items#create'
+      get '/orders', :to => 'orders#user_index'
     end
-    resources :products, only: [:create, :show, :update, :index]
-    # resources :portfolio_items, only: [:destroy]
+    resources :products, only: [:create, :show, :update, :index] do
+      get '/orders', :to => 'orders#product_index'
+      get '/sales', :to => 'sales#product_index'
+      get '/sales/:size', :to => 'sales#product_size_index'
+    end
+    resources :orders, only: [:create, :update]
+    resources :sales, only: [:create, :update]
     delete '/portfolio/:id', :to => 'portfolio_items#destroy'
   end
 end
