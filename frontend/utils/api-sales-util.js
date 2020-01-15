@@ -5,6 +5,13 @@ export const fetchSales = (product_id) => (
   })
 );
 
+export const fetchLastSale = (product_id) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/products/${product_id}/sales/last`
+  })
+);
+
 export const fetchSalesBySize = (product_id, size) => (
   $.ajax({
     method: 'GET',

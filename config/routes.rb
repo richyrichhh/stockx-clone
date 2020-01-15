@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :products, only: [:create, :show, :update, :index] do
       get '/orders', :to => 'orders#product_index'
       get '/sales', :to => 'sales#product_index'
+      get '/sales/last', :to => 'sales#product_last_sale'
       get '/sales/:size', :to => 'sales#product_size_index'
     end
     resources :orders, only: [:create, :update]

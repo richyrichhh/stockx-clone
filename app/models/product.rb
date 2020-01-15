@@ -10,4 +10,6 @@ class Product < ApplicationRecord
     source: :user
 
   has_many :orders
+
+  has_many :sales
 end

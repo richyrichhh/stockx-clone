@@ -4,6 +4,11 @@ class Api::SalesController < ApplicationController
     render :index
   end
 
+  def product_last_sale
+    @sale = Product.find(params[:product_id]).sales.order('date desc').limit(1)[0]
+    render :show
+  end
+
   def product_size_index
     @sales = Product.find(params[:product_id]).sales.where("sales.size = #{params[:size]}")
     render :index
@@ -32,6 +37,6 @@ class Api::SalesController < ApplicationController
   end  
 
   def sale_params
-    params.require(:sale).permit(:id, :order_id, :product_id, :size, :date, :active)
+    params.require(:sale).permit(:id, :order_id, :product_id, :sex, :size, :date, :active, :price)
   end
 end

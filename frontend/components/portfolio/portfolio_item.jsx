@@ -3,8 +3,6 @@ import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom';
 import isEmpty from '../../utils/obj-util';
 
-const MARKET_VALUE = 10;
-
 Array.prototype.rotateRight = function (n) {
   this.unshift(this.splice(n, this.length))
   return this;
@@ -27,19 +25,22 @@ export default class PortfolioItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.state = { 
       item: (this.props.item ? this.props.item : {}),
-      product: (this.props.products[this.props.item.product_id] ? this.props.products[this.props.item.product_id] : {})
+      product: (this.props.products[this.props.item.product_id] ? this.props.products[this.props.item.product_id] : {}),
+      sales: (isEmpty(this.props.sales) ? {} : this.props.sales),
     };
   }
 
   componentDidMount() {
-    if (!this.props.products[this.props.item.product_id]) this.props.fetchProduct(this.props.item.product_id);
+    let p_id = this.state.item.product_id
+    if (!this.props.products[p_id]) this.props.fetchProduct(p_id);
+    this.props.fetchLastSale(p_id).then((action)=>this.setState({sales: { [action.sale.product_id]: { lastSale: action.sale }}}));
     // console.dir(this.props);
   }
 
   handleDelete(e) {
     e.preventDefault();
     this.props.removeItem(this.props.item.id);
-    this.setState({item: {}, product: {}});
+    this.setState({item: {}, product: {}, sales: { [this.props.item.product_id]: { lastSale: {}} }});
     // console.dir(this.context);
     // this.setState(this.state.a ? {a: false} : {a: true});
     // this.forceUpdate();
@@ -56,7 +57,9 @@ export default class PortfolioItem extends React.Component {
     let date = item.updated_at;
     date = (date ? date.split('T')[0].split('-')._formatDateFromString().join('/') : (new Date(Date.now())).toLocaleDateString().split('/')._formatDateFromDate().rotateRight(-1).join('/'));
     let gColor = "g-black";
-    let g_l = MARKET_VALUE - (item.purchase_price || 0);
+    console.dir(this.state.sales);
+    let market_value = this.state.sales[product.id] ? this.state.sales[product.id].lastSale.price : 1;
+    let g_l = market_value - (item.purchase_price || 0);
     if (g_l > 0) gColor = "g-green";
     else if (g_l < 0) gColor = "g-red"
     return (
@@ -77,7 +80,7 @@ export default class PortfolioItem extends React.Component {
         </td>
         <td className="portfolio-col3"><p>{date}</p></td>
         <td className="portfolio-col4"><p>${item.purchase_price}</p></td>
-        <td className="portfolio-col5"><p>${MARKET_VALUE}</p></td>
+        <td className="portfolio-col5"><p>${market_value}</p></td>
         <td className="portfolio-col6"><p className={gColor}>{`$${g_l}(${((g_l / item.purchase_price)*100).toFixed(2)}%)`}</p></td>
       </tr>
     )
