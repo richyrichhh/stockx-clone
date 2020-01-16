@@ -26,7 +26,7 @@ export default class NavBar extends React.Component {
   }
 
   render() {
-    console.log(this.state.loggedIn);
+    // console.log(this.state.loggedIn);
     return (
       <div id="navbar-div">
         <span id="logo-span">

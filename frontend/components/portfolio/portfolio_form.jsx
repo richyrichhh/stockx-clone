@@ -16,7 +16,7 @@ export default class PortfolioForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     const itemData = document.getElementById("portfolio-form-product-dropdown").value.split('|jj|');
     let ss = document.getElementById("portfolio-form-size-sex-dropdown").value;
     let sn = document.getElementById("portfolio-form-size-num-dropdown").value;
