@@ -5,7 +5,8 @@ import RegistrationContainer from './session/registration_container';
 import ProfileContainer from './users/profile_container';
 import ProductsIndexContainer from './products/products_index_container';
 import NavBarContainer from './nav/navbar_container';
-import { Route } from 'react-router-dom';
+import ProductShowContainer from './products/products_show_container';
+import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route-util';
 
 const App = () => (
@@ -15,7 +16,10 @@ const App = () => (
 
     <div id="main-div">
       <Route exact path="/" component={SplashContainer} />
-      <Route exact path="/products" component={ProductsIndexContainer} />
+      <Switch>
+        <Route exact path="/products" component={ProductsIndexContainer} />
+        <Route exact path="/product/:id" component={ProductShowContainer} />
+      </Switch>
       <ProtectedRoute path="/profile" component={ProfileContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/register" component={RegistrationContainer} />

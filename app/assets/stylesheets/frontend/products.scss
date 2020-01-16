@@ -29,8 +29,11 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-
   margin: 10px;
+}
+
+#products-index-div a:hover .products-index-item {
+  border: 1px solid #ababab;
 }
 
 .products-index-item > a {
@@ -49,6 +52,10 @@
   justify-content: center;
 }
 
+#products-index-div a:hover .products-index-img {
+  border: 1px solid #ababab;
+}
+
 .products-index-tag {
   display: flex;
   flex-direction: column;
@@ -57,6 +64,10 @@
   height: 60px;
   box-sizing: border-box;
   background-color: #fafafa;
+}
+
+#products-index-div a:hover .products-index-tag {
+  background-color: #ababab;
 }
 
 .products-index-item > a > span > img {

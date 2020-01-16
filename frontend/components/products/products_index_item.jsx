@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 
 export default ({ product }) => {
-  const linkPath = `/products/${product.id}`
+  const linkPath = `/product/${product.id}`
   // console.dir(product);
   return (
     <li className="products-index-item">
       <Link to={linkPath}>
-        <span class="products-index-img">
+        <span className="products-index-img">
           <img src={product.img_path} />
         </span>
-        <span class="products-index-tag">
+        <span className="products-index-tag">
           <h3>
             <ul>
               <li>
