@@ -4,9 +4,6 @@ import isEmpty from '../../utils/obj-util';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 export default ( {portfolio, sales, products} ) => {
-
-  console.dir(sales);
-  console.dir(sales)
   const options = {
     theme: "light2",
     animationEnabled: true,

@@ -16,7 +16,6 @@ export default class PortfolioIndex extends React.Component {
   }
 
   render() {
-    console.dir(this.props);
     let portfolio = this.props.portfolio;
     let products = this.props.products;
     let sales = this.props.sales;
