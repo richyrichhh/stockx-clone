@@ -6,3 +6,19 @@
 #portfolio-graph-inner { 
   font: 15px 'proxima-nova', sans-serif;
 }
+
+.canvasjs-chart-credit {
+  display: none;
+}
+
+#portfolio-graph-inner::after {
+  content: "";
+  background-color: white;
+  color: white;
+  fill: white;
+  width: 100px;
+  height: 10px;
+  position: absolute;
+  top: 307px;
+  z-index: 3;
+}
