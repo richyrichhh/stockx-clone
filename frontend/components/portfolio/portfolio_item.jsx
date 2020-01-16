@@ -22,31 +22,34 @@ Array.prototype._formatDateFromString = function() {
 export default class PortfolioItem extends React.Component {
   constructor(props) {
     super(props);
+    // console.log('here');
+    // console.dir(this.props);
     this.handleDelete = this.handleDelete.bind(this);
     this.state = { 
       item: (this.props.item ? this.props.item : {}),
       product: (this.props.products[this.props.item.product_id] ? this.props.products[this.props.item.product_id] : {}),
-      sales: (isEmpty(this.props.sales) ? {} : this.props.sales),
+      sale: (this.props.sales.lastSale ? this.props.sales.lastSale : {})
     };
   }
 
   componentDidMount() {
     let p_id = this.state.item.product_id
     if (!this.props.products[p_id]) this.props.fetchProduct(p_id);
-    this.props.fetchLastSale(p_id).then((action)=>this.setState({sales: { [action.sale.product_id]: { lastSale: action.sale }}}));
+    // this.props.fetchLastSale(p_id).then((action)=>this.setState({sales: { [action.sale.product_id]: { lastSale: action.sale }}}));
     // console.dir(this.props);
   }
 
   handleDelete(e) {
     e.preventDefault();
     this.props.removeItem(this.props.item.id);
-    this.setState({item: {}, product: {}, sales: { [this.props.item.product_id]: { lastSale: {}} }});
+    this.setState({item: {}, product: {}, sale: {} });
     // console.dir(this.context);
     // this.setState(this.state.a ? {a: false} : {a: true});
     // this.forceUpdate();
   }
 
   render() {
+    // console.dir(this.state.sale);
     let product = this.state.product;
     let item = this.state.item;
     if (isEmpty(product) || isEmpty(item)) return (null);
@@ -57,8 +60,8 @@ export default class PortfolioItem extends React.Component {
     let date = item.updated_at;
     date = (date ? date.split('T')[0].split('-')._formatDateFromString().join('/') : (new Date(Date.now())).toLocaleDateString().split('/')._formatDateFromDate().rotateRight(-1).join('/'));
     let gColor = "g-black";
-    console.dir(this.state.sales);
-    let market_value = this.state.sales[product.id] ? this.state.sales[product.id].lastSale.price : 1;
+    // console.dir(this.state.sales);
+    let market_value = this.state.sale.price || 0;
     let g_l = market_value - (item.purchase_price || 0);
     if (g_l > 0) gColor = "g-green";
     else if (g_l < 0) gColor = "g-red"

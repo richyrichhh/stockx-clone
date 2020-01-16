@@ -5,13 +5,12 @@ import { removeItem } from '../../actions/portfolio';
 import { fetchProduct } from '../../actions/products';
 import { fetchLastSale } from '../../actions/sales';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   let isLoggedIn = (state.session.currentUserId ? true : false);
   return ({
     currentUser: (isLoggedIn ? state.entities.currentUser : null),
     products: state.entities.products,
-    portfolio: state.entities.portfolio,
-    sales: state.entities.sales
+    portfolio: state.entities.portfolio
   });
 };
 

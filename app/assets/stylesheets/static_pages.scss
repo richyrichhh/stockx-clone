@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+body {
+  height: 100vh;
+}
+html {
+  height: 100vh;
+}
+
 #root {
   display: flex;
   align-items: center;
@@ -22,7 +29,6 @@
   display: flex;
   margin-top: min(20%, 90px);
   min-height: 80vh;
-  height: 100%;
   width: 100vw;
 }
 

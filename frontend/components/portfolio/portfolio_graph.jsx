@@ -1,0 +1,45 @@
+import React, { Component } from 'react';
+import CanvasJSReact from './canvasjs.react';
+import isEmpty from '../../utils/obj-util';
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+export default ( {portfolio, sales, products} ) => {
+
+  console.dir(sales);
+  console.dir(sales)
+  const options = {
+    theme: "light2",
+    animationEnabled: true,
+    exportFileName: "New Year Resolutions",
+    exportEnabled: true,
+    title: {
+      text: "Top Categories of New Year's Resolution"
+    },
+    data: [{
+      type: "pie",
+      showInLegend: true,
+      legendText: "{label}",
+      toolTipContent: "{label}: <strong>{y}$</strong>",
+      indexLabel: "{y}$",
+      indexLabelPlacement: "inside",
+      dataPoints: (!isEmpty(sales) ? Object.values(portfolio).map(item => (sales[item.product_id] ? { y: sales[item.product_id].lastSale.price, label: products[item.product_id].name } : {y: 0, label: ""})) : null)
+      // [
+      //   { y: 32, label: "Health" },
+      //   { y: 22, label: "Finance" },
+      //   { y: 15, label: "Education" },
+      //   { y: 19, label: "Career" },
+      //   { y: 5, label: "Family" },
+      //   { y: 7, label: "Real Estate" }
+      // ]
+    }]
+  }
+  
+  return (
+    <div id="portfolio-graph-inner">
+      <CanvasJSChart options={options}
+      /* onRef={ref => this.chart = ref} */
+      />
+      {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+    </div>
+  );
+}

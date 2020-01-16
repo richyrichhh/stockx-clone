@@ -1,32 +1,31 @@
 import React from 'react'
 import PortfolioItemContainer from './portfolio_item_container';
+import PortfolioGraph from './portfolio_graph';
 import isEmpty from '../../utils/obj-util';
-import {Link} from 'react-router-dom';
-import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 export default class PortfolioIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  isEmpty(obj) {
-    for (var key in obj) {
-      if (obj.hasOwnProperty(key))
-        return false;
-    }
-    return true;
-  }
-
   componentDidMount() {
     this.props.fetchProducts();
-    this.props.fetchPortfolio(this.props.currentUser.id);
+    this.props.fetchPortfolio(this.props.currentUser.id).then(() => Object.values(this.props.portfolio).forEach(item => this.props.fetchLastSale(item.product_id)));
   }
 
   render() {
-    let portfolio = (isEmpty(this.props.portfolio) ? {} : this.props.portfolio);
-    let products = (isEmpty(this.props.products) ? {} : this.props.products);
+    console.dir(this.props);
+    let portfolio = this.props.portfolio;
+    let products = this.props.products;
+    let sales = this.props.sales;
     return (
       <div id="portfolio-main">
+        <div id="portfolio-graph-outer">
+          <PortfolioGraph portfolio={portfolio} sales={sales} products={products} />
+        </div>
+
         <span id="portfolio-header">Portfolio</span>
         <table id="portfolio-table">
           <thead id="portfolio-table-heading">
@@ -40,7 +39,7 @@ export default class PortfolioIndex extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {Object.values(portfolio).map(item => isEmpty(item) ? null : <PortfolioItemContainer products={products} item={item} key={`item${item.id}`} />)}
+            {Object.values(portfolio).map(item => isEmpty(item) || isEmpty(sales[item.product_id]) ? null : <PortfolioItemContainer products={products} item={item} sales={sales[item.product_id]} key={`item${item.id}`} />)}
           </tbody>
         </table>
 

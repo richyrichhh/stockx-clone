@@ -12,8 +12,9 @@ export default (state = {}, action) => {
         return state;
       }
     case RECEIVE_LAST_SALE:
+      // return Object.assign({}, action.sales);
       if (action.sale) {
-        return Object.assign({}, state, { [action.sale.product_id]: { lastSale: action.sale }});
+       return Object.assign({}, state, { [action.sale.product_id]: { lastSale: action.sale }});
       } else return state;
     default:
       return state;
