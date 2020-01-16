@@ -1,6 +1,6 @@
 import React from 'react'
 import PortfolioItemContainer from './portfolio_item_container';
-import PortfolioGraph from './portfolio_graph';
+import PortfolioGraphValues from './portfolio_graph_values';
 import isEmpty from '../../utils/obj-util';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
@@ -22,7 +22,7 @@ export default class PortfolioIndex extends React.Component {
     return (
       <div id="portfolio-main">
         <div id="portfolio-graph-outer">
-          <PortfolioGraph portfolio={portfolio} sales={sales} products={products} />
+          <PortfolioGraphValues portfolio={portfolio} sales={sales} products={products} />
         </div>
 
         <span id="portfolio-header">Portfolio</span>

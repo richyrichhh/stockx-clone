@@ -1,9 +1,10 @@
 #portfolio-graph-outer {
   margin-bottom: 10px;
-  margin-left: 50px;
+  position: relative;
+  right: 150px;
 }
 
-#portfolio-graph-inner { 
+#portfolio-graph-values { 
   font: 15px 'proxima-nova', sans-serif;
 }
 
@@ -11,14 +12,14 @@
   display: none;
 }
 
-#portfolio-graph-inner::after {
-  content: "";
-  background-color: white;
-  color: white;
-  fill: white;
-  width: 100px;
-  height: 10px;
-  position: absolute;
-  top: 307px;
-  z-index: 3;
-}
+// #portfolio-graph-values::after {
+//   content: "";
+//   background-color: white;
+//   color: white;
+//   fill: white;
+//   width: 100px;
+//   height: 10px;
+//   position: absolute;
+//   top: 307px;
+//   z-index: 3;
+// }

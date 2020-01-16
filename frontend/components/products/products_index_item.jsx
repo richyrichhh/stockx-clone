@@ -7,8 +7,23 @@ export default ({ product }) => {
   // console.dir(product);
   return (
     <li className="products-index-item">
-      <Link to={linkPath}><img src={product.img_path} height="250px" />
-        <h3>{product.model} "{product.name}"</h3></Link>
+      <Link to={linkPath}>
+        <span class="products-index-img">
+          <img src={product.img_path} />
+        </span>
+        <span class="products-index-tag">
+          <h3>
+            <ul>
+              <li>
+                {product.model}
+              </li>
+              <li>
+                "{product.name}"
+              </li>
+            </ul>
+          </h3>
+        </span>
+      </Link>
     </li>
   );
 }

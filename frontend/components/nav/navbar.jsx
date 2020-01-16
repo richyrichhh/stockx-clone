@@ -40,7 +40,7 @@ export default class NavBar extends React.Component {
         </span>
         <span id="navbar-nav-ele">
           <ul id="navbar-els1">
-            <Link to="/">
+            <Link to="/products">
               <li id="navbar-browse" className="navbar-dropdown">Browse</li>
             </Link>
             <Link to="/">

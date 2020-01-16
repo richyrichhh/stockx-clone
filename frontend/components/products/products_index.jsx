@@ -1,20 +1,22 @@
 import React from 'react';
 import ProductsIndexItem from './products_index_item'
+import isEmpty from '../../utils/obj-util';
 import { Link } from 'react-router-dom';
 
 export default class ProductsIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      products: this.props.products
+    }
   }
 
   componentDidMount() {
-    this.props.fetchProducts();
+    this.props.fetchProducts().then(action => this.setState({products: action.products}));
   }
 
   render() {
-    let products;
-    if (!this.props.products[0]) products = [];
-    else products = Object.values(this.props.products);
+    let products = Object.values(this.state.products);
     return (
       <div id="products-index-div">
         <ul id="products-list">
