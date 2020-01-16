@@ -20,3 +20,10 @@ export const logout = () => (
     method: 'delete'
   })
 );
+
+export const check = () => (
+  $.ajax({
+    url: '/api/session',
+    method: 'GET'
+  })
+);

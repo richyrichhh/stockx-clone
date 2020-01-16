@@ -26,6 +26,9 @@ export const createUser = formUser => dispatch =>
   )
 );
 
+export const checkLogin = () => dispatch =>
+  SessionUtil.check().then(user => dispatch(receiveCurrentUser(user)));
+
 export const login = formUser => dispatch =>
   SessionUtil.login(formUser)
     .then(user => dispatch(receiveCurrentUser(user)), err => (

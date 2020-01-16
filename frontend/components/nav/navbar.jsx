@@ -6,13 +6,27 @@ const LOGO_PATH = "https://upload.wikimedia.org/wikipedia/commons/9/95/Stockx_lo
 export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loggedIn: this.props.loggedIn
+    }
+    // this.setState({loggedIn: this.props.loggedIn});
+
   }
 
   handleLogout() {
     this.props.logout();
   }
 
+  // componentDidUpdate() {
+  //   this.props.checkLogin();
+  // }
+
+  componentDidUpdate() {
+    if (this.state.loggedIn != this.props.loggedIn) this.setState({loggedIn: this.props.loggedIn});
+  }
+
   render() {
+    console.log(this.state.loggedIn);
     return (
       <div id="navbar-div">
         <span id="logo-span">
@@ -41,9 +55,11 @@ export default class NavBar extends React.Component {
             <Link to="/">
               <li id="navbar-help">Help</li>
             </Link>
+            {this.state.loggedIn ? 
             <Link to="/profile">
               <li id="navbar-my-account" className="navbar-dropdown">My Account</li>
-            </Link>
+            </Link> : <span id="navbar-auth"><Link to="/login"><li id="navbar-login">Login</li></Link>
+                <Link to="/register"><li id="navbar-register">Register</li></Link></span>}
           </ul>
           <span id="navbar-els2">
             <Link to="/">

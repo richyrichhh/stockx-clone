@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
+    get '/session', :to => 'sessions#index'
     resources :users, only: [:create, :show, :update, :destroy] do
       # resources :portfolio_items, only: [:index, :create]
       get '/portfolio', :to => 'portfolio_items#index'

@@ -16,4 +16,11 @@ class Api::SessionsController < ApplicationController
     logout
     render json: {}
   end
+
+  def index
+    @user = current_user
+    if @user
+      render 'api/users/show'
+    end
+  end
 end

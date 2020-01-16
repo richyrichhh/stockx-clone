@@ -93,7 +93,28 @@ div {
   cursor: pointer;
   text-decoration: none;
   font-stretch: expanded;
-  font-family: proxima-nova, sans-serif;
+  font-family: 'proxima-nova', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  white-space: nowrap;
+  font-size: 15px;
+  text-transform: capitalize;
+  padding: 8px 10px;
+}
+
+#navbar-auth {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+#navbar-els1 > span > a {
+  color: #111111;
+  cursor: pointer;
+  text-decoration: none;
+  font-stretch: expanded;
+  font-family: 'proxima-nova', sans-serif;
   font-style: normal;
   font-weight: 500;
   white-space: nowrap;
