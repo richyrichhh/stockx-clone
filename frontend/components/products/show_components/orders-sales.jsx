@@ -14,7 +14,6 @@ const formatMoney = (number) => {
 };
 
 export default ({product, sales, orders}) => {
-  console.dir(sales);
   if (sales.length === 0) sales = [{price: 0}, {price: 0}];
   if (sales.length === 1) sales.unshift({price: 1})
   let sEnd = sales.length - 1;

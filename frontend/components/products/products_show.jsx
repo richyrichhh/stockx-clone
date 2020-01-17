@@ -23,8 +23,7 @@ export default class ProductShow extends React.Component {
     let product = this.props.products[this.state.productId] || {};
     let sales = this.props.sales[this.state.productId] ? Object.values(this.props.sales[this.state.productId]) : [];
     let orders = isEmpty(this.props.orders) ? [] : Object.values(this.props.orders);
-    console.dir(sales);
-    console.dir(orders);
+
     return (
     <div className="product-show">
       <div id="prod-show-buttons-outer">
