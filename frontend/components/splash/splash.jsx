@@ -7,17 +7,24 @@ export default class Splash extends React.Component {
   }
 
   render() {
-    if (this.props.loggedIn) {
-      return (
-        <Link to="/profile">Profile</Link>
-      )
-    } else {
-      return (
-        <div id="splash-div">
-          <Link to="/login">Log In</Link>
-          <Link to="/register">Register</Link>
-        </div>
-      )
-    }
+    // if (this.props.loggedIn) {
+    //   return (
+    //     <div id="splash-div">
+    //       <Link to="/profile">Profile</Link>
+    //     </div>
+    //   )
+    // } else {
+    //   return (
+    //     <div id="splash-div">
+    //       <Link to="/login">Log In</Link>
+    //       <Link to="/register">Register</Link>
+    //     </div>
+    //   )
+    // }
+    return (
+      <div id="splash-div">
+        <img src="https://wallpapercave.com/wp/wp3408855.jpg"/>
+      </div>
+    )
   }
 }

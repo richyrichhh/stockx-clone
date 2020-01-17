@@ -13,7 +13,7 @@ Order.destroy_all
 Sale.destroy_all
 
 user1 = User.create(username: 'admin', name: 'John Doe', password: 'abc123', email: 'admin@site.com')
-demo_user = User.create(username: 'demologin', name: 'Johnny Sins', password: 'demopassword', email: 'demo@demo.demo')
+demo_user = User.create(username: 'demologin', name: 'Demo User', password: 'demopassword', email: 'demo@demo.demo')
 product1 = Product.create(name: 'Bred', model: "Air Jordan 1", brand: "Jordan", description: 'The Classic', style_code: 4281, colorway: 'black red', retail_price: 170, img_path: 'https://www.flightclub.com/media/catalog/product/cache/1/image/1600x1140/9df78eab33525d08d6e5fb8d27136e95/6/3/63611742962-air-jordan-1-retro-high-og-bred-black-varsity-red-white-011845_1.jpg', release_date: '9/3/2016')
 product2 = Product.create(name: 'White Cement', model: "Air Jordan 3", brand: "Jordan", description: 'Also a classic', style_code: '136064-105', colorway: 'white fire-red cement-grey black', retail_price: 200, img_path: 'https://stockx-360.imgix.net/Air-Jordan-3-Retro-White-Cement-2011/Images/Air-Jordan-3-Retro-White-Cement-2011/Lv2/img01.jpg', release_date: '9/3/2016')
 product3 = Product.create(name: 'Space Jams', model: "Air Jordan 11", brand: "Jordan", description: 'Your childhood', style_code: '378037-003', colorway: 'black dark-concord white', retail_price: 220, img_path: 'https://stockx.imgix.net/Jordan-11-Retro-Space-Jams-2016-Product.jpg', release_date: '12/10/2016')

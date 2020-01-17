@@ -45,8 +45,8 @@ export default ({product, sales, orders}) => {
             <p>Lowest Ask</p>
           </span>
           <span id="asks-right">
-            <p>Buy</p>
-            <p>or Bid</p>
+            <p id="asks-right-big">Buy</p>
+            <p id="asks-right-small">or Bid</p>
           </span>
         </Link>
         <span id="asks-bottom">
@@ -58,12 +58,12 @@ export default ({product, sales, orders}) => {
       <span id="prod-bids">
         <Link to="#">
           <span id="bids-left">
-            <p>$500</p>
-            <p>Lowest Bid</p>
+            <p className="bids-right-big">$500</p>
+            <p className="bids-right-small">Lowest Bid</p>
           </span>
           <span id="bids-right">
-            <p>Sell</p>
-            <p>or Ask</p>
+            <p className="bids-right-big">Sell</p>
+            <p className="bids-right-small">or Ask</p>
           </span>
         </Link>
         <span id="bids-bottom">
