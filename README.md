@@ -64,6 +64,44 @@ offer better judgment on trades.
 
 ## Select Code Snippets
 
+**`PortfolioGraph`**
+
+The following code groups portfolio items by brand and populates the graph,
+creating a pie chart of portfolio values for data visualization.
+
+```
+  let graphData = [];
+  let nike = {y: 0, label: 'Nike'};
+  let jordan = {y: 0, label: 'Jordan'};
+  // console.dir(sales);
+  if (!isEmpty(sales)) {
+    Object.values(portfolio).forEach(item => {
+      // console.dir(item);
+      if (products[item.product_id].brand === 'Nike') {
+        if (sales[item.product_id]) {
+          // console.log('nike');
+          // console.log(item.product_id);
+          // console.log(sales[item.product_id]);
+          nike.y += sales[item.product_id].lastSale.price;
+        } else {
+          nike.y += item.purchase_price;
+        }
+      } else if (products[item.product_id].brand === 'Jordan') {
+        if (sales[item.product_id]) {
+          // console.log('jordan');
+          // console.log(item.product_id);
+          // console.log(sales[item.product_id]);
+          jordan.y += sales[item.product_id].lastSale.price;
+        } else {
+          jordan.y += item.purchase_price;
+        }
+      }
+    });
+  }
+  if (nike.y > 0) graphData.push(nike);
+  if (jordan.y > 0) graphData.push(jordan);
+```
+
 **`SalesController`**
 
 Three functions provide functionality for the profile and products show page,
