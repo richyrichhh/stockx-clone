@@ -27195,3 +27195,431 @@ Migrating to RenameTypeToOrderType (20200115201133)
   ↳ db/seeds.rb:44
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:44
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 90]]
+  ↳ db/seeds.rb:9
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 89]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (1.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 140]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 141]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 142]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 143]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 144]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 145]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mPortfolioItem Load (1.1ms)[0m  [1m[34mSELECT "portfolio_items".* FROM "portfolio_items"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPortfolioItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "portfolio_items" WHERE "portfolio_items"."id" = $1[0m  [["id", 136]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPortfolioItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "portfolio_items" WHERE "portfolio_items"."id" = $1[0m  [["id", 137]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPortfolioItem Destroy (0.4ms)[0m  [1m[31mDELETE FROM "portfolio_items" WHERE "portfolio_items"."id" = $1[0m  [["id", 138]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mOrder Destroy (1.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 23]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 24]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 25]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 26]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 27]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mOrder Destroy (0.4ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = $1[0m  [["id", 28]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSale Load (0.8ms)[0m  [1m[34mSELECT "sales".* FROM "sales"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSale Destroy (0.4ms)[0m  [1m[31mDELETE FROM "sales" WHERE "sales"."id" = $1[0m  [["id", 32]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSale Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sales" WHERE "sales"."id" = $1[0m  [["id", 33]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSale Destroy (0.4ms)[0m  [1m[31mDELETE FROM "sales" WHERE "sales"."id" = $1[0m  [["id", 34]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSale Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sales" WHERE "sales"."id" = $1[0m  [["id", 35]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSale Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sales" WHERE "sales"."id" = $1[0m  [["id", 36]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSale Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sales" WHERE "sales"."id" = $1[0m  [["id", 37]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSale Destroy (0.4ms)[0m  [1m[31mDELETE FROM "sales" WHERE "sales"."id" = $1[0m  [["id", 38]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@site.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4P2lcabD3DzIs9aydPpISg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "session_token", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "admin"], ["password_digest", "$2a$12$.NHrU1PzOD1jvcv8lySj0.dgRMs9Gosq32OEkCqXNriIt9G0z0Umy"], ["email", "admin@site.com"], ["session_token", "4P2lcabD3DzIs9aydPpISg"], ["created_at", "2020-01-16 23:51:10.086469"], ["updated_at", "2020-01-16 23:51:10.086469"], ["name", "John Doe"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demologin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hAUbf2_xcBFRbtO0QyLmkQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "session_token", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "demologin"], ["password_digest", "$2a$12$gllAuoFCD40yqc1eRsp.1.mdvXRfZWHgVrtHf5x5Ygf8Xj7VCPYK6"], ["email", "demo@demo.demo"], ["session_token", "hAUbf2_xcBFRbtO0QyLmkQ"], ["created_at", "2020-01-16 23:51:10.317349"], ["updated_at", "2020-01-16 23:51:10.317349"], ["name", "Johnny Sins"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at", "model", "brand") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Bred"], ["description", "The Classic"], ["style_code", "4281"], ["colorway", "black red"], ["retail_price", 170], ["img_path", "https://www.flightclub.com/media/catalog/product/cache/1/image/1600x1140/9df78eab33525d08d6e5fb8d27136e95/6/3/63611742962-air-jordan-1-retro-high-og-bred-black-varsity-red-white-011845_1.jpg"], ["release_date", "2016-03-09"], ["created_at", "2020-01-16 23:51:10.320727"], ["updated_at", "2020-01-16 23:51:10.320727"], ["model", "Air Jordan 1"], ["brand", "Jordan"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at", "model", "brand") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "White Cement"], ["description", "Also a classic"], ["style_code", "136064-105"], ["colorway", "white fire-red cement-grey black"], ["retail_price", 200], ["img_path", "https://stockx-360.imgix.net/Air-Jordan-3-Retro-White-Cement-2011/Images/Air-Jordan-3-Retro-White-Cement-2011/Lv2/img01.jpg"], ["release_date", "2016-03-09"], ["created_at", "2020-01-16 23:51:10.325071"], ["updated_at", "2020-01-16 23:51:10.325071"], ["model", "Air Jordan 3"], ["brand", "Jordan"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at", "model", "brand") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Space Jams"], ["description", "Your childhood"], ["style_code", "378037-003"], ["colorway", "black dark-concord white"], ["retail_price", 220], ["img_path", "https://stockx.imgix.net/Jordan-11-Retro-Space-Jams-2016-Product.jpg"], ["release_date", "2016-10-12"], ["created_at", "2020-01-16 23:51:10.328228"], ["updated_at", "2020-01-16 23:51:10.328228"], ["model", "Air Jordan 11"], ["brand", "Jordan"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at", "model", "brand") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Royal"], ["description", "The OG"], ["style_code", "4282"], ["colorway", "black royal-blue"], ["retail_price", 65], ["img_path", "https://stockx.imgix.net/Air-Jordan-1-OG-Royal-1985.png"], ["release_date", "1985-09-15"], ["created_at", "2020-01-16 23:51:10.331067"], ["updated_at", "2020-01-16 23:51:10.331067"], ["model", "Air Jordan 1"], ["brand", "Jordan"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at", "model", "brand") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Fire Red"], ["description", "👍"], ["style_code", "4367"], ["colorway", "white fire-red"], ["retail_price", 75], ["img_path", "https://stockx.imgix.net/Air-Jordan-3-OG-Fire-Red-1988.jpg"], ["release_date", "1988-01-01"], ["created_at", "2020-01-16 23:51:10.333790"], ["updated_at", "2020-01-16 23:51:10.333790"], ["model", "Air Jordan 3"], ["brand", "Jordan"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at", "model", "brand") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Concord"], ["description", "what u know"], ["style_code", "136046-171"], ["colorway", "white black dark-concord"], ["retail_price", 165], ["img_path", "https://stockx-360.imgix.net/air-jordan-11-retro-concord-2011_TruView/Images/air-jordan-11-retro-concord-2011_TruView/Lv2/img01.jpg"], ["release_date", "2011-12-23"], ["created_at", "2020-01-16 23:51:10.336994"], ["updated_at", "2020-01-16 23:51:10.336994"], ["model", "Air Jordan 11"], ["brand", "Jordan"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at", "model", "brand") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Tiffany"], ["description", "you already know"], ["style_code", "304292-402"], ["colorway", "aqua chrome"], ["retail_price", 89], ["img_path", "https://stockx.imgix.net/Nike-Dunk-SB-Low-Diamond-Supply-Co-Tiffany-Product.jpg"], ["release_date", "2005-08-01"], ["created_at", "2020-01-16 23:51:10.339698"], ["updated_at", "2020-01-16 23:51:10.339698"], ["model", "Nike SB Dunk Low"], ["brand", "Nike"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "style_code", "colorway", "retail_price", "img_path", "release_date", "created_at", "updated_at", "model", "brand") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Flash"], ["description", "Chris's favorite"], ["style_code", "304292-801"], ["colorway", "orange-flash black"], ["retail_price", 60], ["img_path", "https://stockx.imgix.net/Nike-SB-Dunk-Low-Orange-Flash.png"], ["release_date", "2002-10-01"], ["created_at", "2020-01-16 23:51:10.342758"], ["updated_at", "2020-01-16 23:51:10.342758"], ["model", "Nike SB Dunk Low"], ["brand", "Nike"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mOrder Create (1.8ms)[0m  [1m[32mINSERT INTO "orders" ("product_id", "asker_id", "price", "order_type", "active", "sold", "shipped", "created_at", "updated_at", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["product_id", 146], ["asker_id", 91], ["price", 500], ["order_type", "ask"], ["active", "f"], ["sold", "t"], ["shipped", "t"], ["created_at", "2020-01-16 23:51:10.362511"], ["updated_at", "2020-01-16 23:51:10.362511"], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mOrder Create (0.4ms)[0m  [1m[32mINSERT INTO "orders" ("product_id", "asker_id", "price", "order_type", "active", "sold", "shipped", "created_at", "updated_at", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["product_id", 147], ["asker_id", 91], ["price", 50], ["order_type", "ask"], ["active", "f"], ["sold", "t"], ["shipped", "t"], ["created_at", "2020-01-16 23:51:10.368948"], ["updated_at", "2020-01-16 23:51:10.368948"], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("product_id", "asker_id", "price", "order_type", "active", "sold", "shipped", "created_at", "updated_at", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["product_id", 148], ["asker_id", 91], ["price", 5], ["order_type", "ask"], ["active", "f"], ["sold", "t"], ["shipped", "t"], ["created_at", "2020-01-16 23:51:10.375131"], ["updated_at", "2020-01-16 23:51:10.375131"], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mOrder Create (1.4ms)[0m  [1m[32mINSERT INTO "orders" ("product_id", "asker_id", "price", "order_type", "active", "sold", "shipped", "created_at", "updated_at", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["product_id", 149], ["asker_id", 91], ["price", 123], ["order_type", "ask"], ["active", "f"], ["sold", "t"], ["shipped", "t"], ["created_at", "2020-01-16 23:51:10.385536"], ["updated_at", "2020-01-16 23:51:10.385536"], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 150], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mOrder Create (4.5ms)[0m  [1m[32mINSERT INTO "orders" ("product_id", "asker_id", "price", "order_type", "active", "sold", "shipped", "created_at", "updated_at", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["product_id", 150], ["asker_id", 91], ["price", 456], ["order_type", "ask"], ["active", "f"], ["sold", "t"], ["shipped", "t"], ["created_at", "2020-01-16 23:51:10.394540"], ["updated_at", "2020-01-16 23:51:10.394540"], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 151], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("product_id", "asker_id", "price", "order_type", "active", "sold", "shipped", "created_at", "updated_at", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["product_id", 151], ["asker_id", 91], ["price", 789], ["order_type", "ask"], ["active", "f"], ["sold", "t"], ["shipped", "t"], ["created_at", "2020-01-16 23:51:10.416531"], ["updated_at", "2020-01-16 23:51:10.416531"], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("product_id", "asker_id", "price", "order_type", "active", "sold", "shipped", "created_at", "updated_at", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["product_id", 152], ["asker_id", 91], ["price", 400], ["order_type", "ask"], ["active", "f"], ["sold", "t"], ["shipped", "t"], ["created_at", "2020-01-16 23:51:10.422052"], ["updated_at", "2020-01-16 23:51:10.422052"], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 153], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("product_id", "asker_id", "price", "order_type", "active", "sold", "shipped", "created_at", "updated_at", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["product_id", 153], ["asker_id", 91], ["price", 850], ["order_type", "ask"], ["active", "f"], ["sold", "t"], ["shipped", "t"], ["created_at", "2020-01-16 23:51:10.427614"], ["updated_at", "2020-01-16 23:51:10.427614"], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mPortfolioItem Create (1.9ms)[0m  [1m[32mINSERT INTO "portfolio_items" ("user_id", "product_id", "size", "created_at", "updated_at", "purchase_price") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 91], ["product_id", 146], ["size", "M 9"], ["created_at", "2020-01-16 23:51:10.438132"], ["updated_at", "2020-01-16 23:51:10.438132"], ["purchase_price", 1]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolioItem Create (0.6ms)[0m  [1m[32mINSERT INTO "portfolio_items" ("user_id", "product_id", "size", "created_at", "updated_at", "purchase_price") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 91], ["product_id", 147], ["size", "M 9"], ["created_at", "2020-01-16 23:51:10.444944"], ["updated_at", "2020-01-16 23:51:10.444944"], ["purchase_price", 1]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mPortfolioItem Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolio_items" ("user_id", "product_id", "size", "created_at", "updated_at", "purchase_price") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 92], ["product_id", 148], ["size", "M 9"], ["created_at", "2020-01-16 23:51:10.450177"], ["updated_at", "2020-01-16 23:51:10.450177"], ["purchase_price", 1]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mSale Create (0.8ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 29], ["product_id", 146], ["date", "2020-01-16"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.459272"], ["updated_at", "2020-01-16 23:51:10.459272"], ["price", 500], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:44
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mSale Create (1.7ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 30], ["product_id", 147], ["date", "2020-01-16"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.469747"], ["updated_at", "2020-01-16 23:51:10.469747"], ["price", 50], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mSale Create (0.4ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 31], ["product_id", 148], ["date", "2020-01-16"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.476499"], ["updated_at", "2020-01-16 23:51:10.476499"], ["price", 5], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mSale Create (0.4ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 31], ["product_id", 148], ["date", "2020-01-15"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.482653"], ["updated_at", "2020-01-16 23:51:10.482653"], ["price", 5000], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mSale Create (0.5ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 32], ["product_id", 149], ["date", "2020-01-16"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.488391"], ["updated_at", "2020-01-16 23:51:10.488391"], ["price", 123], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 150], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mSale Create (0.4ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 33], ["product_id", 150], ["date", "2020-01-16"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.493346"], ["updated_at", "2020-01-16 23:51:10.493346"], ["price", 456], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 151], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mSale Create (0.4ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 34], ["product_id", 151], ["date", "2020-01-16"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.498045"], ["updated_at", "2020-01-16 23:51:10.498045"], ["price", 789], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mSale Create (0.4ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 35], ["product_id", 152], ["date", "2020-01-16"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.502818"], ["updated_at", "2020-01-16 23:51:10.502818"], ["price", 400], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 153], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mSale Create (0.4ms)[0m  [1m[32mINSERT INTO "sales" ("order_id", "product_id", "date", "active", "created_at", "updated_at", "price", "sex", "size") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["order_id", 36], ["product_id", 153], ["date", "2020-01-16"], ["active", "true"], ["created_at", "2020-01-16 23:51:10.508495"], ["updated_at", "2020-01-16 23:51:10.508495"], ["price", 850], ["sex", "M"], ["size", "9"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51

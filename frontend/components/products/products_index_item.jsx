@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 export default ({ product }) => {
-  const linkPath = `/product/${product.id}`
+  const linkPath = `/products/${product.id}/view`
   // console.dir(product);
   return (
     <li className="products-index-item">

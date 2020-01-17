@@ -1,0 +1,101 @@
+.product-show {
+  margin-top: 40px;
+  margin-left: 5vw;
+  width: 100%;
+}
+
+.product-show > header {
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#prod-show-buttons-outer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 80%;
+}
+
+#prod-show-buttons {
+  width: 200px;
+  height: 25px;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#prod-show-buttons > button {
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#prod-show-buttons > button:hover {
+  background-color: black;
+  color: white;
+}
+
+#prod-show-misc {
+  display: flex;
+  width: 25%;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+#prod-show-condition {
+  display: flex;
+  flex-direction: row;
+  color: #888888;
+}
+
+#prod-show-condition > p {
+  padding-left: 5px;
+}
+
+#prod-show-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#prod-show-img > img {
+  width: 700px;
+}
+
+#prod-show-detail {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Archivo Narrow', sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0px;
+  width: 800px;
+  color: #333;
+  justify-content: space-around;
+}
+
+#prod-show-detail > p {
+  display: flex;
+  flex-direction: row;
+}
+
+.bold-this {
+  font-weight: bold;
+  color: #000;
+  padding-right: 5px;
+}

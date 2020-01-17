@@ -18,7 +18,7 @@ const App = () => (
       <Route exact path="/" component={SplashContainer} />
       <Switch>
         <Route exact path="/products" component={ProductsIndexContainer} />
-        <Route exact path="/product/:id" component={ProductShowContainer} />
+        <Route exact path="/products/:productId/view" component={ProductShowContainer} />
       </Switch>
       <ProtectedRoute path="/profile" component={ProfileContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
