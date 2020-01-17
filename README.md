@@ -157,4 +157,4 @@ the data from the database and turning it into something useful for the user.
 ![Homepage](https://github.com/richyrichhh/stockx-clone/blob/master/screenshots/home-page.png?raw=true)
 
 
-[Link to site](https://stocksoverflow.herokuapp.com/#/)
+[Link to site](https://stock-y.herokuapp.com/#/)
