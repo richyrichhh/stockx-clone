@@ -1,5 +1,6 @@
 import React from 'react';
 import isEmpty from '../../utils/obj-util';
+import ProductOrders from './show_components/orders-sales';
 
 export default class ProductShow extends React.Component {
   constructor(props) {
@@ -33,24 +34,25 @@ export default class ProductShow extends React.Component {
         </div>
       </div>
       <header>{product.model} "{product.name}"</header>
-        <span id="prod-show-misc">
-          <span id="prod-show-condition">
-            Condition: <p style={{color: 'green'}}>New</p>
-          </span> | <span id="prod-show-authenticity">
-            <p style={{color: 'green'}}>100% Authentic</p>
-          </span>
+      <span id="prod-show-misc">
+        <span id="prod-show-condition">
+          Condition: <p style={{color: 'green'}}>New</p>
+        </span> | <span id="prod-show-authenticity">
+          <p style={{color: 'green'}}>100% Authentic</p>
         </span>
-      {sales[sales.length - 1] ? sales[sales.length - 1].price : ""}
-      {orders[0] ? orders[0].price : ""}
+      </span>
+
+      {sales[sales.length - 1] && orders[0] ? <ProductOrders product={product} sales={sales} orders={orders} /> : ""}
+      
 
 
       <div id="prod-show-main">
         <div id="prod-show-img">
           <img src={product.img_path}/>
           <span id="prod-show-detail">
-              <p><p className="bold-this">Style</p> <p>{product.style_code}</p></p>
-              <p><p className="bold-this">Colorway</p> <p>{product.colorway ? product.colorway.split(' ').join('/') : 'black'}</p></p>
-              <p><p className="bold-this">Release Date</p> <p>{product.release_date}</p></p>
+              <span><p className="bold-this">Style</p> <p>{product.style_code}</p></span>
+              <span><p className="bold-this">Colorway</p> <p>{product.colorway ? product.colorway.split(' ').join('/') : 'black'}</p></span>
+              <span><p className="bold-this">Release Date</p> <p>{product.release_date}</p></span>
           </span>
         </div>
       </div>

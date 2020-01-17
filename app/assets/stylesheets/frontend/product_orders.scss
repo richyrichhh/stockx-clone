@@ -1,0 +1,96 @@
+#product-orders {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70vw;
+  font-family: 'proxima-nova', sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: #888888;
+}
+
+#product-orders-size {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#product-orders-size > p {
+  font-weight: bold;
+}
+
+#product-orders-size > span {
+  font-size: 30px;
+  color: black;
+  padding-top: 5px;
+}
+
+#this-will-be-a-gray-line {
+  height: 100px;
+  width: 1px;
+  background-color: #c3c3c3;
+  margin-left: 50px;
+  margin-right: 25px;
+}
+
+#product-orders-last-sale {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+#p-last-sale-top {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.last-sale-bold {
+  font-weight: bold;
+}
+
+#last-sale-num {
+  color: black;
+  font-size: 28px;
+}
+
+#last-sale-change {
+  font-size: 16px;
+}
+
+#p-last-sale-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+}
+
+#p-last-sale-bottom > p {
+  color: black;
+  padding: 10px;
+}
+
+.smaller-gray-line {
+  height: 14px;
+  width: 1px;
+  background-color: #c3c3c3;
+}
+
+#prod-asks {
+  margin-left: 50px;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+#prod-asks > a {
+  display: flex;
+  flex-direction: row;
+}

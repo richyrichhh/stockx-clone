@@ -83,13 +83,13 @@
   font-family: 'Archivo Narrow', sans-serif;
   text-transform: uppercase;
   font-size: 22px;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   width: 800px;
   color: #333;
   justify-content: space-around;
 }
 
-#prod-show-detail > p {
+#prod-show-detail > span {
   display: flex;
   flex-direction: row;
 }
