@@ -41,8 +41,9 @@ and then provide the prices for the library to render.
   market prices, as well as resell price premiums for each brand. However,
   this has not been implemented yet.
 
-![Data Visualization](https://github.com/richyrichhh/stockx-clone/tree/master/screenshots/sample-portfolio-graph.png)
-![Data Visualization](https://github.com/richyrichhh/stockx-clone/tree/master/screenshots/sample-portfolio.png)
+![Portfolio Graph](https://github.com/richyrichhh/stockx-clone/blob/master/screenshots/sample-portfolio-graph.png?raw=true)
+
+![Portfolio Item](https://github.com/richyrichhh/stockx-clone/blob/master/screenshots/sample-portfolio.png?raw=true)
 
 Prices are also tracked on each individual product show page, allowing users
 to track historical price data in greater detail over long periods of time.
@@ -58,7 +59,7 @@ tracked realtime and displayed on the product show, while the last sale price
 is displayed along with any recent price changes to allow for comparisons and
 offer better judgment on trades.
 
-![Trading](https://github.com/richyrichhh/stockx-clone/tree/master/screenshots/sample-prices.png)
+![Trading](https://github.com/richyrichhh/stockx-clone/blob/master/screenshots/sample-prices.png?raw=true)
 
 
 ## Select Code Snippets
@@ -115,7 +116,7 @@ the data from the database and turning it into something useful for the user.
 + Add watch list
 + Make the profile page actually look good
 
-![Homepage](https://github.com/richyrichhh/stockx-clone/tree/master/screenshots/home-page.png)
+![Homepage](https://github.com/richyrichhh/stockx-clone/blob/master/screenshots/home-page.png?raw=true)
 
 
 [Link to site](https://stocksoverflow.herokuapp.com/#/)
