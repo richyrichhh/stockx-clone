@@ -49,22 +49,18 @@ export default class PortfolioItem extends React.Component {
   }
 
   render() {
-    // console.dir(this.state.sale);
     let product = this.state.product;
     let item = this.state.item;
     if (isEmpty(product) || isEmpty(item)) return (null);
     let size = ["n/a", "n/a"];
-    if (item) {
-      size = item.size.split(' ');
-    }
+    if (item) size = item.size.split(' ');
     let date = item.updated_at;
     date = (date ? date.split('T')[0].split('-')._formatDateFromString().join('/') : (new Date(Date.now())).toLocaleDateString().split('/')._formatDateFromDate().rotateRight(-1).join('/'));
     let gColor = "g-black";
-    // console.dir(this.state.sales);
     let market_value = this.state.sale.price || 0;
     let g_l = market_value - (item.purchase_price || 0);
     if (g_l > 0) gColor = "g-green";
-    else if (g_l < 0) gColor = "g-red"
+    else if (g_l < 0) gColor = "g-red";
     return (
       <tr className="portfolio-row portfolio-item">
         <td className="portfolio-col1">
