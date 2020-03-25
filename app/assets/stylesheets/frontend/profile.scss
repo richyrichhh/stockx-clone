@@ -82,3 +82,62 @@
   width: calc(100vw - 250px);
   flex-direction: column;
 }
+
+#profile-main-div {
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'proxima-nova', sans-serif;
+  letter-spacing: 1px;
+}
+
+#profile-main-title {
+  margin-bottom: 5px;
+  font-family: 'impact';
+  font-size: 30px;
+}
+
+#profile-main-div > a {
+  width: 80px;
+  height: 25px;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  color: buttontext;
+  background-color: buttonface;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0em;
+  letter-spacing: 0;
+}
+
+#profile-main-div > button {
+  width: 80px;
+  height: 25px;
+  border-radius: 25px;
+  letter-spacing: 0;
+}
+
+#profile-main-div > button:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+#profile-main-div > a:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+#welcome-msg {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
