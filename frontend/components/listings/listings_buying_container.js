@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ListingsBuying from './listings_buying';
 import { fetchPortfolio } from '../../actions/portfolio';
-import { fetchOrders } from '../../actions/orders'
+import { fetchOrdersByUser, fetchOrdersByProduct } from '../../actions/orders'
 import { fetchProducts } from '../../actions/products';
 import { fetchLastSale } from '../../actions/sales';
 
@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => ({
   fetchProducts: () => dispatch(fetchProducts()),
   fetchPortfolio: (id) => dispatch(fetchPortfolio(id)),
   fetchLastSale: (id) => dispatch(fetchLastSale(id)),
-  fetchOrders: (id) => dispatch(fetchOrders(id))
+  fetchOrdersByUser: (id) => dispatch(fetchOrdersByUser(id)),
+  fetchOrdersByProduct: (id) => dispatch(fetchOrdersByProduct(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListingsBuying);

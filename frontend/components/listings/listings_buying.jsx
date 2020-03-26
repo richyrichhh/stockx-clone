@@ -1,6 +1,4 @@
 import React from 'react'
-import PortfolioItemContainer from './portfolio_item_container';
-import PortfolioGraphValues from './portfolio_graph_values';
 import isEmpty from '../../utils/obj-util';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
@@ -11,7 +9,8 @@ export default class ListingsBuying extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProducts();
+    this.props.fetchProducts()
+      .then(() => this.props.fetchOrders(this.props.currentUser.id))
     this.props.fetchPortfolio(this.props.currentUser.id).then(() => Object.values(this.props.portfolio).forEach(item => this.props.fetchLastSale(item.product_id)));
   }
 
@@ -21,7 +20,7 @@ export default class ListingsBuying extends React.Component {
     let sales = this.props.sales;
     return (
       <div id="listings-buying">
-        <span id="listings-buy-header">Portfolio</span>
+        <span id="listings-buy-header">Buying</span>
         <table id="listings-buy-table">
           <thead id="listings-buy-table-heading">
             <tr className="lbt-row">
@@ -32,11 +31,11 @@ export default class ListingsBuying extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {Object.values(portfolio).map(item => isEmpty(item) || isEmpty(sales[item.product_id]) ? null : <PortfolioItemContainer products={products} item={item} sales={sales[item.product_id]} key={`item${item.id}`} />)}
+            {/* {Object.values(portfolio).map(item => isEmpty(item) || isEmpty(sales[item.product_id]) ? null : <PortfolioItemContainer products={products} item={item} sales={sales[item.product_id]} key={`item${item.id}`} />)} */}
           </tbody>
         </table>
 
-        <Link to="/profile/listings/new/buy">Add Item</Link>
+        <Link to="/profile/listings/new/buy">Add Buy Order</Link>
       </div>
     )
   }
