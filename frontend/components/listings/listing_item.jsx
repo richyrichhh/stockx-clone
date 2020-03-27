@@ -28,14 +28,23 @@ export default class ListingItem extends React.Component {
     this.state = { 
       order: (this.props.order ? this.props.order : {}),
       product: (this.props.products[this.props.order.product_id] ? this.props.products[this.props.order.product_id] : {}),
+      hBid: -1,
+      lAsk: 21717
     };
   }
 
   componentDidMount() {
-    let p_id = this.state.order.product_id
+    let p_id = this.state.order.product_id;
     if (!this.props.products[p_id]) this.props.fetchProduct(p_id);
     this.props.fetchOrdersByProduct(p_id).then((data) => {
+      let newState = Object.assign({}, this.state);
       console.dir(data);
+      for (let order of Object.values(data.orders)) {
+        if (order.order_type === 'buy' && order.price > newState.hBid) newState.hBid = order.price;
+        else if (order.order_type === 'sell' && order.price < newState.lAsk) newState.lAsk = order.price;
+      }
+      this.setState(newState);
+      console.dir(this.state);
     })
   }
 
@@ -45,6 +54,7 @@ export default class ListingItem extends React.Component {
     newOrder.active = 'false'
     this.props.updateOrder(newOrder);
     this.setState({order: {}, product: {}});
+    window.refresh();
     // console.dir(this.context);
     // this.setState(this.state.a ? {a: false} : {a: true});
     // this.forceUpdate();
@@ -59,7 +69,7 @@ export default class ListingItem extends React.Component {
     return (
       <tr className="listing-row listing-item">
         <td className="listing-col0">
-          <Link to="/profile/"><img className="delete-listing-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" /></Link>
+          <Link to="/profile/listings/buying/"><img className="delete-listing-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" /></Link>
         </td>
         <td className="listing-col1 listing-item-info">
           <span className="listing-item-pic">
@@ -72,8 +82,8 @@ export default class ListingItem extends React.Component {
           </ul>
         </td>
         <td className="listing-col2"><p>${order.price}</p></td>
-        <td className="listing-col3"><p>$2</p></td>
-        <td className="listing-col4"><p>$2</p></td>
+        <td className="listing-col3"><p>{this.state.hBid === -1 ? 'n/a' : `$${this.state.hBid}`}</p></td>
+        <td className="listing-col4"><p>{this.state.lAsk === 21717 ? 'n/a' : `$${this.state.lAsk}`}</p></td>
       </tr>
     )
   }
