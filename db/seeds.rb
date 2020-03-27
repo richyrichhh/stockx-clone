@@ -24,14 +24,14 @@ product7 = Product.create!(name: 'Tiffany', model: 'Nike SB Dunk Low', brand: 'N
 product8 = Product.create!(name: 'Flash', model: 'Nike SB Dunk Low', brand: 'Nike', description: 'Chris\'s favorite', style_code: '304292-801', colorway: 'orange-flash black', retail_price: 60, img_path: 'https://stockx.imgix.net/Nike-SB-Dunk-Low-Orange-Flash.png', release_date: '01/10/2002')
 
 
-order1 = Order.create!(product_id: product1.id, asker_id: user1.id, price: 500, order_type: 'ask', active: false, sold: true, shipped: true, sex: 'M', size: '9')
-order2 = Order.create!(product_id: product2.id, asker_id: user1.id, price: 50, order_type: 'ask', active: false, sold: true, shipped: true, sex: 'M', size: '9')
-order3 = Order.create!(product_id: product3.id, asker_id: user1.id, price: 5, order_type: 'ask', active: false, sold: true, shipped: true, sex: 'M', size: '9')
-order4 = Order.create!(product_id: product4.id, asker_id: user1.id, price: 123, order_type: 'ask', active: false, sold: true, shipped: true, sex: 'M', size: '9')
-order5 = Order.create!(product_id: product5.id, asker_id: user1.id, price: 456, order_type: 'ask', active: false, sold: true, shipped: true, sex: 'M', size: '9')
-order6 = Order.create!(product_id: product6.id, asker_id: user1.id, price: 789, order_type: 'ask', active: false, sold: true, shipped: true, sex: 'M', size: '9')
-order7 = Order.create!(product_id: product7.id, asker_id: user1.id, price: 400, order_type: 'ask', active: false, sold: true, shipped: true, sex: 'M', size: '9')
-order8 = Order.create!(product_id: product8.id, asker_id: user1.id, price: 850, order_type: 'ask', active: false, sold: true, shipped: true, sex: 'M', size: '9')
+order1 = Order.create!(product_id: product1.id, asker_id: user1.id, price: 500, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order2 = Order.create!(product_id: product2.id, asker_id: user1.id, price: 50, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order3 = Order.create!(product_id: product3.id, asker_id: user1.id, price: 5, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order4 = Order.create!(product_id: product4.id, asker_id: user1.id, price: 123, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order5 = Order.create!(product_id: product5.id, asker_id: user1.id, price: 456, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order6 = Order.create!(product_id: product6.id, asker_id: user1.id, price: 789, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order7 = Order.create!(product_id: product7.id, asker_id: user1.id, price: 400, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order8 = Order.create!(product_id: product8.id, asker_id: user1.id, price: 850, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 
 
 

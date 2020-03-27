@@ -49,10 +49,10 @@ export default class ListingItem extends React.Component {
   }
 
   handleDelete(e) {
-    e.preventDefault();
+    // e.preventDefault();
     let newOrder = Object.assign({}, this.state.order);
     newOrder.active = 'false'
-    this.props.updateOrder(newOrder);
+    this.props.updateOrder(newOrder).then(data => console.dir(data));
     this.setState({order: {}, product: {}});
     window.refresh();
     // console.dir(this.context);

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get '/portfolio', :to => 'portfolio_items#index'
       post '/portfolio', :to => 'portfolio_items#create'
       get '/orders', :to => 'orders#user_index'
+      get '/follows', :to => 'follows#user_index'
     end
     resources :products, only: [:create, :show, :update, :index] do
       get '/orders', :to => 'orders#product_index'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
     end
     resources :orders, only: [:create, :update]
     resources :sales, only: [:create, :update]
+    resources :follows, only: [:create, :destroy]
     delete '/portfolio/:id', :to => 'portfolio_items#destroy'
   end
 end
