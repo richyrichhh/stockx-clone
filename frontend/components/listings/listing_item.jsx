@@ -75,11 +75,13 @@ export default class ListingItem extends React.Component {
           <span className="listing-item-pic">
             <img src={product.img_path} width="80px" />
           </span>
-          <ul className="listing-item-details">
-            <li>{product.model}</li>
-            <li>{product.name}</li>
-            <li>U.S. {size[0] === "M" ? `Men's Size: ${size[1]}` : size[0] === 'F' ? `Women's Size: ${size[1]}` : `Kids' Size: ${size[1]}`}</li>
-          </ul>
+          <Link to={`/products/${product.id}/view`}>
+            <ul className="listing-item-details">
+              <li>{product.model}</li>
+              <li>{product.name}</li>
+              <li>U.S. {size[0] === "M" ? `Men's Size: ${size[1]}` : size[0] === 'F' ? `Women's Size: ${size[1]}` : `Kids' Size: ${size[1]}`}</li>
+            </ul>
+          </Link>
         </td>
         <td className="listing-col2"><p>${order.price}</p></td>
         <td className="listing-col3"><p>{this.state.hBid === -1 ? 'n/a' : `$${this.state.hBid}`}</p></td>

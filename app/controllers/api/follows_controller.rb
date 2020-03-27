@@ -14,7 +14,7 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @item = PortfolioItem.find(params[:id])
+    @item = Follow.find(params[:id])
     @item.destroy
   end
 

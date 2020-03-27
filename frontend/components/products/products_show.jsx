@@ -7,8 +7,11 @@ export default class ProductShow extends React.Component {
     super(props);
     let prodId = this.props.location.pathname.split('/')[2];
     this.state = {
-      productId: prodId
+      productId: prodId,
+      follows: false,
+      follow_id: -1
     }
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
   componentDidMount() {
@@ -16,7 +19,33 @@ export default class ProductShow extends React.Component {
     this.props.fetchOrdersByProduct(this.state.productId);
     this.props.fetchSales(this.state.productId);
     this.props.fetchLastSale(this.state.productId);
+    this.props.fetchFollows(this.props.currentUser.id).then(data => {
+      console.log('here');
+      console.dir(data);
+      for (let follow of Object.values(data.follows)) {
+        console.log(this.state.productId);
+        console.log(follow.product_id);
+        if (parseInt(follow.product_id) === parseInt(this.state.productId)) {
+          console.log('true')
+          this.setState({follows: true, follow_id: follow.id});
+        }
+      }
+    })
   
+  }
+
+  handleFollow(e) {
+    e.preventDefault();
+    if (this.state.follows) {
+      this.props.deleteFollow(this.state.follow_id);
+      this.setState({follows: false, follow_id: -1});
+    }
+    else if (!this.state.follows) {
+      this.props.createFollow({user_id: this.props.currentUser.id, product_id: this.state.productId}).then( data => {
+        console.log(data);
+        this.setState({follows: true, follow_id: data.follow.id});
+      })
+    }
   }
 
   render() {
@@ -29,7 +58,7 @@ export default class ProductShow extends React.Component {
       <div id="prod-show-buttons-outer">
         <div id="prod-show-buttons">
           <button id="prod-show+p">+ Portfolio</button>
-          <button id="prod-show+f">+ Follow</button>
+          <button id="prod-show+f" onClick={this.handleFollow}>+ {this.state.follows ? 'Following' : 'Follow'}</button>
         </div>
       </div>
       <header>{product.model} "{product.name}"</header>

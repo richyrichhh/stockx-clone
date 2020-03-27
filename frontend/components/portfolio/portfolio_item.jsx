@@ -70,12 +70,14 @@ export default class PortfolioItem extends React.Component {
           <span className="portfolio-item-pic">
             <img src={product.img_path} width="80px" />
           </span>
-          <ul className="portfolio-item-details">
-            <li>{product.model}</li>
-            <li>{product.name}</li>
-            <li>U.S. {size[0] === "M" ? `Men's Size: ${size[1]}` : size[0] === 'F' ? `Women's Size: ${size[1]}` : `Kids' Size: ${size[1]}`}</li>
-            <li>{product.release_date ? product.release_date.split('-')[0] : ""}</li>
-          </ul>
+          <Link to={`/products/${product.id}/view`}>
+            <ul className="portfolio-item-details">
+              <li>{product.model}</li>
+              <li>{product.name}</li>
+              <li>U.S. {size[0] === "M" ? `Men's Size: ${size[1]}` : size[0] === 'F' ? `Women's Size: ${size[1]}` : `Kids' Size: ${size[1]}`}</li>
+              <li>{product.release_date ? product.release_date.split('-')[0] : ""}</li>
+            </ul>
+          </Link>
         </td>
         <td className="portfolio-col3"><p>{date}</p></td>
         <td className="portfolio-col4"><p>${item.purchase_price}</p></td>
