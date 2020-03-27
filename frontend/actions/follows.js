@@ -5,17 +5,17 @@ export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
 export const DELETE_FOLLOW = 'DELETE_FOLLOW';
 export const RECEIVE_FOLLOW_ERRORS = 'RECEIVE_FOLLOW_ERRORS';
 
-const receiveFollow = order => ({
+const receiveFollow = follow => ({
   type: RECEIVE_FOLLOW,
-  order
+  follow
 });
 
-const receiveFollows = orders => ({
+const receiveFollows = follows => ({
   type: RECEIVE_FOLLOWS,
-  orders
+  follows
 });
 
-const deleteFollow = productId => ({
+const deletedFollow = productId => ({
   type: DELETE_FOLLOW,
   itemId
 });
@@ -32,5 +32,5 @@ export const createFollow = formFollow => dispatch =>
   FollowsUtil.createFollow(formFollow).then(follow => dispatch(receiveFollow(follow)), errors => dispatch(receiveFollowErrors(errors.responseJSON)));
 
 export const deleteFollow = id => dispatch =>
-  FollowsUtil.deleteFollow(id).then(() => dispatch(deleteFollow(id)));
+  FollowsUtil.deleteFollow(id).then(() => dispatch(deletedFollow(id)));
 

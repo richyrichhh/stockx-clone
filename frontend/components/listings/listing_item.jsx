@@ -69,7 +69,7 @@ export default class ListingItem extends React.Component {
     return (
       <tr className="listing-row listing-item">
         <td className="listing-col0">
-          <Link to="/profile/listings/buying/"><img className="delete-listing-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" /></Link>
+          <Link to="#"><img className="delete-listing-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" /></Link>
         </td>
         <td className="listing-col1 listing-item-info">
           <span className="listing-item-pic">
