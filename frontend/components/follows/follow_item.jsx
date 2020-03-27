@@ -50,14 +50,17 @@ export default class FollowItem extends React.Component {
         <td className="fl-col0">
           <Link to="/profile/follows/"><img className="delete-follow-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" /></Link>
         </td>
+        
         <td className="fl-col1 fl-item-info">
           <span className="fl-item-pic">
             <img src={product.img_path} width="80px" />
           </span>
-          <ul className="fl-item-details">
-            <li>{product.model}</li>
-            <li>{product.name}</li>
-          </ul>
+          <Link to={`/products/${product.id}/view`}>
+            <ul className="fl-item-details">
+              <li>{product.model}</li>
+              <li>{product.name}</li>
+            </ul>
+          </Link>
         </td>
         <td className="fl-col2"><p>{this.state.hBid === -1 ? 'n/a' : `$${this.state.hBid}`}</p></td>
         <td className="fl-col3"><p>{this.state.lAsk === 21717 ? 'n/a' : `$${this.state.lAsk}`}</p></td>

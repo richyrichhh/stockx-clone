@@ -57,7 +57,7 @@ export default class ProductShow extends React.Component {
     <div className="product-show">
       <div id="prod-show-buttons-outer">
         <div id="prod-show-buttons">
-          <button id="prod-show+p">+ Portfolio</button>
+          {/* <button id="prod-show+p">+ Portfolio</button> */}
           <button id="prod-show+f" onClick={this.handleFollow}>+ {this.state.follows ? 'Following' : 'Follow'}</button>
         </div>
       </div>
