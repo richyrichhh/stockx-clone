@@ -1,16 +1,17 @@
 class Api::OrdersController < ApplicationController
   def user_index
-    @orders = current_user.taken_orders.concat(current_user.listed_orders)
+    @orders = current_user.listed_orders.where("active = 'true'")
     render :index
   end
 
   def product_index
-    @orders = Product.find(params[:product_id]).orders
+    @orders = Product.find(params[:product_id]).orders.where("active = 'true'")
     render :index
   end
 
   def create
     @order = Order.new(order_params)
+    @order.taker_id = nil
     if @order.save
       render :show
     else

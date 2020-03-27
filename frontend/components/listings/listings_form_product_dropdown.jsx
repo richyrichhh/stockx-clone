@@ -2,7 +2,7 @@ import React from 'react';
 
 export default ({ products }) => {
   return (
-    <select name="product_id" defaultValue="default" id="portfolio-form-product-dropdown">
+    <select name="product_id" defaultValue="default" id="listings-form-product-dropdown">
       <option value="default" disabled>Product</option>
       {products.map(product => 
         (

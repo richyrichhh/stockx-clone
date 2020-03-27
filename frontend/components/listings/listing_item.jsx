@@ -19,30 +19,32 @@ Array.prototype._formatDateFromString = function() {
   this[2] -= 1;
   return this;
 }
-export default class PortfolioItem extends React.Component {
+export default class ListingItem extends React.Component {
   constructor(props) {
     super(props);
     // console.log('here');
     // console.dir(this.props);
     this.handleDelete = this.handleDelete.bind(this);
     this.state = { 
-      item: (this.props.item ? this.props.item : {}),
-      product: (this.props.products[this.props.item.product_id] ? this.props.products[this.props.item.product_id] : {}),
-      sale: (this.props.sales.lastSale ? this.props.sales.lastSale : {})
+      order: (this.props.order ? this.props.order : {}),
+      product: (this.props.products[this.props.order.product_id] ? this.props.products[this.props.order.product_id] : {}),
     };
   }
 
   componentDidMount() {
-    let p_id = this.state.item.product_id
+    let p_id = this.state.order.product_id
     if (!this.props.products[p_id]) this.props.fetchProduct(p_id);
-    // this.props.fetchLastSale(p_id).then((action)=>this.setState({sales: { [action.sale.product_id]: { lastSale: action.sale }}}));
-    // console.dir(this.props);
+    this.props.fetchOrdersByProduct(p_id).then((data) => {
+      console.dir(data);
+    })
   }
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.removeItem(this.props.item.id);
-    this.setState({item: {}, product: {}, sale: {} });
+    let newOrder = Object.assign({}, this.state.order);
+    newOrder.active = 'false'
+    this.props.updateOrder(newOrder);
+    this.setState({order: {}, product: {}});
     // console.dir(this.context);
     // this.setState(this.state.a ? {a: false} : {a: true});
     // this.forceUpdate();
@@ -50,37 +52,28 @@ export default class PortfolioItem extends React.Component {
 
   render() {
     let product = this.state.product;
-    let item = this.state.item;
-    if (isEmpty(product) || isEmpty(item)) return (null);
+    let order = this.state.order;
+    if (isEmpty(product) || isEmpty(order)) return (null);
     let size = ["n/a", "n/a"];
-    if (item) size = item.size.split(' ');
-    let date = item.updated_at;
-    date = (date ? date.split('T')[0].split('-')._formatDateFromString().join('/') : (new Date(Date.now())).toLocaleDateString().split('/')._formatDateFromDate().rotateRight(-1).join('/'));
-    let gColor = "g-black";
-    let market_value = this.state.sale.price || 0;
-    let g_l = market_value - (item.purchase_price || 0);
-    if (g_l > 0) gColor = "g-green";
-    else if (g_l < 0) gColor = "g-red";
+    if (order) size = [order.sex, order.size];
     return (
-      <tr className="portfolio-row portfolio-item">
-        <td className="portfolio-col1">
-          <Link to="/profile/"><img className="delete-portfolio-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" /></Link>
+      <tr className="listing-row listing-item">
+        <td className="listing-col0">
+          <Link to="/profile/"><img className="delete-listing-item-btn" src="https://image.flaticon.com/icons/png/512/64/64022.png" onClick={this.handleDelete} height="25px" /></Link>
         </td>
-        <td className="portfolio-col2 portfolio-item-info">
-          <span className="portfolio-item-pic">
+        <td className="listing-col1 listing-item-info">
+          <span className="listing-item-pic">
             <img src={product.img_path} width="80px" />
           </span>
-          <ul className="portfolio-item-details">
+          <ul className="listing-item-details">
             <li>{product.model}</li>
             <li>{product.name}</li>
             <li>U.S. {size[0] === "M" ? `Men's Size: ${size[1]}` : size[0] === 'F' ? `Women's Size: ${size[1]}` : `Kids' Size: ${size[1]}`}</li>
-            <li>{product.release_date ? product.release_date.split('-')[0] : ""}</li>
           </ul>
         </td>
-        <td className="portfolio-col3"><p>{date}</p></td>
-        <td className="portfolio-col4"><p>${item.purchase_price}</p></td>
-        <td className="portfolio-col5"><p>${market_value}</p></td>
-        <td className="portfolio-col6"><p className={gColor}>{`$${g_l}(${((g_l / item.purchase_price)*100).toFixed(2)}%)`}</p></td>
+        <td className="listing-col2"><p>${order.price}</p></td>
+        <td className="listing-col3"><p>$2</p></td>
+        <td className="listing-col4"><p>$2</p></td>
       </tr>
     )
   }

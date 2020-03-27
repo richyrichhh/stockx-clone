@@ -1,23 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PortfolioItem from './portfolio_item';
+import ListingItem from './listing_item';
 import { removeItem } from '../../actions/portfolio';
-import { fetchProduct } from '../../actions/products';
-import { fetchLastSale } from '../../actions/sales';
+import { updateOrder } from '../../actions/products';
+import { fetchOrdersByProduct } from '../../actions/orders';
 
 const mapStateToProps = (state, ownProps) => {
   let isLoggedIn = (state.session.currentUserId ? true : false);
   return ({
     currentUser: (isLoggedIn ? state.entities.currentUser : null),
     products: state.entities.products,
-    portfolio: state.entities.portfolio
   });
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchProduct: (id) => dispatch(fetchProduct(id)),
-  removeItem: (id) => dispatch(removeItem(id)),
-  fetchLastSale: (id) => dispatch(fetchLastSale(id))
+  updateOrder: (id) => dispatch(updateOrder(id)),
+  fetchOrdersByProduct: (id) => dispatch(fetchOrdersByProduct(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PortfolioItem);
+export default connect(mapStateToProps, mapDispatchToProps)(ListingItem);

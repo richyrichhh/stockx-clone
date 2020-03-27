@@ -12,6 +12,7 @@ export default class ListingsBuying extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchProducts();
   }
 
   render() {
