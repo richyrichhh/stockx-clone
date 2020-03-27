@@ -8,6 +8,7 @@ import PortfolioIndexContainer from '../portfolio/portfolio_index_container';
 import PortfolioFormContainer from '../portfolio/portfolio_form_container';
 import ListingsIndexContainer from '../listings/listings_index_container';
 import ListingsFormContainer from '../listings/listings_form_container';
+import FollowsContainer from '../follows/follows_container';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ export default class Profile extends React.Component {
           <ProtectedRoute exact path="/profile/portfolio/add" component={PortfolioFormContainer} />
           <ProtectedRoute path="/profile/listings" component={ListingsIndexContainer} />
           <ProtectedRoute exact path="/profile/listings/new" component={ListingsFormContainer} />
+          <ProtectedRoute path="/profile/follows" component={FollowsContainer} />
         </div>
       </div>
     );
