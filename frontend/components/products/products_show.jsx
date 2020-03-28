@@ -9,24 +9,47 @@ export default class ProductShow extends React.Component {
     this.state = {
       productId: prodId,
       follows: false,
-      follow_id: -1
+      follow_id: -1,
+      hBid: -1,
+      hBidOrder: '',
+      lAsk: -1,
+      lAskOrder: ''
     }
     this.handleFollow = this.handleFollow.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProduct(this.state.productId);
-    this.props.fetchOrdersByProduct(this.state.productId);
+    this.props.fetchOrdersByProduct(this.state.productId).then(data => {
+      console.log(data);
+      let hBid = -1;
+      let lAsk = -1;
+      for (let order of Object.values(data.orders)) {
+        if (hBid === -1 && order.order_type === "buy") {
+          hBid = order;
+        }
+        else if (order.price > hBid && order.order_type === "buy") {
+          hBid = order;
+        }
+        if (lAsk === -1 && order.order_type === "sell") {
+          lAsk = order;
+        }
+        else if (order.price < lAsk && order.order_type === "sell") {
+          lAsk = order;
+        }
+      }
+      this.setState({hBid: hBid, lAsk: lAsk});
+    });
     this.props.fetchSales(this.state.productId);
     this.props.fetchLastSale(this.state.productId);
     this.props.fetchFollows(this.props.currentUser.id).then(data => {
-      console.log('here');
-      console.dir(data);
+      // console.log('here');
+      // console.dir(data);
       for (let follow of Object.values(data.follows)) {
-        console.log(this.state.productId);
-        console.log(follow.product_id);
+        // console.log(this.state.productId);
+        // console.log(follow.product_id);
         if (parseInt(follow.product_id) === parseInt(this.state.productId)) {
-          console.log('true')
+          // console.log('true')
           this.setState({follows: true, follow_id: follow.id});
         }
       }
@@ -49,16 +72,19 @@ export default class ProductShow extends React.Component {
   }
 
   render() {
+    
+    console.log(`id is ${this.props.currentUser.id}`); 
+    console.dir(this.props.currentUser.id);
+
     let product = this.props.products[this.state.productId] || {};
     let sales = this.props.sales[this.state.productId] ? Object.values(this.props.sales[this.state.productId]) : [];
-    let orders = isEmpty(this.props.orders) ? [] : Object.values(this.props.orders);
+    let orders = isEmpty(this.props.orders) ? [{price: 0, type: 'buy'}] : Object.values(this.props.orders);
 
     return (
     <div className="product-show">
       <div id="prod-show-buttons-outer">
         <div id="prod-show-buttons">
-          {/* <button id="prod-show+p">+ Portfolio</button> */}
-          <button id="prod-show+f" onClick={this.handleFollow}>+ {this.state.follows ? 'Following' : 'Follow'}</button>
+          <button id="prod-show-f" onClick={this.handleFollow}>+ {this.state.follows ? 'Following' : 'Follow'}</button>
         </div>
       </div>
       <header>{product.model} "{product.name}"</header>
@@ -70,7 +96,7 @@ export default class ProductShow extends React.Component {
         </span>
       </span>
 
-      {sales[sales.length - 1] && orders[0] ? <ProductOrders product={product} sales={sales} orders={orders} /> : ""}
+      {sales[sales.length - 1] && orders[0] ? <ProductOrders product={product} sales={sales} orders={[this.state.hBid, this.state.lAsk]} updateOrder={this.props.updateOrder} createSale={this.props.createSale} addItem={this.props.addItem} currentUserId={this.props.currentUser.id} /> : ""}
       
 
 

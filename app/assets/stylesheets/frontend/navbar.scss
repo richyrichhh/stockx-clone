@@ -74,6 +74,15 @@ div {
   letter-spacing: 1px;
 }
 
+#search-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F6F6F6;
+}
+
 #navbar-nav-ele {
   width: 45%;
   display: flex;

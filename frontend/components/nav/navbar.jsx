@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+
 
 const LOGO_PATH = "https://upload.wikimedia.org/wikipedia/commons/9/95/Stockx_logo.png"
 
@@ -9,6 +10,7 @@ export default class NavBar extends React.Component {
     this.state = {
       loggedIn: this.props.loggedIn
     }
+    this.handleSearch = this.handleSearch.bind(this);
     // this.setState({loggedIn: this.props.loggedIn});
 
   }
@@ -25,6 +27,12 @@ export default class NavBar extends React.Component {
     if (this.state.loggedIn != this.props.loggedIn) this.setState({loggedIn: this.props.loggedIn});
   }
 
+  handleSearch(e) {
+    e.preventDefault();
+    window.location.hash = "#/products"
+    window.location.searchCache = document.getElementById('navbar-search').value;
+  }
+
   render() {
     // console.log(this.state.loggedIn);
     return (
@@ -34,8 +42,11 @@ export default class NavBar extends React.Component {
         </span>
         <span id="navbar-search-span">
           <span id="navbar-search-outer">
-            <span id="navbar-search-icon"><i className="fas fa-search"></i></span>
-            <input type="text" name="search" placeholder="Search for brand, color, etc." id="navbar-search" />
+            <form id="search-form" onSubmit={this.handleSearch}>
+              <span id="navbar-search-icon"><i className="fas fa-search"></i></span>
+              <input type="text" name="search" placeholder="Search for brand, color, etc." id="navbar-search" />
+              <input type="submit" style={{display: 'none'}} />
+            </form>
           </span>
         </span>
         <span id="navbar-nav-ele">
