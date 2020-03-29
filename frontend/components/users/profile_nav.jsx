@@ -39,7 +39,7 @@ export default class ProfileNav extends React.Component {
         <Link to="/profile"><li onClick={this.changeBold} id="p-navbar-profile" className="profile-nav-item"><span className="nav-icon">🤦‍♂️</span><span className="nav-label">Profile</span></li></Link>
         <Link to="/profile/portfolio"><li onClick={this.changeBold} id="p-navbar-portfolio" className="profile-nav-item"><span className="nav-icon">📈</span><span className="nav-label">Portfolio</span></li></Link>
         <Link to="/profile/follows"><li onClick={this.changeBold} id="p-navbar-follows" className="profile-nav-item"><span className="nav-icon">🔭</span><span className="nav-label">Following</span></li></Link>
-        <li id="p-navbar-settings" className="profile-nav-item"><span className="nav-icon">⚙️</span>Settings</li>
+        <Link to="/profile/edit"><li onClick={this.changeBold} id="p-navbar-settings" className="profile-nav-item"><span className="nav-icon">⚙️</span>Settings</li></Link>
       </ul>
     );
   }

@@ -11,6 +11,7 @@ export default class NavBar extends React.Component {
       loggedIn: this.props.loggedIn
     }
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleHelp = this.handleHelp.bind(this);
     // this.setState({loggedIn: this.props.loggedIn});
 
   }
@@ -38,6 +39,11 @@ export default class NavBar extends React.Component {
     
   }
 
+  handleHelp(e) {
+    e.preventDefault();
+    alert(`Don't worry, you can't actually buy anything.`);
+  }
+
   render() {
     // console.log(this.state.loggedIn);
     return (
@@ -59,18 +65,18 @@ export default class NavBar extends React.Component {
             <Link to="/products">
               <li id="navbar-browse" className="navbar-dropdown">Browse</li>
             </Link>
-            <Link to="/">
+            <a href="https://news.google.com/">
               <li id="navbar-news">News</li>
-            </Link>
+            </a>
             <Link to="/profile/portfolio">
               <li id="navbar-portfolio">Portfolio</li>
             </Link>
-            <Link to="/">
+            <a href="https://github.com/richyrichhh/stockx-clone">
               <li id="navbar-about" className="navbar-dropdown">About</li>
-            </Link>
-            <Link to="/">
+            </a>
+            <a href="#" onClick={this.handleHelp}>
               <li id="navbar-help">Help</li>
-            </Link>
+            </a>
             {this.state.loggedIn ? 
             <Link to="/profile">
               <li id="navbar-my-account" className="navbar-dropdown">My Account</li>
@@ -78,7 +84,7 @@ export default class NavBar extends React.Component {
                 <Link to="/register"><li id="navbar-register">Register</li></Link></span>}
           </ul>
           <span id="navbar-els2">
-            <Link to="/">
+            <Link to="/profile/listings/new">
               <button id="navbar-sell-btn">Sell</button>
             </Link>
           </span>
