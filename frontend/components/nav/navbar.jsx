@@ -29,8 +29,11 @@ export default class NavBar extends React.Component {
 
   handleSearch(e) {
     e.preventDefault();
-    window.location.hash = "#/products"
-    window.location.searchCache = document.getElementById('navbar-search').value;
+    let searchTerm = document.getElementById('navbar-search').value;
+    
+    window.location.hash = "#/products/search";
+    window.location.searchCache = searchTerm;
+    
   }
 
   render() {
