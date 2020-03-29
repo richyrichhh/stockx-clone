@@ -38,12 +38,12 @@ export default class ListingsSelling extends React.Component {
         <span id="listings-sell-header">Selling</span>
         <table id="listings-sell-table">
           <thead id="listings-sell-table-heading">
-            <tr className="lbt-row">
-              <th className="lbt-col0"></th>
-              <th className="lbt-col1">Item</th>
-              <th className="lbt-col2">Ask Price</th>
-              <th className="lbt-col3">Highest Bid</th>
-              <th className="lbt-col4">Lowest Ask</th>
+            <tr className="listing-row">
+              <th className="listing-col0"></th>
+              <th className="listing-col1">Item</th>
+              <th className="listing-col2">Ask Price</th>
+              <th className="listing-col3">Highest Bid</th>
+              <th className="listing-col4">Lowest Ask</th>
             </tr>
           </thead>
           <tbody>
@@ -51,7 +51,7 @@ export default class ListingsSelling extends React.Component {
           </tbody>
         </table>
 
-        <Link to="/profile/listings/new">New Order</Link>
+        <Link to="/profile/listings/new" className="new-listing">+ New Order</Link>
       </div>
     )
   }

@@ -93,7 +93,7 @@ export default class ListingsForm extends React.Component {
           <label>
               <input type="number" min="0" step="1" id="listings-form-price" placeholder="Price" onChange={this.handleInput('price')} />
           </label>
-          <input type="submit" value="Submit"/>
+          <input type="submit" value="Submit" id="listings-form-submit"/>
         </form>
         <div id="listings-form-errors" className="hidden">
           {this.renderErrors()}

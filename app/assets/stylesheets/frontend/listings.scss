@@ -1,0 +1,224 @@
+#listings-index-div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+#listings-links {
+  display: flex;
+  flex-direction: row;
+}
+
+#listings-links > a {
+  display: flex;
+  color: black;
+  font-family: 'proxima-nova', sans-serif;
+  padding: 10px;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.listings-selected {
+  border-bottom: 4px solid green;
+}
+
+#listings-buying {
+  width: calc(100% - 10px);
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'proxima-nova', sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+#listings-selling {
+  width: calc(100% - 10px);
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'proxima-nova', sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+#listings-buy-header {
+  text-transform: uppercase;
+  font-size: 16px;
+  position: relative;
+  margin-bottom: -1px;
+  margin-left: 2%;
+  border-bottom: 4px solid green;
+  width: 100px;
+  display: none;
+}
+
+#listings-buy-table-heading {
+  font-family: impact;
+  text-transform: uppercase;
+  border-top: 1px solid #c3c3c3;
+  cursor: default;
+}
+
+#listings-buy-table-heading > tr {
+  height: 5vh;
+  color: #333;
+}
+
+.listing-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.listing-col0 {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 5px;
+  box-sizing: border-box;
+
+}
+
+.listing-col0 > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listing-col1 {
+  width: 20%;
+  display: flex;
+
+}
+
+.listing-col2 {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.listing-item-pic {
+  margin-right: 2%;
+}
+.listing-item-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.listing-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-col3 {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.listing-col4 {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+#listings-sell-header {
+  text-transform: uppercase;
+  font-size: 16px;
+  position: relative;
+  margin-bottom: -1px;
+  margin-left: 2%;
+  border-bottom: 4px solid green;
+  width: 100px;
+  display: none;
+}
+
+#listings-sell-table-heading {
+  font-family: impact;
+  text-transform: uppercase;
+  border-top: 1px solid #c3c3c3;
+  cursor: default;
+}
+
+#listings-sell-table-heading > tr {
+  height: 5vh;
+  color: #333;
+}
+
+.new-listing {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 25px;
+  width: 100px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.new-listing:hover {
+  color: white;
+  background-color: black;
+}
+
+#listings-form-div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+#listings-form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  font-size: 24px;
+  font-family: 'proxima-nova', sans-serif;
+  border: 1px solid #c3c3c3;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
+#listings-form > label > select {
+  font-size: 16px;
+  font-family: 'proxima-nova', sans-serif;
+  letter-spacing: 1px;
+
+}
+#listings-form-type-dropdown {
+  width: 100%;
+}
+
+#listings-form-product-dropdown {
+  width: 100%;
+}
+#listings-form-size-sex-dropdown {
+  width: 50%;
+}
+#listings-form-size-num-dropdown {
+  width: 50%;
+}
+#listings-form-price {
+  width: 98%;
+  font-size: 16px;
+  font-family: 'proxima-nova', sans-serif;
+  letter-spacing: 1px;
+
+}
+#listings-form-submit {
+  width: 100%;
+  height: 40px;
+  background-color: #999999;
+  color: white;
+  font: bold 14px 'proxima-nova', sans-serif;
+  letter-spacing: 1px;
+  margin-top: 5px;
+
+}
