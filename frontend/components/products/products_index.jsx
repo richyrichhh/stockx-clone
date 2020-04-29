@@ -19,7 +19,7 @@ export default class ProductsIndex extends React.Component {
   
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     let products = Object.values(this.state.products);
 
     return (

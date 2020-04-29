@@ -21,13 +21,13 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
   let hBid = orders[0].price || -1;
   let lAsk = orders[1].price || -1;
   let lastDiff = (sales[sEnd].price - sales[sEnd - 1].price);
-  console.log(lastDiff);
+  // console.log(lastDiff);
 
   let handleBuy = () => {
     if (lAsk === -1) {
       window.location.href = window.location.origin + `/#/profile/listings/new`;
     } else {
-      console.log(orders[1]);
+      // console.log(orders[1]);
       let updatedOrder = Object.assign({}, orders[1]);
       updatedOrder.active = false;
       updatedOrder.sold = true;
@@ -67,7 +67,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
     if (hBid === -1) {
       window.location.href = window.location.origin + `/#/profile/listings/new`;
     } else {
-      console.log(orders[0]);
+      // console.log(orders[0]);
       let updatedOrder = Object.assign({}, orders[0]);
       updatedOrder.active = false;
       updatedOrder.sold = true;

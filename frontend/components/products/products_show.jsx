@@ -21,7 +21,7 @@ export default class ProductShow extends React.Component {
   componentDidMount() {
     this.props.fetchProduct(this.state.productId);
     this.props.fetchOrdersByProduct(this.state.productId).then(data => {
-      console.log(data);
+      // console.log(data);
       let hBid = -1;
       let lAsk = -1;
       for (let order of Object.values(data.orders)) {
@@ -65,7 +65,7 @@ export default class ProductShow extends React.Component {
     }
     else if (!this.state.follows) {
       this.props.createFollow({user_id: this.props.currentUser.id, product_id: this.state.productId}).then( data => {
-        console.log(data);
+        // console.log(data);
         this.setState({follows: true, follow_id: data.follow.id});
       })
     }
@@ -73,7 +73,7 @@ export default class ProductShow extends React.Component {
 
   render() {
     
-    console.log(`id is ${this.props.currentUser.id}`); 
+    // console.log(`id is ${this.props.currentUser.id}`); 
     console.dir(this.props.currentUser.id);
 
     let product = this.props.products[this.state.productId] || {};

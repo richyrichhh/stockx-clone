@@ -8,8 +8,10 @@ export default class ProductsSearch extends React.Component {
     super(props);
     this.state = {
       products: this.props.products,
+      filtered: [],
       searchTerms: []
     }
+    this.filter = this.filterProducts.bind(this);
   }
 
   componentDidMount() {
@@ -24,59 +26,78 @@ export default class ProductsSearch extends React.Component {
         delete window.location.searchCache;
         this.setState(newState);
       }
+
+    let searchBar = document.getElementById('navbar-search');
+    searchBar.addEventListener('keyup', this.filter);
+    this.filterProducts();
   }
 
-  filterProducts(products) {
+  componentWillUnmount() {
+    let searchBar = document.getElementById('navbar-search');
+    searchBar.removeEventListener('keyup', this.filterProducts);
+  }
+
+  filterProducts() {
+    let products = Object.values(this.state.products);
     let filtered = [];
-    let terms = this.state.searchTerms;
-    terms = terms.map((word) => word.toLowerCase());
-    for (let prod of products) {
-      
-      for (let name of prod.name.toLowerCase().split(' ')) {
-        if (terms.includes(name)) {
-          if (!filtered.includes(prod)) filtered.push(prod);
-          break;
+    let terms = document.getElementById('navbar-search').value.split(' ');
+    if (terms.length === 0) filtered = products;
+    else {
+      terms = terms.map((word) => word.toLowerCase());
+      for (let prod of products) {
+        for (let name of prod.name.toLowerCase().split(' ')) {
+          for (let term of terms) {
+            if (name.includes(term)) {
+              if (!filtered.includes(prod)) filtered.push(prod);
+              break;
+            }
+          }
         }
-      }
-      for (let brand of prod.brand.toLowerCase().split(' ')) {
-        if (terms.includes(brand)) {
-          if (!filtered.includes(prod)) filtered.push(prod);
-          
-          break;
+        for (let brand of prod.brand.toLowerCase().split(' ')) {
+          for (let term of terms) {
+            if (brand.includes(term)) {
+              if (!filtered.includes(prod)) filtered.push(prod);
+              break;
+            }
+          }
         }
-      }
-      for (let model of prod.model.toLowerCase().split(' ')) {
-        if (terms.includes(model)) {
-          if (!filtered.includes(prod)) filtered.push(prod);
-          
-          break;
+        for (let model of prod.model.toLowerCase().split(' ')) {
+          for (let term of terms) {
+            if (model.includes(term)) {
+              if (!filtered.includes(prod)) filtered.push(prod);
+              break;
+            }
+          }
         }
-      }
-      for (let colorway of prod.colorway.toLowerCase().split(' ')) {
-        if (terms.includes(colorway)) {
-          if (!filtered.includes(prod)) filtered.push(prod);
-         
-          break;
+        for (let colorway of prod.colorway.toLowerCase().split(' ')) {
+          for (let term of terms) {
+            if (colorway.includes(term)) {
+              if (!filtered.includes(prod)) filtered.push(prod);
+             
+              break;
+            }
+          }
         }
-      }
-      for (let style_code of prod.style_code.toLowerCase().split(' ')) {
-        if (terms.includes(style_code)) {
-          if (!filtered.includes(prod)) filtered.push(prod);
-         
-          break;
+        for (let style_code of prod.style_code.toLowerCase().split(' ')) {
+          for (let term of terms) {
+            if (style_code.includes(term)) {
+              if (!filtered.includes(prod)) filtered.push(prod);
+              break;
+            }
+          }
         }
+        
       }
-      
     }
-    return filtered;
+    
+    this.setState({filtered: filtered});
+
   }
 
   render() {
-    console.log(this.state);
-    let products = Object.values(this.state.products);
-    if (this.state.searchTerms.length > 0) {
-      products = this.filterProducts(products);
-    }
+    // console.log(this.state);
+    let products = this.state.filtered;
+
     return (
       <div id="products-index-div">
         <ul id="products-list">

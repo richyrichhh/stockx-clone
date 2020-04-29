@@ -24,8 +24,8 @@ export default class ListingsBuying extends React.Component {
           }
         }
         this.setState({orders: orders});
-        console.log(this.state);
-        console.log(data.orders);
+        // console.log(this.state);
+        // console.log(data.orders);
       })
     );
     // this.props.fetchPortfolio(this.props.currentUser.id).then(() => Object.values(this.props.portfolio).forEach(item => this.props.fetchLastSale(item.product_id)));
