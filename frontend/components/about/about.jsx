@@ -3,7 +3,6 @@ import React from 'react';
 export default () => {
   return (
     <div id="about-div">
-      <p>
         <ul>
           <li>
             Greetings!
@@ -27,7 +26,6 @@ export default () => {
             Users are also able to search for items using a variety of factors such as name, brand, model, and colors.
           </li>
         </ul>
-      </p>
     </div>
   )
 }
