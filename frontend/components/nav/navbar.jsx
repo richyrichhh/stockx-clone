@@ -67,9 +67,9 @@ export default class NavBar extends React.Component {
             <Link to="/profile/portfolio">
               <li id="navbar-portfolio">Portfolio</li>
             </Link>
-            <a href="https://github.com/richyrichhh/stockx-clone">
+            <Link to="/about">
               <li id="navbar-about" className="navbar-dropdown">About</li>
-            </a>
+            </Link>
             <a href="#" onClick={this.handleHelp}>
               <li id="navbar-help">Help</li>
             </a>
