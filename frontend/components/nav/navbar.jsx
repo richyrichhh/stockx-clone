@@ -70,9 +70,9 @@ export default class NavBar extends React.Component {
             <Link to="/about">
               <li id="navbar-about" className="navbar-dropdown">About</li>
             </Link>
-            <a href="#" onClick={this.handleHelp}>
+            {/* <a href="#" onClick={this.handleHelp}>
               <li id="navbar-help">Help</li>
-            </a>
+            </a> */}
             {this.state.loggedIn ? 
             <Link to="/profile">
               <li id="navbar-my-account" className="navbar-dropdown">My Account</li>
