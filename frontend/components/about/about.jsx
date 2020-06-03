@@ -5,7 +5,7 @@ export default () => {
     <div id="about-div">
         <ul>
           <li>
-            Greetings!
+            Welcome!
           </li>
           <li>
             This app is a functional clone of popular shoe and clothing exchange website StockX.
