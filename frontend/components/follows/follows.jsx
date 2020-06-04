@@ -17,7 +17,7 @@ export default class Follows extends React.Component {
     this.props.fetchProducts()
       .then(() => this.props.fetchFollows(this.props.currentUser.id)
       .then((data) => {
-        console.dir(data);
+        // console.dir(data);
         for (let follow of Object.values(data.follows)) {
           let prod = Object.assign({}, this.props.products[follow.product_id]);
           prod.f_id = follow.id;

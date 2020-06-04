@@ -16,7 +16,7 @@ export default class FollowItem extends React.Component {
       hBid: -1,
       lAsk: 21717
     };
-    console.log(this.state.follow);
+    // console.log(this.state.follow);
   }
 
   componentDidMount() {
@@ -24,20 +24,20 @@ export default class FollowItem extends React.Component {
     // if (!this.props.products[p_id]) this.props.fetchProduct(p_id);
     this.props.fetchOrdersByProduct(p_id).then((data) => {
       let newState = Object.assign({}, this.state);
-      console.dir(data);
+      // console.dir(data);
       for (let order of Object.values(data.orders)) {
         if (order.order_type === 'buy' && order.price > newState.hBid) newState.hBid = order.price;
         else if (order.order_type === 'sell' && order.price < newState.lAsk) newState.lAsk = order.price;
       }
       this.setState(newState);
-      console.dir(this.state);
+      // console.dir(this.state);
     })
   }
 
   handleDelete(e) {
     // let newOrder = Object.assign({}, this.state.order);
     // newOrder.active = 'false'
-    this.props.deleteFollow(newOrder).then(data => console.dir(data));
+    this.props.deleteFollow(newOrder)//.then(data => console.dir(data));
     this.setState({follow: {}});
     // window.refresh();
   }

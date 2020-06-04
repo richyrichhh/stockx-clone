@@ -38,13 +38,13 @@ export default class ListingItem extends React.Component {
     if (!this.props.products[p_id]) this.props.fetchProduct(p_id);
     this.props.fetchOrdersByProduct(p_id).then((data) => {
       let newState = Object.assign({}, this.state);
-      console.dir(data);
+      // console.dir(data);
       for (let order of Object.values(data.orders)) {
         if (order.order_type === 'buy' && order.price > newState.hBid) newState.hBid = order.price;
         else if (order.order_type === 'sell' && order.price < newState.lAsk) newState.lAsk = order.price;
       }
       this.setState(newState);
-      console.dir(this.state);
+      // console.dir(this.state);
     })
   }
 
@@ -52,7 +52,7 @@ export default class ListingItem extends React.Component {
     // e.preventDefault();
     let newOrder = Object.assign({}, this.state.order);
     newOrder.active = 'false'
-    this.props.updateOrder(newOrder).then(data => console.dir(data));
+    this.props.updateOrder(newOrder)//.then(data => console.dir(data));
     this.setState({order: {}, product: {}});
     window.refresh();
     // console.dir(this.context);
