@@ -68,7 +68,7 @@ export default class NavBar extends React.Component {
               <li id="navbar-portfolio">Portfolio</li>
             </Link>
             <Link to="/about">
-              <li id="navbar-about" className="navbar-dropdown">About</li>
+              <li id="navbar-about" className="navbar-dropdown">About/Help</li>
             </Link>
             {/* <a href="#" onClick={this.handleHelp}>
               <li id="navbar-help">Help</li>
