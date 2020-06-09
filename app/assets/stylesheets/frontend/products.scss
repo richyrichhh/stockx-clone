@@ -59,11 +59,16 @@
 .products-index-tag {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   height: 60px;
   box-sizing: border-box;
   background-color: #fafafa;
+}
+
+.products-index-tag > h3 {
+  margin-left: 15px;
+  margin-top: 7.5px;
 }
 
 #products-index-div a:hover .products-index-tag {
