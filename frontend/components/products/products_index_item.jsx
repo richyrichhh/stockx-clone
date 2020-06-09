@@ -20,6 +20,9 @@ export default ({ product }) => {
               <li>
                 "{product.name}"
               </li>
+              <li className="prod-style-code">
+                {product.style_code}
+              </li>
             </ul>
           </h3>
         </span>
