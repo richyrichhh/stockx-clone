@@ -3,6 +3,11 @@ import React from 'react';
 export default () => {
   return (
     <div id="about-div">
+        <p>
+          StockX is the world’s first stock market for things – a live ‘bid/ask’ marketplace. Buyers place bids, sellers place asks and when a bid and ask meet, the transaction happens automatically. Retro Jordans, Nikes, Yeezys and more – now 100% authentic guaranteed.
+          <br/>
+          -StockX
+        </p>
         <ul>
           <li>
             Welcome!
