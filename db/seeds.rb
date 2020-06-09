@@ -23,7 +23,6 @@ product6 = Product.create!(name: 'Concord', model: "Air Jordan 11", brand: "Jord
 product7 = Product.create!(name: 'Tiffany', model: 'Nike SB Dunk Low', brand: 'Nike', description: 'Iconic', style_code: '304292-402', colorway: 'aqua chrome', retail_price: 89, img_path: 'https://stockx.imgix.net/Nike-Dunk-SB-Low-Diamond-Supply-Co-Tiffany-Product.jpg', release_date: '1/08/2005')
 product8 = Product.create!(name: 'Flash', model: 'Nike SB Dunk Low', brand: 'Nike', description: 'Chris\'s favorite', style_code: '304292-801', colorway: 'orange-flash black', retail_price: 60, img_path: 'https://stockx.imgix.net/Nike-SB-Dunk-Low-Orange-Flash.png', release_date: '1/10/2002')
 product9 = Product.create!(name: 'Blink', model: 'Air Yeezy', brand: 'Nike', description: 'Part of Kanye\'s first yeezy collection', style_code: '366164-003', colorway: 'black black', retail_price: 250, img_path: 'https://stockx.imgix.net/Nike-Air-Yeezy-1-Black-Pink-Blink.jpg', release_date: '4/4/2009')
-product10 = Product.create!(name: 'Turtledove', model: 'Yeezy Boost 350', brand: 'adidas', description: 'First adidas shoe added here', style_code: 'AQ4832', colorway: 'turtledove blue grey-white', retail_price: 200, img_path: 'https://stockx.imgix.net/Adidas-Yeezy-Boost-350-Low-Turtledove-Product.jpg', release_date: '27/6/2015')
 
 
 order1 = Order.create!(product_id: product1.id, asker_id: user1.id, price: 500, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
@@ -35,7 +34,6 @@ order6 = Order.create!(product_id: product6.id, asker_id: user1.id, price: 789, 
 order7 = Order.create!(product_id: product7.id, asker_id: user1.id, price: 400, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 order8 = Order.create!(product_id: product8.id, asker_id: user1.id, price: 850, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 order9 = Order.create!(product_id: product9.id, asker_id: user1.id, price: 2500, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
-order10 = Order.create!(product_id: product10.id, asker_id: user1.id, price: 1000, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 
 
 
@@ -54,4 +52,3 @@ sale7 = Sale.create!(order_id: order6.id, product_id: order6.product_id, sex: or
 sale8 = Sale.create!(order_id: order7.id, product_id: order7.product_id, sex: order7.sex, size: order7.size, date: Date.today.to_s.split('-').join('/'), active: 'true', price: order7.price)
 sale9 = Sale.create!(order_id: order8.id, product_id: order8.product_id, sex: order8.sex, size: order8.size, date: Date.today.to_s.split('-').join('/'), active: 'true', price: order8.price)
 sale10 = Sale.create!(order_id: order9.id, product_id: order9.product_id, sex: order9.sex, size: order9.size, date: Date.today.to_s.split('-').join('/'), active: 'true', price: order9.price)
-sale11 = Sale.create!(order_id: order10.id, product_id: order10.product_id, sex: order10.sex, size: order10.size, date: Date.today.to_s.split('-').join('/'), active: 'true', price: order10.price)
