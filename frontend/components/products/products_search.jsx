@@ -94,6 +94,15 @@ export default class ProductsSearch extends React.Component {
     // console.log(this.state);
     let products = this.state.filtered;
 
+    if (products.length === 0) return (
+      <div id="products-index-div">
+        <b className="center-everything">
+          No search results found.
+
+        </b>
+      </div>
+    )
+
     return (
       <div id="products-index-div">
         <ul id="products-list">
