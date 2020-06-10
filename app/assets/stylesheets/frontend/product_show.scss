@@ -104,3 +104,11 @@
 .prod-style-code {
   color: #bbbbbb
 }
+
+.center-everything {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

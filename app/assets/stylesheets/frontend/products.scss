@@ -1,7 +1,7 @@
 #products-index-div {
   margin-top: 50px;
   width: 100%;
-  height: 100vh;
+  height: min(calc(100vh - 90px), 80vh);
   display: flex;
   font-family: 'proxima-nova', sans-serif;
   font-size: 14px;
