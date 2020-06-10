@@ -42,7 +42,7 @@ export default class ProductShow extends React.Component {
     });
     this.props.fetchSales(this.state.productId);
     this.props.fetchLastSale(this.state.productId);
-    this.props.fetchFollows(this.props.currentUser.id).then(data => {
+    if (this.props.currentUser) this.props.fetchFollows(this.props.currentUser.id).then(data => {
       // console.log('here');
       // console.dir(data);
       for (let follow of Object.values(data.follows)) {
@@ -79,6 +79,7 @@ export default class ProductShow extends React.Component {
     let product = this.props.products[this.state.productId] || {};
     let sales = this.props.sales[this.state.productId] ? Object.values(this.props.sales[this.state.productId]) : [];
     let orders = isEmpty(this.props.orders) ? [{price: 0, type: 'buy'}] : Object.values(this.props.orders);
+    let currUser = this.props.currentUser ? this.props.currentUser.id : -1;
 
     return (
     <div className="product-show">
@@ -96,7 +97,7 @@ export default class ProductShow extends React.Component {
         </span>
       </span>
 
-      {sales[sales.length - 1] && orders[0] ? <ProductOrders product={product} sales={sales} orders={[this.state.hBid, this.state.lAsk]} updateOrder={this.props.updateOrder} createSale={this.props.createSale} addItem={this.props.addItem} currentUserId={this.props.currentUser.id} /> : ""}
+      {sales[sales.length - 1] && orders[0] ? <ProductOrders product={product} sales={sales} orders={[this.state.hBid, this.state.lAsk]} updateOrder={this.props.updateOrder} createSale={this.props.createSale} addItem={this.props.addItem} currentUserId={currUser} /> : ""}
       
 
 
