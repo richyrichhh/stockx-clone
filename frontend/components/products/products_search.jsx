@@ -103,7 +103,7 @@ export default class ProductsSearch extends React.Component {
       </div>
     )
 
-    return (
+    else return (
       <div id="products-index-div">
         <ul id="products-list">
           {products.map(product => (
