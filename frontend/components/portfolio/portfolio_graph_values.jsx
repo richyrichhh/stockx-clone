@@ -7,6 +7,7 @@ export default ( {portfolio, sales, products} ) => {
   let graphData = [];
   let nike = {y: 0, label: 'Nike'};
   let jordan = {y: 0, label: 'Jordan'};
+  let adidas = {y: 0, label: 'adidas'};
   // console.dir(sales);
   if (!isEmpty(sales)) {
     Object.values(portfolio).forEach(item => {
@@ -29,11 +30,18 @@ export default ( {portfolio, sales, products} ) => {
         } else {
           jordan.y += item.purchase_price;
         }
+      } else if (products[item.product_id].brand === 'adidas') {
+        if (sales[item.product_id]) {
+          adidas.y += sales[item.product_id].lastSale.price;
+        } else {
+          adidas.y += item.purchase_price;
+        }
       }
     });
   }
   if (nike.y > 0) graphData.push(nike);
   if (jordan.y > 0) graphData.push(jordan);
+  if (adidas.y > 0) graphData.push(adidas);
   // console.dir(graphData);
   const options = {
     theme: "light2",
