@@ -8,28 +8,24 @@ export default class ProductsSearch extends React.Component {
     super(props);
     this.state = {
       products: this.props.products,
-      filtered: [],
-      searchTerms: []
+      filtered: []
     }
     this.filter = this.filterProducts.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchProducts()
-      .then(action => this.setState({products: action.products}));
-      if (window.location.searchCache) {
-        let newState = Object.assign({}, this.state);
-          newState.searchTerms = [];
-        for (let word of window.location.searchCache.split(' ')) {
-          newState.searchTerms.push(word);
-        }
-        delete window.location.searchCache;
-        this.setState(newState);
-      }
+    if (this.props.products) {
+      this.setState({products: this.props.products})
+      this.filterProducts();
+    } else {
+      this.props.fetchProducts()
+        .then(action => this.setState({products: action.products}))
+        .then(() => this.filterProducts());
+    }
+      
 
     let searchBar = document.getElementById('navbar-search');
     searchBar.addEventListener('keyup', this.filter);
-    this.filterProducts();
   }
 
   componentWillUnmount() {
