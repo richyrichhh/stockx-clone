@@ -74,7 +74,7 @@ export default class ProductShow extends React.Component {
   render() {
     
     // console.log(`id is ${this.props.currentUser.id}`); 
-    console.dir(this.props.currentUser.id);
+    // console.dir(this.props.currentUser.id);
 
     let product = this.props.products[this.state.productId] || {};
     let sales = this.props.sales[this.state.productId] ? Object.values(this.props.sales[this.state.productId]) : [];

@@ -14,6 +14,8 @@ export default class Follows extends React.Component {
 
   componentDidMount() {
     let follows = [];
+    // console.dir(this.props);
+
     this.props.fetchProducts()
       .then(() => this.props.fetchFollows(this.props.currentUser.id)
       .then((data) => {
