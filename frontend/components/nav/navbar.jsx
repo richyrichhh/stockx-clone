@@ -51,7 +51,7 @@ export default class NavBar extends React.Component {
           <span id="navbar-search-outer">
             <form id="search-form" onSubmit={this.handleSearch}>
               <span id="navbar-search-icon"><i className="fas fa-search"></i></span>
-              <input type="text" name="search" placeholder="Search for brand, color, etc." id="navbar-search" />
+              <input type="text" name="search" placeholder="Search for brand, color, etc. (ex. Nike, blue...)" id="navbar-search" />
               <input type="submit" style={{display: 'none'}} />
             </form>
           </span>
