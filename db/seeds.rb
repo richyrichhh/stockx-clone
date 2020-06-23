@@ -28,7 +28,8 @@ product11 = Product.create!(name: 'Ronnie Fieg F&F', model: 'Ultra Boost Mid', b
 product12 = Product.create!(name: 'Burgundy', model: 'Ultra Boost 1.0', brand: 'adidas', description: 'First gen ultra boost', style_code: 'AF5836', colorway: 'burgundy maroon', retail_price: 180, img_path: 'https://stockx.imgix.net/Adidas-Ultra-Boost-Burgundy-Maroon.jpg', release_date: '9/9/2015')
 product13 = Product.create!(name: 'Black Cement 3', model: 'Air Jordan III', brand: 'Jordan', description: 'Black shoe with cement print', style_code: '854262-001', colorway: 'black fire-red cement-grey white', retail_price: 200, img_path: 'https://stockx.imgix.net/Air-Jordan-3-Retro-Black-Cement-2018-Product.jpg', release_date: '17/2/2018')
 product14 = Product.create!(name: 'Black Cement 4', model: 'Air Jordan IV', brand: 'Jordan', description: 'Black/gray shoe with cement print', style_code: '308497-089', colorway: 'black fire-red cement-grey', retail_price: 160, img_path: 'https://stockx.imgix.net/Air-Jordan-4-Retro-Black-Cement-2012-Product.jpg', release_date: '1/11/2012')
-product15 = Product.create!(name: 'Kobe Bryant PE', model: 'Air Jordan 8', brand: 'Jordan', description: 'Player exclusive for Kobe Bryant', style_code: '869802-907', colorway: 'white purple', retail_price: 0, img_path: 'https://stockx.imgix.net/Air-Jordan-8-Retro-Nike-Kobe-Bryant-PE.jpg', release_date: '14/02/2016')
+product15 = Product.create!(name: 'Kobe Bryant PE', model: 'Air Jordan 8', brand: 'Jordan', description: 'Player exclusive for Kobe Bryant', style_code: '869802-907', colorway: 'white purple', retail_price: 0, img_path: 'https://stockx.imgix.net/Air-Jordan-8-Retro-Nike-Kobe-Bryant-PE.jpg', release_date: '14/2/2016')
+product16 = Product.create!(name: 'White \'07', model: 'Air Force 1', brand: 'Nike', description: 'Shoe that started it all', style_code: '315122-111', colorway: 'white white', retail_price: 90, img_path: 'https://stockx.imgix.net/Nike-Air-Force-1-Low-White-07-Product.jpg', release_date: '1/1/1982')
 
 
 order1 = Order.create!(product_id: product1.id, asker_id: user1.id, price: 500, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
@@ -46,6 +47,7 @@ order12 = Order.create!(product_id: product12.id, asker_id: user1.id, price: 500
 order13 = Order.create!(product_id: product13.id, asker_id: user1.id, price: 400, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 order14 = Order.create!(product_id: product14.id, asker_id: user1.id, price: 400, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 order15 = Order.create!(product_id: product15.id, asker_id: user1.id, price: 20000, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order16 = Order.create!(product_id: product16.id, asker_id: user1.id, price: 88, order_type: 'buy', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 
 
 
@@ -70,3 +72,4 @@ sale13 = Sale.create!(order_id: order12.id, product_id: order12.product_id, sex:
 sale14 = Sale.create!(order_id: order13.id, product_id: order13.product_id, sex: order13.sex, size: order13.size, date: Date.today.to_s.split('-').join('/'), active: 'true', price: order13.price)
 sale15 = Sale.create!(order_id: order14.id, product_id: order14.product_id, sex: order14.sex, size: order14.size, date: Date.today.to_s.split('-').join('/'), active: 'true', price: order14.price)
 sale16 = Sale.create!(order_id: order15.id, product_id: order15.product_id, sex: order15.sex, size: order15.size, date: Date.today.to_s.split('-').join('/'), active: 'true', price: order15.price)
+sale17 = Sale.create!(order_id: order16.id, product_id: order16.product_id, sex: order16.sex, size: order16.size, date: Date.today.to_s.split('-').join('/'), active: 'true', price: order16.price)
