@@ -26,9 +26,6 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
   let handleBuy = () => {
     if (currentUserId === -1) {
       location.href = location.origin + `/#/login`;
-      console.log(location.href);
-      console.log('aaa');
-      console.log(this.context.router.history);
       // return false;
     }
     else if (lAsk === -1) {
@@ -73,7 +70,6 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
   let handleSell = () => {
     if (currentUserId === -1) {
       window.location.href = window.location.origin + `/#/login`;
-      return false;
     }
     else if (hBid === -1) {
       window.location.href = window.location.origin + `/#/profile/listings/new`;
