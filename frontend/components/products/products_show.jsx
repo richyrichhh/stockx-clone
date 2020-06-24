@@ -58,6 +58,10 @@ export default class ProductShow extends React.Component {
   }
 
   handleFollow(e) {
+    if (!this.props.currentUser) {
+      location.href = location.origin + `/#/login`;
+      return false;
+    }
     e.preventDefault();
     if (this.state.follows) {
       this.props.deleteFollow(this.state.follow_id);
