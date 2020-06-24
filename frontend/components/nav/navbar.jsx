@@ -35,11 +35,6 @@ export default class NavBar extends React.Component {
     
   }
 
-  handleHelp(e) {
-    e.preventDefault();
-    alert(`Don't worry, you can't actually buy anything.`);
-  }
-
   render() {
     // console.log(this.state.loggedIn);
     return (
