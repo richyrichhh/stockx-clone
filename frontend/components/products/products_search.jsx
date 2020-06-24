@@ -14,15 +14,16 @@ export default class ProductsSearch extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.products) {
-      this.setState({products: this.props.products})
+    let memProds = Object.values(this.props.products);
+    if (memProds.length) {
+      this.setState({products: memProds})
       this.filterProducts();
     } else {
       this.props.fetchProducts()
         .then(action => this.setState({products: action.products}))
         .then(() => this.filterProducts());
     }
-      
+
 
     let searchBar = document.getElementById('navbar-search');
     searchBar.addEventListener('keyup', this.filter);
@@ -34,6 +35,8 @@ export default class ProductsSearch extends React.Component {
   }
 
   filterProducts() {
+    console.log(this.props.products);
+
     let products = Object.values(this.state.products);
     let filtered = [];
     let terms = document.getElementById('navbar-search').value.split(' ');

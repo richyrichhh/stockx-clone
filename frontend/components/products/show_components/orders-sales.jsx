@@ -24,6 +24,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
   // console.log(lastDiff);
 
   let handleBuy = () => {
+    console.log(currentUserId);
     if (lAsk === -1) {
       window.location.href = window.location.origin + `/#/profile/listings/new`;
     } else {
@@ -64,6 +65,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
   handleBuy = handleBuy.bind(this);
 
   let handleSell = () => {
+    console.log(currentUserId);
     if (hBid === -1) {
       window.location.href = window.location.origin + `/#/profile/listings/new`;
     } else {
@@ -108,7 +110,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
     <div id="product-orders">
       <span id="product-orders-size">
         <p>Size</p> 
-        <span>All<input type="hidden" name="This span will become a dropdown" /></span> 
+        <span>All<input type="hidden" /></span> 
       </span>
       <span id="this-will-be-a-gray-line"></span>
       <span id="product-orders-last-sale">
