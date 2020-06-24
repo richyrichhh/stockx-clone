@@ -96,7 +96,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
           //   size: `${orders[0].sex} ${orders[0].size}`
           // }
           // addItem(pItem).then(() => {
-            window.refresh();
+            location.reload();
             // window.location.href = window.location.origin + `/#/profile/portfolio`;
           // })
         })

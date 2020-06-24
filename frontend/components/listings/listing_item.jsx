@@ -54,7 +54,7 @@ export default class ListingItem extends React.Component {
     newOrder.active = 'false'
     this.props.updateOrder(newOrder)//.then(data => console.dir(data));
     this.setState({order: {}, product: {}});
-    window.refresh();
+    location.reload();
     // console.dir(this.context);
     // this.setState(this.state.a ? {a: false} : {a: true});
     // this.forceUpdate();
