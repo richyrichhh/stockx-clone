@@ -24,8 +24,14 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
   // console.log(lastDiff);
 
   let handleBuy = () => {
-    console.log(currentUserId);
-    if (lAsk === -1) {
+    if (currentUserId === -1) {
+      location.href = location.origin + `/#/login`;
+      console.log(location.href);
+      console.log('aaa');
+      console.log(this.context.router.history);
+      // return false;
+    }
+    else if (lAsk === -1) {
       window.location.href = window.location.origin + `/#/profile/listings/new`;
     } else {
       // console.log(orders[1]);
@@ -65,8 +71,11 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
   handleBuy = handleBuy.bind(this);
 
   let handleSell = () => {
-    console.log(currentUserId);
-    if (hBid === -1) {
+    if (currentUserId === -1) {
+      window.location.href = window.location.origin + `/#/login`;
+      return false;
+    }
+    else if (hBid === -1) {
       window.location.href = window.location.origin + `/#/profile/listings/new`;
     } else {
       // console.log(orders[0]);
@@ -125,7 +134,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
         </span>
       </span>
       <span id="prod-asks">
-        <Link to="#" onClick={() => handleBuy()}>
+        <button onClick={() => handleBuy()}>
           <span id="asks-left">
             <p id="p-ask-price">{lAsk === -1 ? `n/a` : `$${lAsk}`}</p>
             <p>Lowest Ask</p>
@@ -134,7 +143,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
             <p id="asks-right-big">Buy</p>
             {/* <p id="asks-right-small">or Bid</p> */}
           </span>
-        </Link>
+        </button>
         <span id="asks-bottom">
           {/* <p>Size 8</p>
           <span className="smaller-gray-line"></span>
@@ -142,7 +151,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
         </span>
       </span>
       <span id="prod-bids">
-        <Link to="#" onClick={() => handleSell()}>
+        <button to="#" onClick={() => handleSell()}>
           <span id="bids-left">
             <p className="bids-right-big">{hBid === -1 ? `n/a` : `$${hBid}`}</p>
             <p className="bids-right-small">Highest Bid</p>
@@ -151,7 +160,7 @@ export default ({product, sales, orders, updateOrder, createSale, addItem, curre
             <p className="bids-right-big">Sell</p>
             {/* <p className="bids-right-small">or Ask</p> */}
           </span>
-        </Link>
+        </button>
         <span id="bids-bottom">
           {/* <p>Size 8</p>
           <span className="smaller-gray-line"></span>

@@ -91,7 +91,7 @@
   align-items: center;
 }
 
-#prod-asks > a {
+#prod-asks > button {
   display: flex;
   flex-direction: row;
   background-color: #509e2f;
@@ -103,8 +103,9 @@
   border-radius: 5px;
 }
 
-#prod-asks > a:hover {
+#prod-asks > button:hover {
   background-color: green;
+  cursor: pointer;
 }
 
 #asks-bottom {
@@ -169,7 +170,7 @@
   align-items: center;
 }
 
-#prod-bids > a {
+#prod-bids > button {
   display: flex;
   flex-direction: row;
   background-color: #ff5a5f;
@@ -181,7 +182,8 @@
   border-radius: 5px;
 }
 
-#prod-bids > a:hover {
+#prod-bids > button:hover {
+  cursor: pointer;
   background-color: #cc4c4c;
 }
 
