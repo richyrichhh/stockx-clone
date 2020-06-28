@@ -11,7 +11,7 @@ export default class NavBar extends React.Component {
       loggedIn: this.props.loggedIn
     }
     this.handleSearch = this.handleSearch.bind(this);
-    this.handleHelp = this.handleHelp.bind(this);
+    // this.handleHelp = this.handleHelp.bind(this);
     // this.setState({loggedIn: this.props.loggedIn});
 
   }
