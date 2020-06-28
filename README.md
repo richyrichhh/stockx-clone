@@ -15,16 +15,15 @@ modeled after the StockX clothing/shoe exchange web app.
 + Builds portfolio of shoes, tracking changes in their market values.
 + Shoes can be added to a watchlist.
 + Easily buy and sell shoes.
-+ Read news articles on publicly traded companies
 
 ### Technologies
 
 + Ruby on Rails backend
-+ React/Redux frontend
-+ CanvasJS API
++ React.js frontend
++ Canvas.JS API
 + Object Oriented Programming
-+ SASS?
 + CSS
++ PostgreSQL database
 
 ## Demos
 
@@ -73,24 +72,16 @@ creating a pie chart of portfolio values for data visualization.
   let graphData = [];
   let nike = {y: 0, label: 'Nike'};
   let jordan = {y: 0, label: 'Jordan'};
-  // console.dir(sales);
   if (!isEmpty(sales)) {
     Object.values(portfolio).forEach(item => {
-      // console.dir(item);
       if (products[item.product_id].brand === 'Nike') {
         if (sales[item.product_id]) {
-          // console.log('nike');
-          // console.log(item.product_id);
-          // console.log(sales[item.product_id]);
           nike.y += sales[item.product_id].lastSale.price;
         } else {
           nike.y += item.purchase_price;
         }
       } else if (products[item.product_id].brand === 'Jordan') {
         if (sales[item.product_id]) {
-          // console.log('jordan');
-          // console.log(item.product_id);
-          // console.log(sales[item.product_id]);
           jordan.y += sales[item.product_id].lastSale.price;
         } else {
           jordan.y += item.purchase_price;
@@ -148,10 +139,7 @@ the data from the database and turning it into something useful for the user.
 
 ## Future Development
 
-+ Finish adding graphs
-+ Finish feature actually allowing you to buy and sell
 + Add historical price graphs
-+ Add watch list
 + Make the profile page actually look good
 
 ![Homepage](https://github.com/richyrichhh/stockx-clone/blob/master/screenshots/home-page.png?raw=true)
