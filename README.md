@@ -63,34 +63,33 @@ offer better judgment on trades.
 
 ## Select Code Snippets
 
-**`PortfolioGraph`**
+**`Search`**
 
-The following code groups portfolio items by brand and populates the graph,
-creating a pie chart of portfolio values for data visualization.
+The following code renders search results for the user. If there are no search results, the user will be notified.
 
 ```
-  let graphData = [];
-  let nike = {y: 0, label: 'Nike'};
-  let jordan = {y: 0, label: 'Jordan'};
-  if (!isEmpty(sales)) {
-    Object.values(portfolio).forEach(item => {
-      if (products[item.product_id].brand === 'Nike') {
-        if (sales[item.product_id]) {
-          nike.y += sales[item.product_id].lastSale.price;
-        } else {
-          nike.y += item.purchase_price;
-        }
-      } else if (products[item.product_id].brand === 'Jordan') {
-        if (sales[item.product_id]) {
-          jordan.y += sales[item.product_id].lastSale.price;
-        } else {
-          jordan.y += item.purchase_price;
-        }
-      }
-    });
+  render() {
+    let products = this.state.filtered;
+
+    if (products.length === 0) return (
+      <div id="products-index-div">
+        <b className="center-everything">
+          No search results found.
+
+        </b>
+      </div>
+    )
+
+    else return (
+      <div id="products-index-div">
+        <ul id="products-list">
+          {products.map(product => (
+            <ProductsIndexItem product={product} key={`product${product.id}`} />
+          ))}
+        </ul>
+      </div>
+    )
   }
-  if (nike.y > 0) graphData.push(nike);
-  if (jordan.y > 0) graphData.push(jordan);
 ```
 
 **`SalesController`**
