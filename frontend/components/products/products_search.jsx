@@ -94,7 +94,6 @@ export default class ProductsSearch extends React.Component {
   }
 
   render() {
-    // console.log(this.state);
     let products = this.state.filtered;
 
     if (products.length === 0) return (
