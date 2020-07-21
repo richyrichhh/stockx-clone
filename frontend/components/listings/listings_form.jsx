@@ -32,7 +32,8 @@ export default class ListingsForm extends React.Component {
       shipped: 'false'
     });
     this.props.createOrder(item).then(success => {
-      window.location.href = window.location.origin + `/#/profile/listings/${ot}ing`;
+      console.dir(success);
+      window.location.href = window.location.origin + `/#/profile/listings/created`;
       // this.props.history.push('/profile/listings');
     }, failure => {
       this.setState({errors: this.props.errors});

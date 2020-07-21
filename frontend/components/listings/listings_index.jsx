@@ -2,6 +2,7 @@ import React from 'react'
 import isEmpty from '../../utils/obj-util';
 import ListingsBuyingContainer from './listings_buying_container';
 import ListingsSellingContainer from './listings_selling_container';
+import ListingsCreated from './listings_created';
 import { Route } from 'react-router-dom';
 import { ProtectedRoute } from '../../utils/route-util';
 import { Link } from 'react-router-dom';
@@ -25,6 +26,7 @@ export default class ListingsBuying extends React.Component {
         </span>
           <ProtectedRoute exact path="/profile/listings/buying" component={ListingsBuyingContainer} />
           <ProtectedRoute exact path="/profile/listings/selling" component={ListingsSellingContainer} />
+          <ProtectedRoute exact path="/profile/listings/created" component={ListingsCreated} />
       </div>
     )
   }
