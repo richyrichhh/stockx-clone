@@ -32,14 +32,9 @@ export default class ListingsForm extends React.Component {
       shipped: 'false'
     });
     this.props.createOrder(item).then(success => {
-      console.log('success!')
-      console.dir(success);
       window.location.href = window.location.origin + `/#/profile/listings/created`;
       // this.props.history.push('/profile/listings');
     }, failure => {
-        console.log('failed!')
-
-      console.dir(failure)
       this.setState({errors: failure.errors});
       $(document.getElementById("listings-form-errors")).removeClass('hidden');
     }); 
