@@ -40,7 +40,7 @@ export default class ListingsForm extends React.Component {
         console.log('failed!')
 
       console.dir(failure)
-      this.setState({errors: this.props.errors});
+      this.setState({errors: failure.errors});
       $(document.getElementById("listings-form-errors")).removeClass('hidden');
     }); 
   }
