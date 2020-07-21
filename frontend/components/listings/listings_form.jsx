@@ -16,7 +16,7 @@ export default class ListingsForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // e.preventDefault();
+    e.preventDefault();
     const itemData = document.getElementById("listings-form-product-dropdown").value.split('|jj|');
     let ss = document.getElementById("listings-form-size-sex-dropdown").value;
     let sn = document.getElementById("listings-form-size-num-dropdown").value;
