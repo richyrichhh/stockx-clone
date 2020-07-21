@@ -71,7 +71,7 @@ export default class ListingsForm extends React.Component {
   }
 
   render() {
-    let products = (isEmpty(this.props.products) ? [] : Object.values(this.props.products));
+    let products = this.state.products;
     return (
       <div id="listings-form-div">
         <form id="listings-form" onSubmit={this.handleSubmit}>
