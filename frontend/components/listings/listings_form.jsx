@@ -20,7 +20,7 @@ export default class ListingsForm extends React.Component {
     if (isEmpty(this.props.products)) {
       this.props.fetchProducts().then((pl) => this.setState({products: Object.values(pl.products)}));
     } else {
-      this.setState({products: this.props.products});
+      this.setState({products: Object.values(this.props.products)});
     }
   }
 
