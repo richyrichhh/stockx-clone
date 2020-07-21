@@ -10,9 +10,18 @@ export default class ListingsForm extends React.Component {
     this.state = {
       user_id: this.props.currentUser.id,
       price: "",
-      errors: this.props.errors
+      errors: this.props.errors,
+      products: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if (isEmpty(this.props.products)) {
+      this.props.fetchProducts().then((pl) => this.setState({products: Object.values(pl.products)}));
+    } else {
+      this.setState({products: this.props.products});
+    }
   }
 
   handleSubmit(e) {
