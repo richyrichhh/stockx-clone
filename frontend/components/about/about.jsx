@@ -31,6 +31,24 @@ export default () => {
           <li>
             Users are also able to search for items using a variety of factors such as name, brand, model, and colors.
           </li>
+          <li>
+            To begin, create an account, login, or use the guest account.
+          </li>
+          <li>
+            You will then be able to view your portfolio, watch list, and any orders you have placed in your profile.
+          </li>
+          <li>
+            You may then browse for a product or search for one by name, model, brand, color, and more.
+          </li>
+          <li>
+            After clicking on a product, you will then be able to choose to watch the item or make a transaction.
+          </li>
+          <li>
+            If there are any sell orders available, you will be able to buy the item. It will be automatically added to your portfolio. Otherwise, you may place a "buy" order and if someone is willing to take your offer, they will then sell you the product.
+          </li>
+          <li>
+            If there are any buy orders available, you will be able to sell the item. You do not need the item in your portfolio to sell, as you may have items you have not added to your portfolio. Otherwise, you may place a "sell" order and others will see you have the product for sale.
+          </li>
         </ul>
     </div>
   )
