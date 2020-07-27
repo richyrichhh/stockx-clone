@@ -80,6 +80,7 @@ order45 = Order.create!(product_id: product13.id, asker_id: user1.id, price: 100
 order46 = Order.create!(product_id: product14.id, asker_id: user1.id, price: 1000, order_type: 'sell', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 order47 = Order.create!(product_id: product15.id, asker_id: user1.id, price: 1000, order_type: 'sell', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 order48 = Order.create!(product_id: product16.id, asker_id: user1.id, price: 1000, order_type: 'sell', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
+order49 = Order.create!(product_id: product1.id, asker_id: user1.id, price: 320, order_type: 'sell', active: 'true', sold: 'false', shipped: 'false', sex: 'M', size: '9')
 
 
 
