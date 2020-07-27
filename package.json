@@ -32,15 +32,15 @@
     "start": "webpack -w --mode=development",
     "postinstall": "webpack"
   },
-    "babel": {
-      "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
-      ],
-      "plugins": [
-        "@babel/plugin-proposal-class-properties"
-      ]
-    },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
