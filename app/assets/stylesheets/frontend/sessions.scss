@@ -40,7 +40,7 @@
 }
 
 #form-span:hover {
-  cursor: default;
+  cursor: pointer;
 }
 
 #form-header {
@@ -62,7 +62,7 @@
 #form-header > a {
   font-size: 12px;
   font-family: 'proxima-nova', sans-serif;
-  cursor: default;
+  cursor: pointer;
   padding-bottom: 5%;
   padding-top: 5%;
   border-bottom: 2px solid gray;
@@ -74,7 +74,7 @@
 #form-header > .selected {
   font-size: 12px;
   font-family: 'proxima-nova', sans-serif;
-  cursor: default;
+  cursor: pointer;
   padding-bottom: 5%;
   padding-top: 5%;
   border-bottom: 2px solid black;
@@ -161,6 +161,7 @@
   // text-align: center;
   box-shadow: none;
   margin-top: 2px;
+  cursor: pointer;
 }
 
 .session-form-btn:active {

@@ -32,22 +32,33 @@
   padding-left: 20px;
   background-color: #d7d7d7;
   color: #333;
-  cursor: crosshair;
+  cursor: default;
+}
+
+#profile-nav-name::selection {
+  background: transparent;
+}
+
+#profile-nav-name::-moz-selection {
+  background: transparent;
 }
 
 .profile-nav-item {
   // padding-bottom: 20px;
   font-size: 18px;
-  cursor: default;  
+  cursor: pointer;  
   text-decoration: none;
-  color: black;
   width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
+  color: #444;
   font-weight: normal;
 }
 
+.profile-nav-item::selection {
+  background: transparent;
+}
 
 .nav-icon {
   padding-left: 20px;
@@ -57,14 +68,26 @@
   filter: grayscale(100%);
 }
 
-.profile-nav-item {
-  color: #444;
-}
-
 .profile-nav-item:hover > .nav-icon {
   font-weight: bold;
   -webkit-filter: none; /* Safari 6.0 - 9.0 */
   filter: none;
+}
+
+.nav-icon::selection {
+  background: transparent;
+}
+
+.nav-icon::-moz-selection {
+  background: transparent;
+}
+
+.nav-label::selection {
+  background: transparent;
+}
+
+.nav-label::-moz-selection {
+  background: transparent;
 }
 
 .profile-selected {
