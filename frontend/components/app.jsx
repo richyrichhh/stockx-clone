@@ -24,7 +24,7 @@ const App = () => (
         <Route exact path="/products/:productId/view" component={ProductShowContainer} />
       </Switch>
       <Route exact path="/about" component={About} />
-      <ProtectedRoute path="/profile" component={ProfileContainer} />
+      <ProtectedRoute path="/profile" component={ProfileContainer} asdf="asdf"/>
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/register" component={RegistrationContainer} />
     </div>

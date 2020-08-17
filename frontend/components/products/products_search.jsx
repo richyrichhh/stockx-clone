@@ -35,7 +35,7 @@ export default class ProductsSearch extends React.Component {
   }
 
   filterProducts() {
-    console.log(this.props.products);
+    // console.log(this.props.products);
 
     let products = Object.values(this.state.products);
     let filtered = [];

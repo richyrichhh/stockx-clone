@@ -21,6 +21,9 @@ export default class SessionForm extends React.Component {
   componentDidMount() {
     let formClass = `formtype-${this.props.formType}`
     $(document.getElementById('form-span')).addClass(formClass);
+    this.goto = '#/';
+    if (this.props.location.state) this.goto = '#' + this.props.location.state.from.pathname;
+    // console.dir($_SERVER['REQUEST_URI']);
   }
 
   componentWillUnmount() {
@@ -54,7 +57,7 @@ export default class SessionForm extends React.Component {
     e.preventDefault();
     // console.dir(this.props);
     const user = Object.assign({}, this.state, {name: (this.state.firstName + ' ' + this.state.lastName)});
-    this.props.process(user).then(success => this.props.history.push('/profile'), 
+    this.props.process(user).then(success => window.location.replace(this.goto), 
       error => {
         this.setState({errors: this.props.errors});
         $(document.getElementById("user-form-errors")).removeClass('hidden');
@@ -73,7 +76,8 @@ export default class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, {username: 'demologin', password: 'demopassword'})
     this.props.process(user);
-    this.props.history.push('/profile');
+    window.location.replace(this.goto) 
+    // this.props.history.push('/profile');
   }
 
   render() {
