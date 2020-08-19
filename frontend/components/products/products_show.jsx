@@ -13,7 +13,8 @@ export default class ProductShow extends React.Component {
       hBid: -1,
       hBidOrder: '',
       lAsk: -1,
-      lAskOrder: ''
+      lAskOrder: '',
+      sales: null,
     }
     this.handleFollow = this.handleFollow.bind(this);
   }
@@ -39,8 +40,11 @@ export default class ProductShow extends React.Component {
         }
       }
       this.setState({hBid: hBid, lAsk: lAsk});
+      this.orders = data.orders;
     });
-    this.props.fetchSales(this.state.productId);
+    this.props.fetchSales(this.state.productId).then((sales) => {
+      this.setState({sales: sales.sales})
+    });
     this.props.fetchLastSale(this.state.productId);
     if (this.props.currentUser) this.props.fetchFollows(this.props.currentUser.id).then(data => {
       // console.log('here');
@@ -81,8 +85,8 @@ export default class ProductShow extends React.Component {
     // console.dir(this.props.currentUser.id);
 
     let product = this.props.products[this.state.productId] || {};
-    let sales = this.props.sales[this.state.productId] ? Object.values(this.props.sales[this.state.productId]) : [];
-    let orders = isEmpty(this.props.orders) ? [{price: 0, type: 'buy'}] : Object.values(this.props.orders);
+    let sales = this.state.sales ? Object.values(this.state.sales[this.state.productId]) : this.props.sales[this.state.productId] ? Object.values(this.props.sales[this.state.productId]) : [];
+    let orders = this.orders ? Object.values(this.orders) : isEmpty(this.props.orders) ? [{price: 0, type: 'buy'}] : Object.values(this.props.orders);
     let currUser = this.props.currentUser ? this.props.currentUser.id : -1;
 
     return (
