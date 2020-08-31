@@ -10,6 +10,8 @@ export default ( {portfolio, sales, products} ) => {
   let adidas = {y: 0, label: 'adidas'};
   // console.dir(sales);
   if (!isEmpty(sales)) {
+    // console.dir(sales);
+    // console.dir(portfolio);
     Object.values(portfolio).forEach(item => {
       // console.dir(item);
       if (products[item.product_id].brand === 'Nike') {

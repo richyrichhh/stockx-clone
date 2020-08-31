@@ -8,17 +8,37 @@ import { withRouter } from 'react-router';
 export default class PortfolioIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loaded: false,
+      portfolio: [],
+      products: {},
+      sales: {}
+    };
   }
 
   componentDidMount() {
-    this.props.fetchProducts();
-    this.props.fetchPortfolio(this.props.currentUser.id).then(() => Object.values(this.props.portfolio).forEach(item => this.props.fetchLastSale(item.product_id)));
+    this.props.fetchProducts().then(data => {
+      // console.dir(data);
+      this.setState({products: data.products});
+    });
+    this.props.fetchPortfolio(this.props.currentUser.id).then((data) => {
+      // console.dir(data);
+      this.setState({portfolio: data.portfolio});
+      data.portfolio.forEach(item => {
+        this.props.fetchLastSale(item.product_id).then((data) => {
+          // console.dir(data);
+          let newState = this.state.sales;
+          newState[item.product_id] = {lastSale: data.sale};
+          this.setState({sales: newState});
+        });
+      })
+    });
   }
 
   render() {
-    let portfolio = this.props.portfolio;
-    let products = this.props.products;
-    let sales = this.props.sales;
+    let portfolio = this.state.portfolio;
+    let products = this.state.products;
+    let sales = this.state.sales;
     return (
       <div id="portfolio-main">
         <div id="portfolio-graph-outer">
