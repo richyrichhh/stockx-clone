@@ -25,6 +25,7 @@ export default class PortfolioIndex extends React.Component {
       // console.dir(data);
       this.setState({portfolio: data.portfolio});
       data.portfolio.forEach(item => {
+        this.props.fetchSales(item.product_id).then(data => console.dir(data));
         this.props.fetchLastSale(item.product_id).then((data) => {
           // console.dir(data);
           let newState = this.state.sales;

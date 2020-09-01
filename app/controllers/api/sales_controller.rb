@@ -5,7 +5,7 @@ class Api::SalesController < ApplicationController
   end
 
   def product_last_sale
-    @sale = Product.find(params[:product_id]).sales.order('date desc').limit(1)[0]
+    @sale = Product.find(params[:product_id]).sales.last#order('date desc').limit(1)[0]
     render :show
   end
 

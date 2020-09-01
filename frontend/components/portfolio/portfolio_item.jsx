@@ -30,6 +30,7 @@ export default class PortfolioItem extends React.Component {
       product: (this.props.products[this.props.item.product_id] ? this.props.products[this.props.item.product_id] : {}),
       sale: (this.props.sales.lastSale ? this.props.sales.lastSale : {})
     };
+    console.log(this.state.sale);
   }
 
   componentDidMount() {
