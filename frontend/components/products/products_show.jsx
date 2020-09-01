@@ -105,7 +105,7 @@ export default class ProductShow extends React.Component {
         </span>
       </span>
 
-      {sales[sales.length - 1] && orders[0] ? <ProductOrders product={product} sales={sales} orders={[this.state.hBid, this.state.lAsk]} updateOrder={this.props.updateOrder} createSale={this.props.createSale} addItem={this.props.addItem} currentUserId={currUser} /> : ""}
+      <ProductOrders product={product} sales={sales} orders={[this.state.hBid, this.state.lAsk]} updateOrder={this.props.updateOrder} createSale={this.props.createSale} addItem={this.props.addItem} currentUserId={currUser} />
       
 
 
