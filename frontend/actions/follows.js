@@ -17,7 +17,7 @@ const receiveFollows = follows => ({
 
 const deletedFollow = productId => ({
   type: DELETE_FOLLOW,
-  itemId
+  productId
 });
 
 const receiveFollowErrors = errors => ({

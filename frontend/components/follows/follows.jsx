@@ -35,7 +35,16 @@ export default class Follows extends React.Component {
 
   render() {
     let products = this.props.products;
-    return (
+    console.log(this.state.follows);
+    if (this.state.follows.length === 0) {
+      return (
+        <div id="follows-div">
+          <div id="follows-info-text">
+            Follow an item to track it here.
+          </div>
+        </div>
+      )
+    } else return (
       <div id="follows-div">
         <span id="follows-header">Following</span>
         <table id="follows-table">

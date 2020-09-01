@@ -37,7 +37,8 @@ export default class FollowItem extends React.Component {
   handleDelete(e) {
     // let newOrder = Object.assign({}, this.state.order);
     // newOrder.active = 'false'
-    this.props.deleteFollow(newOrder)//.then(data => console.dir(data));
+    // console.log(this.state.follow);
+    this.props.deleteFollow(this.state.follow.f_id);//.then(data => console.dir(data));
     this.setState({follow: {}});
     // window.refresh();
   }
